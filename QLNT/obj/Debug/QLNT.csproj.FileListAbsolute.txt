@@ -18,3 +18,13 @@ C:\Users\Hai Bang\Downloads\QLNT\QLNT\obj\Debug\QLNT.csproj.GenerateResource.cac
 C:\Users\Hai Bang\Downloads\QLNT\QLNT\obj\Debug\QLNT.csproj.CoreCompileInputs.cache
 C:\Users\Hai Bang\Downloads\QLNT\QLNT\obj\Debug\QLNT.exe
 C:\Users\Hai Bang\Downloads\QLNT\QLNT\obj\Debug\QLNT.pdb
+G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.csprojAssemblyReference.cache
+G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.Form1.resources
+G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.Properties.Resources.resources
+G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.GenerateResource.cache
+G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.CoreCompileInputs.cache
+G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.exe
+G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.pdb
+G:\GitHub\QLPT-C-\QLNT\bin\Debug\QLNT.exe.config
+G:\GitHub\QLPT-C-\QLNT\bin\Debug\QLNT.exe
+G:\GitHub\QLPT-C-\QLNT\bin\Debug\QLNT.pdb

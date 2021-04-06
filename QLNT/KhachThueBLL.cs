@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace QLNT
 {
@@ -13,8 +15,8 @@ namespace QLNT
 
 		public DataTable LoadKhachThue() 
 		{
-        return khachthue.Loadall();
-    }
+			return khachthue.Loadall();
+		}
 
 	/*public DataTable loadkhachthuedatphong() 
 	{
@@ -23,9 +25,9 @@ namespace QLNT
 
 
 	//Thêm khách thuê không đặt phòng trước
-	public bool ThemKhachThueVaoPhongMoi(KhachThue KhachThue)
+	public void ThemKhachThueVaoPhongMoi(KhachThue KhachThue)
 	{
-		return khachthue.ThemKhachthue(KhachThue);
+		khachthue.ThemKhachthue(KhachThue);
 	}
 
 	//Thêm khách thuê có đặt phòng trước
@@ -39,12 +41,16 @@ namespace QLNT
 		return khachthue.SuaKhachthue(KhachThue);
 	}
 
-	public bool XoaKhachThue(KhachThue KhachThue)
+	public void XoaKhachThue(KhachThue KhachThue)
 	{
-		return khachthue.XoaKhach(KhachThue);
+		khachthue.XoaKhach(KhachThue);
 	}
 
-	public DataTable TimKhachThueTheoTen(KhachThue KhachThue) 
+	public DataTable TimKhachThue(String sql, SqlParameter[] parameters)
+	{
+		return khachthue.TimKhachThue(sql, parameters);
+	}
+		public DataTable TimKhachThueTheoTen(KhachThue KhachThue) 
 	{
         return khachthue.TimKhachThueTheoTen(KhachThue);
 	}
