@@ -27,6 +27,8 @@ namespace QLNT
 		public Form1()
 		{
 			InitializeComponent();
+			cbGioiTinh.SelectedItem = "Nam";
+			cbTimKiem.SelectedItem = "Mã Khách";
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -102,8 +104,10 @@ namespace QLNT
 				int selectedIndex = dgvDSKhachThue.CurrentCell.RowIndex;
 				if (selectedIndex > -1)
 				{
-					dgvDSKhachThue.Rows.RemoveAt(selectedIndex);
-					dataGridView1.Refresh(); // if needed
+					KhachThue khach = new KhachThue();
+					khach.setMaKhach(txtMaKhach.Text.ToString());
+					khachThueBLL.XoaKhachThue(khach);
+					dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
 				}
 			}
 			catch (InvalidOperationException ex)
@@ -134,12 +138,17 @@ namespace QLNT
 			}
 			else
 			{
-				updaterow.Cells[0].Value = txtMaKhach.Text;
-				updaterow.Cells[1].Value = txtTenKhach.Text;
-				updaterow.Cells[2].Value = cbGioiTinh.Text;
-				updaterow.Cells[3].Value = txtCMND.Text;
-				updaterow.Cells[4].Value = txtQueQuan.Text;
-				updaterow.Cells[5].Value = txtNgheNghiep.Text;
+
+				KhachThue khach = new KhachThue();
+				khach.setMaKhach(txtMaKhach.Text.ToString());
+				khach.setCmnd(txtCMND.Text.ToString());
+				khach.setNghenghiep(txtNgheNghiep.Text.ToString());
+				khach.setQuequan(txtQueQuan.Text.ToString());
+				khach.setTenKhach(txtTenKhach.Text.ToString());
+				khach.setPhai(cbGioiTinh.Text.ToString());
+
+				khachThueBLL.SuaKhachThue(khach);
+				dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
 			}
 			txtCMND.Enabled = false;
 			txtMaKhach.Enabled = false;
@@ -172,44 +181,33 @@ namespace QLNT
 		private void button3_Click(object sender, EventArgs e)
 		{
 			int index = cbTimKiem.SelectedIndex;
-			KhachThue khach = new KhachThue();
+			String select = "select * from KHACH_THUE where ";
+			SqlParameter p1 = new SqlParameter("@thamso", txtTimKiem.Text.ToString());
 
-			if (index == 0)
-			{
-				khach.setTenKhach(txtTimKiem.Text.ToString());
-				khachThueBLL.TimKhachThueTheoTen(khach);
-				dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
+			SqlParameter[] parameters = { p1 };
+			switch (index)
+            {
+				case 0: //ten
+					select = select + "TenKhach=@thamso";
+					break;
+				case 1: //ma
+					select = select + "MaKhach=@thamso";
+					break;
+				case 2: //que
+					select = select + "QueQuan=@thamso";
+					break;
+				case 3: //nghe
+					select = select + "NgheNghiep=@thamso";
+					break;
+				case 4: //phai
+					select = select + "Phai=@thamso";
+					break;
+				case 5: //cmnd
+					select = select + "CMND=@thamso";
+					break;
 			}
-			if (index == 1)
-			{
-				khach.setMaKhach(txtTimKiem.Text.ToString());
-				khachThueBLL.TimKhachThueTheoTen(khach);
-				dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
-			}
-			if (index == 3)
-			{
-				khach.setNghenghiep(txtTimKiem.Text.ToString());
-				khachThueBLL.TimKhachThueTheoTen(khach);
-				dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
-			}
-			if (index == 2)
-			{
-				khach.setQuequan(txtTimKiem.Text.ToString());
-				khachThueBLL.TimKhachThueTheoTen(khach);
-				dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
-			}
-			if (index == 5)
-			{
-				khach.setCmnd(txtTimKiem.Text.ToString());
-				khachThueBLL.TimKhachThueTheoTen(khach);
-				dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
-			}
-			if (index == 4)
-			{
-				khach.setPhai(txtTimKiem.Text.ToString());
-				khachThueBLL.TimKhachThueTheoTen(khach);
-				dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
-			}
+
+			dgvDSKhachThue.DataSource = khachThueBLL.TimKhachThue(select, parameters);
 		}
 
 		private void btnThemGiaPhong_Click(object sender, EventArgs e)

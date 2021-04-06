@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QLNT
 {
@@ -18,7 +19,7 @@ namespace QLNT
 
 		public SqlConnection open()
 		{
-			conn = new SqlConnection("Data Source=DESKTOP-PP42M7U;Initial Catalog=QUANLYPHONGTRO;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+			conn = new SqlConnection("Data Source=.;Initial Catalog=QUANLYPHONGTRO;Integrated Security=True");
 			conn.Open();
 			return conn;
 		}
@@ -65,15 +66,66 @@ namespace QLNT
 		//Hàm update tổng quát(thêm - xóa - sửa) -  Sử dụng procedure
 		public bool Update(String procName, SqlParameter[] parameters)
 		{
-			
-			
-				cmd = new SqlCommand(procName, conn);
-				cmd.CommandType = CommandType.StoredProcedure;
-				cmd.Parameters.AddRange(parameters);
-				int row = cmd.ExecuteNonQuery();
 
-				return (row == 1);
+			cmd = new SqlCommand(procName, conn);
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddRange(parameters);
+			int row = cmd.ExecuteNonQuery();
+
+			return (row == 1);
+		}
+
+		public void Insert(String insertStatement, SqlParameter[] parameters)
+        {
+			try
+            {
+				cmd = new SqlCommand(insertStatement, conn);
+				cmd.Parameters.AddRange(parameters);
+				cmd.ExecuteNonQuery();
+            }
+			catch(Exception ex)
+            {
+				MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+		public void Delete(String deleteStatement, SqlParameter[] parameters)
+		{
+			try
+			{
+				cmd = new SqlCommand(deleteStatement, conn);
+				cmd.Parameters.AddRange(parameters);
+				cmd.ExecuteNonQuery();
+
 			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message.ToString());
+			}
+		}
+
+		public DataTable Select(String selectStatement, SqlParameter[] parameters)
+		{
+			DataTable table = new DataTable();
+			try
+            {
+				cmd = new SqlCommand(selectStatement, conn);
+				cmd.Parameters.AddRange(parameters);
+				/*int rowNum = cmd.ExecuteNonQuery();
+				if (rowNum <= 0)
+					MessageBox.Show("Khong co ket qua!");*/
+
+				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+				adapter.Fill(table);
+				
+
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show(ex.Message.ToString());
+			}
+			return table;
 		}
 	}
 }

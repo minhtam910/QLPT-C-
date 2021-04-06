@@ -46,6 +46,10 @@ namespace QLNT
 		}*/
 
 		//Tìm khách thuê theo tên
+		public DataTable TimKhachThue(String sql, SqlParameter[] parameters)
+        {
+			return rs = manager.Select(sql, parameters);
+        }
 		public DataTable TimKhachThueTheoTen(KhachThue khachthue)
 		{
 			String sql = "select * from KHACH_THUE where TenKhach like N'%" + khachthue.getTenKhach() + "%'";
@@ -78,7 +82,7 @@ namespace QLNT
 		}
 
 		//thêm khách thuê
-		public bool ThemKhachthue(KhachThue khachthue)
+		public void ThemKhachthue(KhachThue khachthue)
 		{
 			SqlParameter p1 = new SqlParameter("@makhach", khachthue.getMaKhach());
 			SqlParameter p2 = new SqlParameter("@tenkhach", khachthue.getTenKhach());
@@ -87,11 +91,11 @@ namespace QLNT
 			SqlParameter p5 = new SqlParameter("@quequan", khachthue.getQuequan());
 			SqlParameter p6 = new SqlParameter("@nghenghiep", khachthue.getNgheNghiep());
 
-
+			//String insert = "insert into KHACH_THUE values (@makhach, @tenkhach, @phai, @cmnd, @quequan, @nghenghiep)";
 
 			SqlParameter[] giatri = { p1, p2, p3, p4, p5, p6 };
 
-			return manager.Update("ThemKhachThue", giatri);
+			manager.Update(@"dbo.[ThemKhachThue]", giatri);
 		}
 
 		//thêm khách thuê có đặt phòng trước
@@ -112,13 +116,15 @@ namespace QLNT
 		}*/
 
 		//Xóa khách thuê
-		public bool XoaKhach(KhachThue khachthue)
+		public void XoaKhach(KhachThue khachthue)
 		{
 			SqlParameter p1 = new SqlParameter("@makhach", khachthue.getMaKhach());
 
 			SqlParameter[] giatri = { p1 };
 
-			return data.Update("XoaKhach", giatri);
+			String delete = "delete from CT_KHACH_THUE where MaKhach = @makhach; delete from KHACH_THUE where MaKhach = @makhach";
+
+			manager.Delete(delete, giatri);
 
 		}
 
@@ -134,7 +140,7 @@ namespace QLNT
 
 
 			SqlParameter[] giatri = { p1, p2, p3, p4, p5, p6 };
-			return data.Update("SuaKhachThue", giatri);
+			return manager.Update(@"dbo.[SuaKhachThue]", giatri);
 		}
 	}
 }
