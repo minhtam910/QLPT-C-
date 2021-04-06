@@ -1,0 +1,3 @@
+#Đây là nơi lưu trữ các thay đổi của các file các bạn đã edit.
+vd: - File Form1.cs
++ Thay đổi khachThueBLL.ThemKhachThue(khach) => khachThueBLL.ThemKhachThueVaoPhongMoi(khach) //dòng 70
