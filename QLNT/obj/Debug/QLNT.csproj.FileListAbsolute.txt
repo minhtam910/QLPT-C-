@@ -38,6 +38,7 @@ C:\Users\Hai Bang\Source\Repos\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.GenerateResour
 C:\Users\Hai Bang\Source\Repos\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.CoreCompileInputs.cache
 C:\Users\Hai Bang\Source\Repos\QLPT-C-\QLNT\obj\Debug\QLNT.exe
 C:\Users\Hai Bang\Source\Repos\QLPT-C-\QLNT\obj\Debug\QLNT.pdb
+<<<<<<< HEAD
 C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\bin\Debug\QLNT.exe.config
 C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\bin\Debug\QLNT.exe
 C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\bin\Debug\QLNT.pdb
@@ -48,3 +49,5 @@ C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.Generate
 C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.CoreCompileInputs.cache
 C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Debug\QLNT.exe
 C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Debug\QLNT.pdb
+=======
+>>>>>>> c2b4d2cf83785b2ed29daeef0779744c5a1b5241
