@@ -18,8 +18,8 @@ namespace QLNT
 		{
 			String sql = "select DichVu from DICH_VU";
 			rs = data.executeQuery(sql);
-        return rs;
-    }
+			return rs;
+		}
 
 	//Load dịch vụ theo mã khi click vào từng hàng trên table sẽ xuất ra tương ứng vào các textfiled
 	/*public DataTable loadDichVuTheoMa(HoaDonDAL hoadondichvu)

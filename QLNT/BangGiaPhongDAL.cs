@@ -11,7 +11,15 @@ namespace QLNT
 	class BangGiaPhongDAL
 	{
 		private static BangGiaPhongDAL instance;
-		public static BangGiaPhongDAL get()
+		private DBAccess manager;
+		DBAccess data = new DBAccess();
+
+		private BangGiaPhongDAL()
+		{
+			manager = new DBAccess();
+			manager.open();
+		}
+		public static BangGiaPhongDAL getInstance()
 		{
 			if (instance == null)
 			{
@@ -20,17 +28,7 @@ namespace QLNT
 			return instance;
 		}
 
-		private DBAccess manager;
-
-		private BangGiaPhongDAL()
-		{
-			manager = new DBAccess();
-			manager.open();
-		}
-
-		DBAccess data = new DBAccess();
-
-
+	
 		public DataTable LoadThongTinGiaThue()
 		{
 			String sql = "select SoNguoi, PARSENAME(convert(varchar,convert(money,GiaTien),1),2 ) as giatien from GIA_THUE";

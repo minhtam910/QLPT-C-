@@ -9,22 +9,22 @@ namespace QLNT
 {
 	class ThongKeBLL
 	{
-		ThongKeDAL khachthue = ThongKeDAL.get();
+	
 
-		public DataTable loadthang()
-		{
-        return khachthue.loadthang();
+	public DataTable loadthang()
+	{
+        return ThongKeDAL.getInstance().loadthang();
     }
 
 	public DataTable loadHDTheothang(ThongKe thongke) 
 	{
-        return khachthue.loadHDtheoThang(thongke);
+        return ThongKeDAL.getInstance().loadHDtheoThang(thongke);
 	}
 
 	//Load tiền phòng theo mã
 	public DataTable loadTienPhongTheoMa(ThongKe thongke) 
 	{
-        return khachthue.loadTienPhongTheoMa(thongke);
+        return ThongKeDAL.getInstance().loadTienPhongTheoMa(thongke);
 	}
 
 	//Load tiền dịch vụ theo mã
@@ -42,13 +42,13 @@ namespace QLNT
 	//Tổng tiền theo tháng
 	public DataTable TongTienTheoThang(ThongKe thongke) 
 	{
-        return khachthue.TongTienTheoThang(thongke);
+        return ThongKeDAL.getInstance().TongTienTheoThang(thongke);
 	}
 
 	//Tổng tiền theo tháng của phòng
 	public DataTable TongTienTheoThangCuaPhong(ThongKe thongke) 
 	{
-        return khachthue.TongTienTheoThangCuaPhong(thongke);
+        return ThongKeDAL.getInstance().TongTienTheoThangCuaPhong(thongke);
 	}
 }
 }

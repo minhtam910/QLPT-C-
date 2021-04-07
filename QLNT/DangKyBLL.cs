@@ -9,50 +9,50 @@ namespace QLNT
 {
 	class DangKyBLL
 	{
-		DangKyDAL data = DangKyDAL.get();
+		
 
-		public DataTable loadKhachThueChuaCoPhong() 
-		{
-        return data.loadKhachThueChuaCoPhong();
-    }
+	public DataTable loadKhachThueChuaCoPhong() 
+	{
+		return DangKyDAL.getInstance().loadKhachThueChuaCoPhong();
+	}
 
 	public DataTable LoadPhongChuaCOKhach() 
 	{
-        return data.LoadPhongChuaCOKhach();
+        return DangKyDAL.getInstance().LoadPhongChuaCOKhach();
 	}
 
 	public DataTable LoadPhongDaCoKhach()
 	{
-        return data.LoadPhongDaCoKhach();
+        return DangKyDAL.getInstance().LoadPhongDaCoKhach();
 	}
 
 	public DataTable loadChiTietKhachThue(DangKy dangKyPhong) 
 	{
-        return data.loadChiTietKhachThue(dangKyPhong);
+        return DangKyDAL.getInstance().loadChiTietKhachThue(dangKyPhong);
 	}
 
 	//Thêm khách ở ghép
 	public bool ThemKhachOghep(DangKy dangKyPhong)
 	{
-        return data.ThemKhachOghep(dangKyPhong);
+        return DangKyDAL.getInstance().ThemKhachOghep(dangKyPhong);
 	}
 
 	//Thêm khách ở phòng mới
 	public bool ThemKhachThueVaoPhongMoi(DangKy dangKyPhong) 
 	{
-        return data.ThemKhachThueVaoPhongMoi(dangKyPhong);
+        return DangKyDAL.getInstance().ThemKhachThueVaoPhongMoi(dangKyPhong);
 	}
 
 	//Load danh sách phòng có thể ở ghép
 	public DataTable loadMaPhongOGhep()
 	{
-        return data.loadMaPhongOGhep();
+        return DangKyDAL.getInstance().loadMaPhongOGhep();
 	}
 
 	//Load danh sách phòng có thể thuê mới
 	public DataTable LoadMaPhongMoi()
 	{
-        return data.LoadMaPhongMoi();
+        return DangKyDAL.getInstance().LoadMaPhongMoi();
 	}
 
 	

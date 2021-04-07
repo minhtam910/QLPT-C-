@@ -11,12 +11,12 @@ namespace QLNT
 {
 	class KhachThueBLL
 	{
-		KhachThueDAL khachthue = KhachThueDAL.get();
+		
 
-		public DataTable LoadKhachThue() 
-		{
-			return khachthue.Loadall();
-		}
+	public DataTable LoadKhachThue() 
+	{
+		return KhachThueDAL.getInstance().Loadall();
+	}
 
 	/*public DataTable loadkhachthuedatphong() 
 	{
@@ -27,7 +27,7 @@ namespace QLNT
 	//Thêm khách thuê không đặt phòng trước
 	public void ThemKhachThueVaoPhongMoi(KhachThue KhachThue)
 	{
-		khachthue.ThemKhachthue(KhachThue);
+			KhachThueDAL.getInstance().ThemKhachthue(KhachThue);
 	}
 
 	//Thêm khách thuê có đặt phòng trước
@@ -38,36 +38,36 @@ namespace QLNT
 
 	public bool SuaKhachThue(KhachThue KhachThue)
 	{
-		return khachthue.SuaKhachthue(KhachThue);
+		return KhachThueDAL.getInstance().SuaKhachthue(KhachThue);
 	}
 
 	public void XoaKhachThue(KhachThue KhachThue)
 	{
-		khachthue.XoaKhach(KhachThue);
+			KhachThueDAL.getInstance().XoaKhach(KhachThue);
 	}
 
 	public DataTable TimKhachThue(String sql, SqlParameter[] parameters)
 	{
-		return khachthue.TimKhachThue(sql, parameters);
+		return KhachThueDAL.getInstance().TimKhachThue(sql, parameters);
 	}
 		public DataTable TimKhachThueTheoTen(KhachThue KhachThue) 
 	{
-        return khachthue.TimKhachThueTheoTen(KhachThue);
+        return KhachThueDAL.getInstance().TimKhachThueTheoTen(KhachThue);
 	}
 
 	public DataTable TimKhachThueTheoMa(KhachThue KhachThue)
 	{
-        return khachthue.TimKhachThueTheoMa(KhachThue);
+        return KhachThueDAL.getInstance().TimKhachThueTheoMa(KhachThue);
 	}
 
 	public DataTable TimKhachThueTheoNghe(KhachThue KhachThue)
 	{
-        return khachthue.TimKhachThueTheoNgheNghiep(KhachThue);
+        return KhachThueDAL.getInstance().TimKhachThueTheoNgheNghiep(KhachThue);
 	}
 
 	public DataTable TimKhachThueTheoQueQuan(KhachThue KhachThue)
 	{
-        return khachthue.TimKhachThueTheoQueQuan(KhachThue);
+        return KhachThueDAL.getInstance().TimKhachThueTheoQueQuan(KhachThue);
 	}
 }
 }

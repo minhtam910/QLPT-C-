@@ -11,9 +11,15 @@ namespace QLNT
 	class DangKyDAL
 	{
 		DBAccess data;
-
 		private static DangKyDAL instance;
-		public static DangKyDAL get()
+		private DBAccess manager;
+
+		private DangKyDAL()
+		{
+			manager = new DBAccess();
+			manager.open();
+		}
+		public static DangKyDAL getInstance()
 		{
 			if (instance == null)
 			{
@@ -22,13 +28,6 @@ namespace QLNT
 			return instance;
 		}
 
-		private DBAccess manager;
-
-		private DangKyDAL()
-		{
-			manager = new DBAccess();
-			manager.open();
-		}
 
 		//Load các khách thuê chưa có phòng
 		public DataTable loadKhachThueChuaCoPhong()

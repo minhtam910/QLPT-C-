@@ -9,16 +9,16 @@ namespace QLNT
 {
 	class PhongTroBLL
 	{
-		PhongTroDAL data = PhongTroDAL.get();
+		
 
 		public DataTable loadThongTinPhong()
 		{
-			return data.LoadThongTinPhong();
+			return PhongTroDAL.getInstance().LoadThongTinPhong();
 		}
 
 		public DataTable LoadChiTietThuePhong(PhongTro phongtro)
 		{
-			return data.LoadChiTietThuePhong(phongtro);
+			return PhongTroDAL.getInstance().LoadChiTietThuePhong(phongtro);
 		}
 	}
 }

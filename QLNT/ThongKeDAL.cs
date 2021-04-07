@@ -10,25 +10,23 @@ namespace QLNT
 	class ThongKeDAL
 	{
 		private static ThongKeDAL instance;
-		public static ThongKeDAL get()
-		{
-			if (instance == null)
-			{
-				instance = new ThongKeDAL();
-			}
-			return instance;
-		}
-
 		private DBAccess manager;
+		DataTable rs = null;
+		DBAccess data = new DBAccess();
 
 		private ThongKeDAL()
 		{
 			manager = new DBAccess();
 			manager.open();
 		}
-
-		DataTable rs = null;
-		DBAccess data = new DBAccess();
+		public static ThongKeDAL getInstance()
+		{
+			if (instance == null)
+			{
+				instance = new ThongKeDAL();
+			}
+			return instance;
+		}		
 
 		//Load tháng/năm
 		public DataTable loadthang()
