@@ -53,6 +53,10 @@
     <Compile Include="DangKyBLL.cs" />
     <Compile Include="DangKyDAL.cs" />
     <Compile Include="DBAccess.cs" />
+    <Compile Include="DichVu.cs" />
+    <Compile Include="DichVuBLL.cs" />
+    <Compile Include="DV_DoAn_Factory.cs" />
+    <Compile Include="DV_Factory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

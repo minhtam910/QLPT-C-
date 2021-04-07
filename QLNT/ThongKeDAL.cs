@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,16 +11,9 @@ namespace QLNT
 	class ThongKeDAL
 	{
 		private static ThongKeDAL instance;
-		public static ThongKeDAL get()
-		{
-			if (instance == null)
-			{
-				instance = new ThongKeDAL();
-			}
-			return instance;
-		}
-
 		private DBAccess manager;
+		DataTable rs = null;
+		DBAccess data = new DBAccess();
 
 		private ThongKeDAL()
 		{
@@ -27,8 +21,15 @@ namespace QLNT
 			manager.open();
 		}
 
-		DataTable rs = null;
-		DBAccess data = new DBAccess();
+		[MethodImpl(MethodImplOptions.Synchronized)]
+		public static ThongKeDAL getInstance()
+		{
+			if (instance == null)
+			{
+				instance = new ThongKeDAL();
+			}
+			return instance;
+		}		
 
 		//Load tháng/năm
 		public DataTable loadthang()

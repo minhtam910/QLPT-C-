@@ -23,6 +23,7 @@ namespace QLNT
 		DangKyBLL dangKyBLL = new DangKyBLL();
 		ThongKeBLL thongKeBLL = new ThongKeBLL();
 		HoaDonBLL hoaDonBLL = new HoaDonBLL();
+		DichVuBLL dichvu = new DichVuBLL();
 
 		public Form1()
 		{
@@ -39,13 +40,19 @@ namespace QLNT
 			dgvDanhSachKhachChuaCoPhong.DataSource = dangKyBLL.loadKhachThueChuaCoPhong();
 			dgvPhongCoKhachThue.DataSource = dangKyBLL.LoadPhongDaCoKhach();
 			dgvThang.DataSource = thongKeBLL.loadthang();
-			
+			dgvDichVu.DataSource = dichvu.LoadDoAn();
+
+
 			txtCMND.Enabled = false;
 			txtMaKhach.Enabled = false;
 			txtNgheNghiep.Enabled = false;
 			txtQueQuan.Enabled = false;
 			txtTenKhach.Enabled = false;
 			cbGioiTinh.Enabled = false;
+
+			txtMaDoAn.Enabled = false;
+			txtTenDoAn.Enabled = false;
+			txtGiaDoAn.Enabled = false;
 		}
 
 
@@ -311,6 +318,157 @@ namespace QLNT
 		private void cbPhongOGhep_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			 
+		}
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+			indexRowKhach = e.RowIndex;
+			DataGridViewRow row = dgvDichVu.Rows[indexRowKhach];
+
+			txtMaDoAn.Text = row.Cells[0].Value.ToString();
+			txtTenDoAn.Text = row.Cells[1].Value.ToString();
+			txtGiaDoAn.Text = row.Cells[2].Value.ToString();
+			
+		}
+
+        private void dgvDSKhachThue_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			
+
+
+				string message = "Do you want to close this window?";
+				string title = "Close Window";
+				MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+				DialogResult result = MessageBox.Show(message, title, buttons);
+				if (result == DialogResult.Yes)
+				{
+					try
+					{
+						int selectedIndex = dgvDichVu.CurrentCell.RowIndex;
+						if (selectedIndex > -1)
+						{
+							DichVu dichVu = new DichVu();
+							dichVu.setMaDoAn(txtMaDoAn.Text.ToString());
+							dichvu.XoaDichVu(dichVu);
+							dgvDichVu.DataSource = dichvu.LoadDoAn();
+						}
+					}
+
+					catch (InvalidOperationException ex)
+					{
+						throw ex;
+					}
+				}
+				else
+				{
+					this.Close();
+				}
+
+		}
+
+        private void btnThem_DV_Click(object sender, EventArgs e)
+        {
+			txtMaDoAn.Enabled = true;
+			txtTenDoAn.Enabled = true;
+			txtGiaDoAn.Enabled = true;
+			
+		}
+
+
+
+        private void btnEdit_DV_Click(object sender, EventArgs e)
+        {
+
+
+			txtMaDoAn.Enabled = false;
+			txtTenDoAn.Enabled = true;
+			txtGiaDoAn.Enabled = true;
+
+			btnThem_DV.Enabled = false;
+			btnXoa_DV.Enabled = false;
+			btnEdit_DV.Enabled = false;
+		}
+
+
+
+		private void txtGiaDoAn_TextChanged(object sender, EventArgs e)
+        {
+			
+
+		}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+			DataGridViewRow updaterow = dgvDichVu.Rows[indexRowKhach];
+			if (updaterow.Cells[0].Value == null || updaterow.Cells[1].Value == null || updaterow.Cells[2].Value == null)
+			{
+				MessageBox.Show("Hãy chọn khách hàng cần cập nhật");
+			}
+			else
+			{
+
+				DichVu dichVu = new DichVu();
+				dichVu.setMaDoAn(txtMaDoAn.Text.ToString());
+				dichVu.setTenDoAn(txtTenDoAn.Text.ToString());
+				dichVu.setGiaTien(Convert.ToInt32(txtGiaDoAn.Text.ToString()));
+
+
+				dichvu.SuaDichVu(dichVu);
+				dgvDichVu.DataSource = dichvu.LoadDoAn();
+			}
+
+			txtMaDoAn.Enabled = false;
+			txtTenDoAn.Enabled = false;
+			txtGiaDoAn.Enabled = false;
+			btnThem_DV.Enabled = true;
+			btnXoa_DV.Enabled = true;
+			btnEdit_DV.Enabled = true;
+		}
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+			DichVu dv = new DichVu();
+
+			string MaDoAn = txtMaDoAn.Text.ToString();
+			string TenDoAn = txtTenDoAn.Text.ToString();
+
+
+
+			if (txtMaDoAn.Text.ToString() == "" || txtTenDoAn.Text.ToString() == "" || txtGiaDoAn.Text.ToString() == "")
+			{
+				MessageBox.Show("Hãy điền đầy đủ thông tin");
+			}
+
+			else
+			{
+				dv.setMaDoAn(MaDoAn);
+				dv.setTenDoAn(TenDoAn);
+				dv.setGiaTien(Convert.ToInt32(txtGiaDoAn.Text.ToString()));
+
+				dichvu.ThemDichVu(dv);
+				dgvDichVu.DataSource = dichvu.LoadDoAn();
+				MessageBox.Show("Thêm thành công.");
+			}
+
+			txtMaDoAn.Enabled = false;
+			txtTenDoAn.Enabled = false;
+			txtGiaDoAn.Enabled = false;
+
 		}
 	}
 }

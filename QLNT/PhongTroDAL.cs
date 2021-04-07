@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +11,17 @@ namespace QLNT
 	class PhongTroDAL
 	{
 		private static PhongTroDAL instance;
-		public static PhongTroDAL get()
+		private DBAccess manager;
+		DataTable rs = null;
+		DBAccess data = new DBAccess();
+
+		private PhongTroDAL()
+		{
+			manager = new DBAccess();
+			manager.open();
+		}
+		[MethodImpl(MethodImplOptions.Synchronized)]
+		public static PhongTroDAL getInstance()
 		{
 			if (instance == null)
 			{
@@ -18,16 +29,8 @@ namespace QLNT
 			}
 			return instance;
 		}
-
-		private DBAccess manager;
-
-		private PhongTroDAL()
-		{
-			manager = new DBAccess();
-			manager.open();
-		}
-		DataTable rs = null;
-		DBAccess data = new DBAccess();
+		
+		
 
 		//load thông tin các phòng
 		public DataTable LoadThongTinPhong()

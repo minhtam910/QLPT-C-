@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,9 +12,16 @@ namespace QLNT
 	class DangKyDAL
 	{
 		DBAccess data;
-
 		private static DangKyDAL instance;
-		public static DangKyDAL get()
+		private DBAccess manager;
+
+		private DangKyDAL()
+		{
+			manager = new DBAccess();
+			manager.open();
+		}
+		[MethodImpl(MethodImplOptions.Synchronized)]
+		public static DangKyDAL getInstance()
 		{
 			if (instance == null)
 			{
@@ -22,13 +30,6 @@ namespace QLNT
 			return instance;
 		}
 
-		private DBAccess manager;
-
-		private DangKyDAL()
-		{
-			manager = new DBAccess();
-			manager.open();
-		}
 
 		//Load các khách thuê chưa có phòng
 		public DataTable loadKhachThueChuaCoPhong()

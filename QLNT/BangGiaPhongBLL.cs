@@ -8,21 +8,20 @@ namespace QLNT
 {
 	class BangGiaPhongBLL
 	{
-		BangGiaPhongDAL data = BangGiaPhongDAL.get();
-
+		
 		public DataTable LoadThongTinGiaThue()
 		{
-			return data.LoadThongTinGiaThue();
+			return BangGiaPhongDAL.getInstance().LoadThongTinGiaThue();
 		}
 
 		public void ThemPhong(BangGiaPhong banggia)
 		{
-			data.ThemPhong(banggia);
+			BangGiaPhongDAL.getInstance().ThemPhong(banggia);
 		}
 
 		public void SuaPhong(BangGiaPhong banggia)
 		{
-			data.SuaPhong(banggia);
+			BangGiaPhongDAL.getInstance().SuaPhong(banggia);
 		}
 	}
 }

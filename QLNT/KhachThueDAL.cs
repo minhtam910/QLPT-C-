@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,17 @@ namespace QLNT
 	class KhachThueDAL
 	{
 		private static KhachThueDAL instance;
-		public static KhachThueDAL get()
+		private DBAccess manager;
+		DBAccess data = new DBAccess();
+		DataTable rs = null;
+
+		private KhachThueDAL()
+		{
+			manager = new DBAccess();
+			manager.open();
+		}
+		[MethodImpl(MethodImplOptions.Synchronized)]
+		public static KhachThueDAL getInstance()
 		{
 			if (instance == null)
 			{
@@ -19,16 +30,6 @@ namespace QLNT
 			}
 			return instance;
 		}
-
-		private DBAccess manager;
-
-		private KhachThueDAL()
-		{
-			manager = new DBAccess();
-			manager.open();
-		}
-		DataTable rs = null;
-		DBAccess data = new DBAccess();
 
 		//load tất cả các khách thuê
 		public DataTable Loadall()
