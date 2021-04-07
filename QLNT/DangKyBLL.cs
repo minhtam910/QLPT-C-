@@ -13,12 +13,16 @@ namespace QLNT
 
 		public DataTable loadKhachThueChuaCoPhong() 
 		{
-        return data.loadKhachThueChuaCoPhong();
+        return data.LoadKhachThueChuaCoPhong();
     }
 
-	public DataTable LoadPhongChuaCOKhach() 
+	public DataTable LoadPhongDaiHan()
 	{
-        return data.LoadPhongChuaCOKhach();
+			return data.LoadPhongDaiHan();
+    }
+	public DataTable LoadPhongChuaCoKhach() 
+	{
+        return data.LoadPhongChuaCoKhach();
 	}
 
 	public DataTable LoadPhongDaCoKhach()
@@ -28,7 +32,7 @@ namespace QLNT
 
 	public DataTable loadChiTietKhachThue(DangKy dangKyPhong) 
 	{
-        return data.loadChiTietKhachThue(dangKyPhong);
+        return data.LoadChiTietKhachThue(dangKyPhong);
 	}
 
 	//Thêm khách ở ghép

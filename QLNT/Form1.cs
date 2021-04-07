@@ -29,12 +29,19 @@ namespace QLNT
 			InitializeComponent();
 			cbGioiTinh.SelectedItem = "Nam";
 			cbTimKiem.SelectedItem = "Mã Khách";
+			cbPhongTrong.DataSource = dangKyBLL.LoadPhongChuaCoKhach();
+			cbPhongTrong.DisplayMember = "MaPhong";
+			cbPhongTrong.ValueMember = "MaPhong";
+
+			cbPhongOGhep.DataSource = dangKyBLL.LoadPhongDaiHan();
+			cbPhongOGhep.DisplayMember = "MaPhong";
+			cbPhongOGhep.ValueMember = "MaPhong";
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
-			dgvTrangThaiPhong.DataSource = phongTroBLL.loadThongTinPhong();
+			dgvTrangThaiPhong.DataSource = phongTroBLL.LoadThongTinPhong();
 			dgvThongTinGiaThue.DataSource = phongBLL.LoadThongTinGiaThue();
 			dgvDanhSachKhachChuaCoPhong.DataSource = dangKyBLL.loadKhachThueChuaCoPhong();
 			dgvPhongCoKhachThue.DataSource = dangKyBLL.LoadPhongDaCoKhach();
@@ -81,20 +88,13 @@ namespace QLNT
 			cbGioiTinh.Enabled = false;
 		}
 
-		private void dgvTrangThaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			string maphong = dgvTrangThaiPhong.Rows[e.RowIndex].Cells[0].Value.ToString();
-			PhongTro phongtro = new PhongTro();
-			phongtro.setMaPhong(maphong);
-			dgvChiTietPhong.DataSource =  phongTroBLL.LoadChiTietThuePhong(phongtro);
-		}
-
 		private void dgvPhongCoKhachThue_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			string maphong = dgvTrangThaiPhong.Rows[e.RowIndex].Cells[0].Value.ToString();
+			//MessageBox.Show("hihi");
+			/*string maphong = dgvTrangThaiPhong.Rows[e.RowIndex].Cells[0].Value.ToString();
 			DangKy dangKy = new DangKy();
 			dangKy.setMaPhong(maphong);
-			dgvDanhSachKhachThuePhong.DataSource = dangKyBLL.loadChiTietKhachThue(dangKy);
+			dgvDanhSachKhachThuePhong.DataSource = dangKyBLL.loadChiTietKhachThue(dangKy);*/
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
@@ -305,12 +305,24 @@ namespace QLNT
 
 		private void cbPhongTrong_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			cbPhongTrong.Items.Add(dangKyBLL.LoadPhongChuaCOKhach());
+			
 		}
 
 		private void cbPhongOGhep_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			 
 		}
-	}
+
+        private void btnThemKhachDangKy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvTrangThaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+			indexRowKhach = e.RowIndex;
+			DataGridViewRow row = dgvTrangThaiPhong.Rows[indexRowKhach];
+			MessageBox.Show(row.Cells[0].Value.ToString());
+		}
+    }
 }

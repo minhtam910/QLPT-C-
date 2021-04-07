@@ -31,7 +31,14 @@ namespace QLNT
 		}
 
 		//Load các khách thuê chưa có phòng
-		public DataTable loadKhachThueChuaCoPhong()
+
+		public DataTable LoadPhongDaiHan()
+        {
+			String sql = "select MaPhong from PHONG_TRO where ThongTinPhong like  N'Dài hạn' and TrangThai = 1";
+			DataTable table = manager.executeQuery(sql);
+			return table;
+		}
+		public DataTable LoadKhachThueChuaCoPhong()
 		{
 			String sql = "select Makhach, TenKhach, Phai, QueQuan, NgheNghiep from KHACH_THUE where MaKhach not in (select MaKhach from CT_KHACH_THUE)";
 			DataTable table = manager.executeQuery(sql);
@@ -39,9 +46,9 @@ namespace QLNT
 		}
 
 	//Load các phòng chưa có khách vào combobox
-		public DataTable LoadPhongChuaCOKhach()
+		public DataTable LoadPhongChuaCoKhach()
 		{
-			String sql = "select MaPhong from PHONG_TRO where SoNguoi IS NULL";
+			String sql = "select MaPhong from PHONG_TRO where TrangThai = 0";
 			DataTable table = manager.executeQuery(sql);
 			return table;
 		}
@@ -49,13 +56,13 @@ namespace QLNT
 	//Load các phòng đã có khách vào combobox
 		public DataTable LoadPhongDaCoKhach()
 		{
-			String sql = "select MaPhong from PHONG_TRO where SoNguoi IS NOT NULL";
+			String sql = "select MaPhong from PHONG_TRO where TrangThai = 1";
 			DataTable table = manager.executeQuery(sql);
 			return table;
 		}
 
 		//Load danh sách các khách
-		public DataTable loadChiTietKhachThue(DangKy dangkyphong)
+		public DataTable LoadChiTietKhachThue(DangKy dangkyphong)
 		{ 
 			String sql = "select CT_KHACH_THUE.TenKhach, KHACH_THUE.Phai, KHACH_THUE.NgheNghiep, Convert(varchar,NgayVaoPhong,103) as NgayVaoPhong from CT_KHACH_THUE, KHACH_THUE where CT_KHACH_THUE.MaKhach = KHACH_THUE.MaKhach and MaPhong = '" + dangkyphong.getMaPhong()+"'";
 			DataTable table = manager.executeQuery(sql);

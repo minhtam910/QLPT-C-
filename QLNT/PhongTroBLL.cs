@@ -11,7 +11,7 @@ namespace QLNT
 	{
 		PhongTroDAL data = PhongTroDAL.get();
 
-		public DataTable loadThongTinPhong()
+		public DataTable LoadThongTinPhong()
 		{
 			return data.LoadThongTinPhong();
 		}
