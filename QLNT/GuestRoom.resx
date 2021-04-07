@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="RoomRule.Text" xml:space="preserve">
+    <value>Kính chào quý khách
+Để quý khách có thể tận hưởng việc nghỉ ngơi tại nhà trọ, chúng tôi mong quý khách lưu ý những việc sau:
+Thời gian thanh toán và tính kết thúc 1 ngày là vào 17h hằng ngày
+
+1/ Nhà trọ sẽ thu phí 50k nếu khách làm mất chìa khóa phòng :3
+2/ </value>
+  </data>
   <metadata name="Time.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -135,12 +143,4 @@
   <metadata name="Note.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="RoomRule.Text" xml:space="preserve">
-    <value>Kính chào quý khách
-Để quý khách có thể tận hưởng việc nghỉ ngơi tại nhà trọ, chúng tôi mong quý khách lưu ý những việc sau:
-Thời gian thanh toán và tính kết thúc 1 ngày là vào 17h hằng ngày
-
-1/ Nhà trọ sẽ thu phí 50k nếu khách làm mất chìa khóa phòng :3
-2/ </value>
-  </data>
 </root>
