@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +20,7 @@ namespace QLNT
 			manager = new DBAccess();
 			manager.open();
 		}
+		[MethodImpl(MethodImplOptions.Synchronized)]
 		public static PhongTroDAL getInstance()
 		{
 			if (instance == null)
