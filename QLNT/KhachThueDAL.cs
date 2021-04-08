@@ -33,7 +33,8 @@ namespace QLNT
 		//load tất cả các khách thuê
 		public DataTable Loadall()
 		{
-			String sql = "select KHACH_THUE .*, Username from KHACH_THUE left join USER_KHACHTHUE on KHACH_THUE.MaKhach = USER_KHACHTHUE.MaKhach";
+			//String sql = "select KHACH_THUE .*, Username from KHACH_THUE left join USER_KHACHTHUE on KHACH_THUE.MaKhach = USER_KHACHTHUE.MaKhach";
+			String sql = "select * from KHACH_THUE";
 			DataTable table = manager.executeQuery(sql);
 			return table;
 		}

@@ -11,18 +11,18 @@ namespace QLNT
 	{
 		ThongKeDAL khachthue = ThongKeDAL.get();
 
-		public DataTable loadthang()
+		public DataTable Loadthang()
 		{
         return khachthue.loadthang();
     }
 
-	public DataTable loadHDTheothang(ThongKe thongke) 
+	public DataTable LoadHDTheothang(ThongKe thongke) 
 	{
         return khachthue.loadHDtheoThang(thongke);
 	}
 
 	//Load tiền phòng theo mã
-	public DataTable loadTienPhongTheoMa(ThongKe thongke) 
+	public DataTable LoadTienPhongTheoMa(ThongKe thongke) 
 	{
         return khachthue.loadTienPhongTheoMa(thongke);
 	}

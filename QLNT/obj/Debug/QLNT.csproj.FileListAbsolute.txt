@@ -28,3 +28,4 @@ G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.pdb
 G:\GitHub\QLPT-C-\QLNT\bin\Debug\QLNT.exe.config
 G:\GitHub\QLPT-C-\QLNT\bin\Debug\QLNT.exe
 G:\GitHub\QLPT-C-\QLNT\bin\Debug\QLNT.pdb
+G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.GuestRoom.resources

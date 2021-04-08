@@ -10,7 +10,6 @@ namespace QLNT
 {
 	class DangKyDAL
 	{
-		DBAccess data;
 
 		private static DangKyDAL instance;
 		public static DangKyDAL get()
@@ -34,7 +33,7 @@ namespace QLNT
 
 		public DataTable LoadPhongDaiHan()
         {
-			String sql = "select MaPhong from PHONG_TRO where ThongTinPhong like  N'Dài hạn' and TrangThai = 1";
+			String sql = "select MaPhong from PHONG_TRO where LoaiPhong like  N'Dài hạn' and TrangThai = 1";
 			DataTable table = manager.executeQuery(sql);
 			return table;
 		}
@@ -75,10 +74,11 @@ namespace QLNT
 			SqlParameter p1 = new SqlParameter("@makhach", dangkyphong.getMaKhach());
 			SqlParameter p2 = new SqlParameter("@maphong", dangkyphong.getMaPhong());
 			SqlParameter p3 = new SqlParameter("@ngayvaophong", dangkyphong.getNgayVaoPhong());
+			SqlParameter p4 = new SqlParameter("@ghichu", "");
 
-			SqlParameter[] giatri = { p1,p2,p3};
+			SqlParameter[] giatri = { p1, p2, p3, p4 };
 
-			return data.Update("ThemKhachThueVaooGhep", giatri);
+			return manager.Update(@"dbo.[ThemKhachThueVaooGhep]", giatri);
 		}
 
 	//Thêm khách ở phòng mới
@@ -87,10 +87,11 @@ namespace QLNT
 			SqlParameter p1 = new SqlParameter("@makhach", dangkyphong.getMaKhach());
 			SqlParameter p2 = new SqlParameter("@maphong", dangkyphong.getMaPhong());
 			SqlParameter p3 = new SqlParameter("@ngayvaophong", dangkyphong.getNgayVaoPhong());
+			SqlParameter p4 = new SqlParameter("@ghichu", "");
 
-			SqlParameter[] giatri = { p1, p2, p3 };
+			SqlParameter[] giatri = { p1, p2, p3, p4 };
 
-			return data.Update("ThemKhachThueVaoPhongMoi", giatri);
+			return manager.Update(@"dbo.[ThemKhachThueVaoPhongMoi]", giatri);
 		}
 
 		public bool ThemKhachThue(DangKy dangkyphong)
@@ -101,7 +102,7 @@ namespace QLNT
 
 			SqlParameter[] giatri = { p1, p2, p3 };
 
-			return data.Update("ThemKhachThue", giatri);
+			return manager.Update(@"dbo.[ThemKhachThue]", giatri);
 		}
 
 		//Lấy danh sách các phòng còn chỗ trống cho khách mới ở ghép

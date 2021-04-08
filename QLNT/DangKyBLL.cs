@@ -11,7 +11,7 @@ namespace QLNT
 	{
 		DangKyDAL data = DangKyDAL.get();
 
-		public DataTable loadKhachThueChuaCoPhong() 
+		public DataTable LoadKhachThueChuaCoPhong() 
 		{
         return data.LoadKhachThueChuaCoPhong();
     }

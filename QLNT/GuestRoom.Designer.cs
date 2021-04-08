@@ -76,7 +76,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(115, 7);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(176, 32);
             this.textBox1.TabIndex = 1;
@@ -99,7 +99,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(470, 8);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(380, 32);
             this.dateTimePicker1.TabIndex = 3;
@@ -119,7 +119,7 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(115, 66);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(176, 32);
             this.textBox2.TabIndex = 7;
@@ -129,9 +129,9 @@
             // 
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(18, 115);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(815, 416);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
@@ -143,7 +143,7 @@
             this.tabControl1.Controls.Add(this.Notification);
             this.tabControl1.Controls.Add(this.ServiceDetail);
             this.tabControl1.Location = new System.Drawing.Point(4, 17);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(806, 394);
@@ -153,9 +153,9 @@
             // 
             this.tabPage1.Controls.Add(this.RoomRule);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(798, 368);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Quy định Phòng";
@@ -165,7 +165,7 @@
             // 
             this.RoomRule.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RoomRule.Location = new System.Drawing.Point(3, 5);
-            this.RoomRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RoomRule.Margin = new System.Windows.Forms.Padding(2);
             this.RoomRule.Multiline = true;
             this.RoomRule.Name = "RoomRule";
             this.RoomRule.Size = new System.Drawing.Size(794, 362);
@@ -177,9 +177,9 @@
             // 
             this.Notification.Controls.Add(this.dataGridView1);
             this.Notification.Location = new System.Drawing.Point(4, 22);
-            this.Notification.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Notification.Margin = new System.Windows.Forms.Padding(2);
             this.Notification.Name = "Notification";
-            this.Notification.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Notification.Padding = new System.Windows.Forms.Padding(2);
             this.Notification.Size = new System.Drawing.Size(798, 368);
             this.Notification.TabIndex = 1;
             this.Notification.Text = "Thông báo của nhà trọ";
@@ -193,7 +193,7 @@
             this.Topic,
             this.Detail});
             this.dataGridView1.Location = new System.Drawing.Point(4, 5);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -226,9 +226,9 @@
             // 
             this.ServiceDetail.Controls.Add(this.dataGridView2);
             this.ServiceDetail.Location = new System.Drawing.Point(4, 22);
-            this.ServiceDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ServiceDetail.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDetail.Name = "ServiceDetail";
-            this.ServiceDetail.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ServiceDetail.Padding = new System.Windows.Forms.Padding(2);
             this.ServiceDetail.Size = new System.Drawing.Size(798, 368);
             this.ServiceDetail.TabIndex = 2;
             this.ServiceDetail.Text = "Dịch vụ";
@@ -241,8 +241,8 @@
             this.ServiceName,
             this.Price,
             this.Note});
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Location = new System.Drawing.Point(-4, 2);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
@@ -286,7 +286,7 @@
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Location = new System.Drawing.Point(470, 64);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(380, 32);
             this.dateTimePicker2.TabIndex = 10;
@@ -305,7 +305,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GuestRoom";
             this.Text = "GuestRoom";
             this.Load += new System.EventHandler(this.GuestRoom_Load);

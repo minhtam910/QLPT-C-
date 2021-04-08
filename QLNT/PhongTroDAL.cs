@@ -32,7 +32,7 @@ namespace QLNT
 		//load thông tin các phòng
 		public DataTable LoadThongTinPhong()
 		{
-			String sql = "select MaPhong, (case when TrangThai = '1' THEN N'Phòng đã thuê' else N'Phòng còn trống' end) as TrangThai, ThongTinPhong, (case when SoNguoi IS NULL THEN 0 else SoNguoi end) as SoNguoi from PHONG_TRO";
+			String sql = "select MaPhong, (case when TrangThai = '1' THEN N'Phòng đã thuê' else N'Phòng còn trống' end) as TrangThai, LoaiPhong, (case when SoNguoi IS NULL THEN 0 else SoNguoi end) as SoNguoi from PHONG_TRO";
 			rs = manager.executeQuery(sql);
 			return rs;
 		}
