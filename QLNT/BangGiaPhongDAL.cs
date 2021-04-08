@@ -30,6 +30,19 @@ namespace QLNT
 			return instance;
 		}
 
+<<<<<<< HEAD
+		[MethodImpl(MethodImplOptions.Synchronized)]
+		public static BangGiaPhongDAL getInstance()
+		{
+			if (instance == null)
+			{
+				instance = new BangGiaPhongDAL();
+			}
+			return instance;
+		}
+
+=======
+>>>>>>> c2b4d2cf83785b2ed29daeef0779744c5a1b5241
 	
 		public DataTable LoadThongTinGiaThue()
 		{

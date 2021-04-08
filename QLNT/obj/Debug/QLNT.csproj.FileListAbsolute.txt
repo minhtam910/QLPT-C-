@@ -38,6 +38,7 @@ C:\Users\Hai Bang\Source\Repos\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.GenerateResour
 C:\Users\Hai Bang\Source\Repos\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.CoreCompileInputs.cache
 C:\Users\Hai Bang\Source\Repos\QLPT-C-\QLNT\obj\Debug\QLNT.exe
 C:\Users\Hai Bang\Source\Repos\QLPT-C-\QLNT\obj\Debug\QLNT.pdb
+<<<<<<< HEAD
 D:\MonHoc\MTK\final\QLPT-C-\QLNT\bin\Debug\QLNT.exe.config
 D:\MonHoc\MTK\final\QLPT-C-\QLNT\bin\Debug\QLNT.exe
 D:\MonHoc\MTK\final\QLPT-C-\QLNT\bin\Debug\QLNT.pdb
@@ -48,3 +49,18 @@ D:\MonHoc\MTK\final\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.GenerateResource.cache
 D:\MonHoc\MTK\final\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.CoreCompileInputs.cache
 D:\MonHoc\MTK\final\QLPT-C-\QLNT\obj\Debug\QLNT.exe
 D:\MonHoc\MTK\final\QLPT-C-\QLNT\obj\Debug\QLNT.pdb
+=======
+<<<<<<< HEAD
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\bin\Debug\QLNT.exe.config
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\bin\Debug\QLNT.exe
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\bin\Debug\QLNT.pdb
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Debug\QLNT.csprojAssemblyReference.cache
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Debug\QLNT.Form1.resources
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Debug\QLNT.Properties.Resources.resources
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.GenerateResource.cache
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.CoreCompileInputs.cache
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Debug\QLNT.exe
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Debug\QLNT.pdb
+=======
+>>>>>>> c2b4d2cf83785b2ed29daeef0779744c5a1b5241
+>>>>>>> e60da6275badb0aec4f6e8c5029a6786f369a23b

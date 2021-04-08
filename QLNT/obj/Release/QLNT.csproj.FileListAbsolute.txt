@@ -1,0 +1,10 @@
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\bin\Release\QLNT.exe.config
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\bin\Release\QLNT.exe
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\bin\Release\QLNT.pdb
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Release\QLNT.csprojAssemblyReference.cache
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Release\QLNT.Form1.resources
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Release\QLNT.Properties.Resources.resources
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Release\QLNT.csproj.GenerateResource.cache
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Release\QLNT.csproj.CoreCompileInputs.cache
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Release\QLNT.exe
+C:\Users\Hai Bang\Downloads\FinalMTK\QLPT-C-\QLNT\obj\Release\QLNT.pdb

@@ -20,7 +20,10 @@ namespace QLNT
 			manager = new DBAccess();
 			manager.open();
 		}
+<<<<<<< HEAD
+=======
 
+>>>>>>> c2b4d2cf83785b2ed29daeef0779744c5a1b5241
 		[MethodImpl(MethodImplOptions.Synchronized)]
 		public static DangKyDAL getInstance()
 		{
