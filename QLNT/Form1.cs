@@ -104,10 +104,23 @@ namespace QLNT
 				int selectedIndex = dgvDSKhachThue.CurrentCell.RowIndex;
 				if (selectedIndex > -1)
 				{
-					KhachThue khach = new KhachThue();
-					khach.setMaKhach(txtMaKhach.Text.ToString());
-					khachThueBLL.XoaKhachThue(khach);
-					dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
+					string message = "Roi co muon xoa hay la khong";
+					string title = "Suy nghi cho ky";
+					MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+					DialogResult result = MessageBox.Show(message, title, buttons);
+					if (result == DialogResult.Yes)
+					{
+						KhachThue khach = new KhachThue();
+						khach.setMaKhach(txtMaKhach.Text.ToString());
+						khachThueBLL.XoaKhachThue(khach);
+						dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
+						MessageBox.Show("Goy xong, xoa luon goy hic");
+					}
+					else
+					{
+						this.Close();
+					}
+					
 				}
 			}
 			catch (InvalidOperationException ex)
@@ -264,9 +277,21 @@ namespace QLNT
 				int selectedIndex = dgvThongTinGiaThue.CurrentCell.RowIndex;
 				if (selectedIndex > -1)
 				{
-					dgvThongTinGiaThue.Rows.RemoveAt(selectedIndex);
-					dataGridView1.Refresh(); //
-					MessageBox.Show("Xóa thành công");
+					string message = "Xoa chua hay chua xoa";
+					string title = "Xoa ha";
+					MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+					DialogResult result = MessageBox.Show(message, title, buttons);
+					if (result == DialogResult.Yes)
+					{
+						dgvThongTinGiaThue.Rows.RemoveAt(selectedIndex);
+						dataGridView1.Refresh(); //
+						MessageBox.Show("Xóa thành công");
+					}
+					else
+					{
+						this.Close();
+					}
+					
 				}
 			}
 			catch (InvalidOperationException ex)
@@ -312,5 +337,10 @@ namespace QLNT
 		{
 			 
 		}
-	}
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+			dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
+		}
+    }
 }
