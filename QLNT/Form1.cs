@@ -34,17 +34,11 @@ namespace QLNT
 		public void LoadDataGridView()
         {
 			dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
-			dgvTrangThaiPhong.DataSource = phongTroBLL.LoadThongTinPhong();
-			//dgvThongTinGiaThue.DataSource = phongBLL.LoadThongTinGiaThue();
+			dgvTrangThaiPhong.DataSource = phongTroBLL.LoadThongTinPhong();	
+			dgvThongTinGiaThue.DataSource = phongBLL.LoadThongTinGiaThue();
 			dgvDanhSachKhachChuaCoPhong.DataSource = dangKyBLL.LoadKhachThueChuaCoPhong();
 			dgvPhongCoKhachThue.DataSource = dangKyBLL.LoadPhongDaCoKhach();
 			dgvThang.DataSource = thongKeBLL.Loadthang();
-		}
-
-		private void Form1_Load(object sender, EventArgs e)
-		{
-			LoadDataGridView();
-			
 			txtCMND.Enabled = false;
 			txtMaKhach.Enabled = false;
 			txtNgheNghiep.Enabled = false;
@@ -63,10 +57,36 @@ namespace QLNT
 			cbPhongOGhep.DisplayMember = "MaPhong";
 			cbPhongOGhep.ValueMember = "MaPhong";
 
+			cbPhongOGhep.SelectedIndex = 0;
+			cbPhongTrong.SelectedIndex = 0;
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			LoadDataGridView();
+			
+			txtCMND.Enabled = false;
+			txtMaKhach.Enabled = false;
+			txtNgheNghiep.Enabled = false;
+			txtQueQuan.Enabled = false;
+			txtTenKhach.Enabled = false;
+			cbGioiTinh.Enabled = false;
+
+			/*cbGioiTinh.SelectedItem = "Nam";
+			cbTimKiem.SelectedItem = "Mã Khách";
+
+			cbPhongTrong.DataSource = dangKyBLL.LoadPhongChuaCoKhach();
+			cbPhongTrong.DisplayMember = "MaPhong";
+			cbPhongTrong.ValueMember = "MaPhong";
+
+			cbPhongOGhep.DataSource = dangKyBLL.LoadPhongDaiHan();
+			cbPhongOGhep.DisplayMember = "MaPhong";
+			cbPhongOGhep.ValueMember = "MaPhong";
+
 			cbPhongOGhep.SelectedText =  "--Select--";
 			cbPhongOGhep.SelectedItem = null;
 			cbPhongTrong.SelectedText = "--Select--";
-			cbPhongTrong.SelectedItem = null;
+			cbPhongTrong.SelectedItem = null;*/
 		}
 
 
@@ -105,11 +125,11 @@ namespace QLNT
 
 		private void dgvPhongCoKhachThue_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			//MessageBox.Show("hihi");
-			/*string maphong = dgvTrangThaiPhong.Rows[e.RowIndex].Cells[0].Value.ToString();
+			string maphong = dgvPhongCoKhachThue.Rows[e.RowIndex].Cells[0].Value.ToString();
 			DangKy dangKy = new DangKy();
+			//MessageBox.Show(maphong);
 			dangKy.setMaPhong(maphong);
-			dgvDanhSachKhachThuePhong.DataSource = dangKyBLL.loadChiTietKhachThue(dangKy);*/
+			dgvDanhSachKhachThuePhong.DataSource = dangKyBLL.LoadChiTietKhachThue(dangKy);
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
@@ -352,6 +372,7 @@ namespace QLNT
 					dangKy.setMaPhong(phongTrong);
 					dangKyBLL.ThemKhachThueVaoPhongMoi(dangKy);
 				}
+				MessageBox.Show("Thành công!");
 				LoadDataGridView();
 			}
 			catch(Exception ex)
@@ -364,14 +385,21 @@ namespace QLNT
         {
 			indexRowKhach = e.RowIndex;
 			DataGridViewRow row = dgvTrangThaiPhong.Rows[indexRowKhach];
-			MessageBox.Show(row.Cells[0].Value.ToString());
+			String maphong = row.Cells[0].Value.ToString();
+			DangKy dk = new DangKy();
+			dk.setMaPhong(maphong);
+
+			dgvChiTietPhong.DataSource = dangKyBLL.LoadChiTietKhachThue(dk);
+
+			DataTable dt = dangKyBLL.LoadThongTinDichVu(dk);
+			txtGhiChu.Text = dt.Rows[0][0].ToString();
 		}
 
         private void dgvDanhSachKhachChuaCoPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 			indexRowKhach = e.RowIndex;
 			DataGridViewRow row = dgvDanhSachKhachChuaCoPhong.Rows[e.RowIndex];
-			MessageBox.Show(row.Cells[0].Value.ToString());
+			//MessageBox.Show(row.Cells[0].Value.ToString());
         }
     }
 }

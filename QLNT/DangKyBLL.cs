@@ -30,12 +30,17 @@ namespace QLNT
         return data.LoadPhongDaCoKhach();
 	}
 
-	public DataTable loadChiTietKhachThue(DangKy dangKyPhong) 
+	public DataTable LoadChiTietKhachThue(DangKy dangKyPhong) 
 	{
         return data.LoadChiTietKhachThue(dangKyPhong);
 	}
 
-	//Thêm khách ở ghép
+	public DataTable LoadThongTinDichVu(DangKy dangKyPhong)
+	{
+		return data.LoadThongTinDichVu(dangKyPhong);
+	}
+
+		//Thêm khách ở ghép
 	public bool ThemKhachOghep(DangKy dangKyPhong)
 	{
         return data.ThemKhachOghep(dangKyPhong);
@@ -48,9 +53,9 @@ namespace QLNT
 	}
 
 	//Load danh sách phòng có thể ở ghép
-	public DataTable loadMaPhongOGhep()
+	public DataTable LoadMaPhongOGhep()
 	{
-        return data.loadMaPhongOGhep();
+        return data.LoadMaPhongOGhep();
 	}
 
 	//Load danh sách phòng có thể thuê mới

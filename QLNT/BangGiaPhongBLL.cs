@@ -10,10 +10,10 @@ namespace QLNT
 	{
 		BangGiaPhongDAL data = BangGiaPhongDAL.get();
 
-		/*public DataTable LoadThongTinGiaThue()
+		public DataTable LoadThongTinGiaThue()
 		{
 			return data.LoadThongTinGiaThue();
-		}*/
+		}
 
 		public void ThemPhong(BangGiaPhong banggia)
 		{

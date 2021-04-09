@@ -59,6 +59,8 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtGhiChu = new System.Windows.Forms.RichTextBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -127,6 +129,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox15.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhong)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -502,6 +505,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.MistyRose;
+            this.tabPage2.Controls.Add(this.groupBox15);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label9);
@@ -514,6 +518,27 @@
             this.tabPage2.Size = new System.Drawing.Size(859, 576);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Phòng trọ";
+            // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.Enabled = false;
+            this.txtGhiChu.Location = new System.Drawing.Point(5, 18);
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(425, 181);
+            this.txtGhiChu.TabIndex = 7;
+            this.txtGhiChu.Text = "";
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.txtGhiChu);
+            this.groupBox15.Location = new System.Drawing.Point(421, 210);
+            this.groupBox15.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox15.Size = new System.Drawing.Size(435, 204);
+            this.groupBox15.TabIndex = 6;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Thông tin dịch vụ";
             // 
             // button2
             // 
@@ -551,7 +576,7 @@
             this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox7.Size = new System.Drawing.Size(435, 230);
+            this.groupBox7.Size = new System.Drawing.Size(435, 174);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Chi tiết phòng";
@@ -564,7 +589,7 @@
             this.dgvChiTietPhong.Margin = new System.Windows.Forms.Padding(2);
             this.dgvChiTietPhong.Name = "dgvChiTietPhong";
             this.dgvChiTietPhong.RowTemplate.Height = 24;
-            this.dgvChiTietPhong.Size = new System.Drawing.Size(431, 213);
+            this.dgvChiTietPhong.Size = new System.Drawing.Size(431, 157);
             this.dgvChiTietPhong.TabIndex = 0;
             // 
             // groupBox6
@@ -1233,6 +1258,7 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhong)).EndInit();
             this.groupBox6.ResumeLayout(false);
@@ -1368,6 +1394,8 @@
 		private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.RichTextBox txtGhiChu;
     }
 }
 

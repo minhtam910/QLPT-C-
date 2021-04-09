@@ -31,12 +31,13 @@ namespace QLNT
 		DBAccess data = new DBAccess();
 
 
-		/*public DataTable LoadThongTinGiaThue()
+		public DataTable LoadThongTinGiaThue()
 		{
-			String sql = "select SoNguoi, PARSENAME(convert(varchar,convert(money,GiaTien),1),2 ) as giatien from GIA_THUE";
+			//String sql = "select SoNguoi, PARSENAME(convert(varchar,convert(money,GiaTien),1),2 ) as giatien from GIA_THUE";
+			String sql = "select * from GIA_THUE";
 			DataTable table = manager.executeQuery(sql);
 			return table;
-		}*/
+		}
 
 		//Thêm phòng mới vào bảng giá phòng
 		public bool ThemPhong(BangGiaPhong banggia)

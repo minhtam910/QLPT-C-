@@ -63,7 +63,14 @@ namespace QLNT
 		//Load danh sách các khách
 		public DataTable LoadChiTietKhachThue(DangKy dangkyphong)
 		{ 
-			String sql = "select CT_KHACH_THUE.TenKhach, KHACH_THUE.Phai, KHACH_THUE.NgheNghiep, Convert(varchar,NgayVaoPhong,103) as NgayVaoPhong from CT_KHACH_THUE, KHACH_THUE where CT_KHACH_THUE.MaKhach = KHACH_THUE.MaKhach and MaPhong = '" + dangkyphong.getMaPhong()+"'";
+			String sql = "select k.MaKhach, TenKhach, QueQuan, NgheNghiep, CMND, NgayVaoPhong from CT_KHACH_THUE c join KHACH_THUE k on c.MaKhach = k.MaKhach where MaPhong = '" + dangkyphong.getMaPhong()+"'";
+			DataTable table = manager.executeQuery(sql);
+			return table;
+		}
+
+		public DataTable LoadThongTinDichVu(DangKy dangkyphong)
+		{
+			String sql = "select GhiChu from CT_KHACH_THUE c join KHACH_THUE k on c.MaKhach = k.MaKhach where MaPhong = '" + dangkyphong.getMaPhong() + "'";
 			DataTable table = manager.executeQuery(sql);
 			return table;
 		}
@@ -106,7 +113,7 @@ namespace QLNT
 		}
 
 		//Lấy danh sách các phòng còn chỗ trống cho khách mới ở ghép
-		public DataTable loadMaPhongOGhep()
+		public DataTable LoadMaPhongOGhep()
 	{
 		String sql = "select MaPhong from PHONG_TRO where MaPhong in (select MaPhong from CT_KHACH_THUE)";
 			DataTable table = manager.executeQuery(sql);
