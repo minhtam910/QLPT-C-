@@ -59,10 +59,10 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txtGhiChu = new System.Windows.Forms.RichTextBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtGhiChu = new System.Windows.Forms.RichTextBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnCheckOut = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dgvChiTietPhong = new System.Windows.Forms.DataGridView();
@@ -506,8 +506,8 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.MistyRose;
             this.tabPage2.Controls.Add(this.groupBox15);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.btnReset);
+            this.tabPage2.Controls.Add(this.btnCheckOut);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Controls.Add(this.groupBox6);
@@ -518,15 +518,6 @@
             this.tabPage2.Size = new System.Drawing.Size(859, 576);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Phòng trọ";
-            // 
-            // txtGhiChu
-            // 
-            this.txtGhiChu.Enabled = false;
-            this.txtGhiChu.Location = new System.Drawing.Point(5, 18);
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(425, 181);
-            this.txtGhiChu.TabIndex = 7;
-            this.txtGhiChu.Text = "";
             // 
             // groupBox15
             // 
@@ -540,23 +531,33 @@
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Thông tin dịch vụ";
             // 
-            // button2
+            // txtGhiChu
             // 
-            this.button2.Location = new System.Drawing.Point(779, 419);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Reset ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txtGhiChu.Enabled = false;
+            this.txtGhiChu.Location = new System.Drawing.Point(5, 18);
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(425, 181);
+            this.txtGhiChu.TabIndex = 7;
+            this.txtGhiChu.Text = "";
             // 
-            // button1
+            // btnReset
             // 
-            this.button1.Location = new System.Drawing.Point(422, 419);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Check out";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnReset.Location = new System.Drawing.Point(779, 419);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 5;
+            this.btnReset.Text = "Reset ";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.Location = new System.Drawing.Point(422, 419);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckOut.TabIndex = 4;
+            this.btnCheckOut.Text = "Check out";
+            this.btnCheckOut.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -591,6 +592,7 @@
             this.dgvChiTietPhong.RowTemplate.Height = 24;
             this.dgvChiTietPhong.Size = new System.Drawing.Size(431, 157);
             this.dgvChiTietPhong.TabIndex = 0;
+            this.dgvChiTietPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietPhong_CellClick);
             // 
             // groupBox6
             // 
@@ -1392,8 +1394,8 @@
 		private System.Windows.Forms.DataGridView dataGridView2;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.RichTextBox txtGhiChu;
     }

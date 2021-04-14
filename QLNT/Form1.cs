@@ -16,7 +16,7 @@ namespace QLNT
 		int indexRowKhach;
 		int indexRowGia;
 		int indexRowThang;
-		String phongTrong, phongGhep;
+		String phongTrong, phongGhep, maPhong, maKhach;
 
 		KhachThueBLL khachThueBLL = new KhachThueBLL();
 		BangGiaPhongBLL phongBLL = new BangGiaPhongBLL();
@@ -57,8 +57,15 @@ namespace QLNT
 			cbPhongOGhep.DisplayMember = "MaPhong";
 			cbPhongOGhep.ValueMember = "MaPhong";
 
-			cbPhongOGhep.SelectedIndex = 0;
-			cbPhongTrong.SelectedIndex = 0;
+			try
+            {
+				cbPhongOGhep.SelectedIndex = 0;
+				cbPhongTrong.SelectedIndex = 0;
+			}
+			catch(Exception ex)
+            {
+				Console.WriteLine(ex.Message);
+            }
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -71,22 +78,6 @@ namespace QLNT
 			txtQueQuan.Enabled = false;
 			txtTenKhach.Enabled = false;
 			cbGioiTinh.Enabled = false;
-
-			/*cbGioiTinh.SelectedItem = "Nam";
-			cbTimKiem.SelectedItem = "Mã Khách";
-
-			cbPhongTrong.DataSource = dangKyBLL.LoadPhongChuaCoKhach();
-			cbPhongTrong.DisplayMember = "MaPhong";
-			cbPhongTrong.ValueMember = "MaPhong";
-
-			cbPhongOGhep.DataSource = dangKyBLL.LoadPhongDaiHan();
-			cbPhongOGhep.DisplayMember = "MaPhong";
-			cbPhongOGhep.ValueMember = "MaPhong";
-
-			cbPhongOGhep.SelectedText =  "--Select--";
-			cbPhongOGhep.SelectedItem = null;
-			cbPhongTrong.SelectedText = "--Select--";
-			cbPhongTrong.SelectedItem = null;*/
 		}
 
 
@@ -125,10 +116,10 @@ namespace QLNT
 
 		private void dgvPhongCoKhachThue_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			string maphong = dgvPhongCoKhachThue.Rows[e.RowIndex].Cells[0].Value.ToString();
+			maPhong = dgvPhongCoKhachThue.Rows[e.RowIndex].Cells[0].Value.ToString();
 			DangKy dangKy = new DangKy();
 			//MessageBox.Show(maphong);
-			dangKy.setMaPhong(maphong);
+			dangKy.setMaPhong(maPhong);
 			dgvDanhSachKhachThuePhong.DataSource = dangKyBLL.LoadChiTietKhachThue(dangKy);
 		}
 
@@ -322,9 +313,9 @@ namespace QLNT
 
 		private void dgvDanhSachHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			string maphong = dgvDanhSachHoaDon.Rows[e.RowIndex].Cells[0].Value.ToString();
+			maPhong = dgvDanhSachHoaDon.Rows[e.RowIndex].Cells[0].Value.ToString();
 			ThongKe thongKe = new ThongKe();
-			thongKe.setMaphong(maphong);
+			thongKe.setMaphong(maPhong);
 			dgvTienPhong.DataSource = thongKeBLL.LoadTienPhongTheoMa(thongKe);
 		}
 
@@ -359,8 +350,8 @@ namespace QLNT
 				DangKy dangKy = new DangKy();
 				
 				DataGridViewRow row = dgvDanhSachKhachChuaCoPhong.Rows[indexRowKhach];
-				String makhach = row.Cells[0].Value.ToString();
-				dangKy.setMaKhach(makhach);
+				maKhach = row.Cells[0].Value.ToString();
+				dangKy.setMaKhach(maKhach);
 				dangKy.setNgayVaoPhong(DateTime.Now.ToString());
 				if (cbPhongOGhep.Enabled == true)
 				{
@@ -381,19 +372,62 @@ namespace QLNT
             }
         }
 
+        private void dgvChiTietPhong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+				indexRowKhach = e.RowIndex;
+				DataGridViewRow row = dgvChiTietPhong.Rows[indexRowKhach];
+				maKhach = row.Cells[0].Value.ToString();
+				//MessageBox.Show(maKhach);
+			}
+			catch(Exception ex)
+            {
+				MessageBox.Show(ex.Message);
+            }
+        }
+
         private void dgvTrangThaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-			indexRowKhach = e.RowIndex;
-			DataGridViewRow row = dgvTrangThaiPhong.Rows[indexRowKhach];
-			String maphong = row.Cells[0].Value.ToString();
-			DangKy dk = new DangKy();
-			dk.setMaPhong(maphong);
+			try
+            {
+				indexRowKhach = e.RowIndex;
+				DataGridViewRow row = dgvTrangThaiPhong.Rows[indexRowKhach];
+				maPhong = row.Cells[0].Value.ToString();
+				DangKy dk = new DangKy();
+				dk.setMaPhong(maPhong);
 
-			dgvChiTietPhong.DataSource = dangKyBLL.LoadChiTietKhachThue(dk);
+				dgvChiTietPhong.DataSource = dangKyBLL.LoadChiTietKhachThue(dk);
 
-			DataTable dt = dangKyBLL.LoadThongTinDichVu(dk);
-			txtGhiChu.Text = dt.Rows[0][0].ToString();
+				DataTable dt = dangKyBLL.LoadThongTinDichVu(dk);
+				if (dt.Rows.Count > 0)
+					txtGhiChu.Text = dt.Rows[0][0].ToString();
+				else
+					txtGhiChu.Text = "Phòng trống";
+			}
+			catch(Exception ex)
+            {
+				MessageBox.Show(ex.Message);
+            }
 		}
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+			try
+            {
+				DangKy dk = new DangKy();
+				//if (!maKhach.Equals(""))
+				//	dk.setMaKhach(maKhach);
+				if (!maPhong.Equals(""))
+					dk.setMaPhong(maPhong);
+				dangKyBLL.ResetThongTinPhong(dk);
+				LoadDataGridView();
+			}
+			catch(Exception ex)
+            {
+				MessageBox.Show(ex.Message);
+            }
+        }
 
         private void dgvDanhSachKhachChuaCoPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {

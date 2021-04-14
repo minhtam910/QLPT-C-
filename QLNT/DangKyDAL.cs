@@ -89,8 +89,8 @@ namespace QLNT
 		}
 
 	//Thêm khách ở phòng mới
-	public bool ThemKhachThueVaoPhongMoi(DangKy dangkyphong)
-	{
+		public bool ThemKhachThueVaoPhongMoi(DangKy dangkyphong)
+		{
 			SqlParameter p1 = new SqlParameter("@makhach", dangkyphong.getMaKhach());
 			SqlParameter p2 = new SqlParameter("@maphong", dangkyphong.getMaPhong());
 			SqlParameter p3 = new SqlParameter("@ngayvaophong", dangkyphong.getNgayVaoPhong());
@@ -114,18 +114,36 @@ namespace QLNT
 
 		//Lấy danh sách các phòng còn chỗ trống cho khách mới ở ghép
 		public DataTable LoadMaPhongOGhep()
-	{
-		String sql = "select MaPhong from PHONG_TRO where MaPhong in (select MaPhong from CT_KHACH_THUE)";
+		{
+			String sql = "select MaPhong from PHONG_TRO where MaPhong in (select MaPhong from CT_KHACH_THUE)";
 			DataTable table = manager.executeQuery(sql);
 			return table;
 		}
 
 	//Lấy danh sách các phòng còn chỗ trống cho khách mới thuê
-	public DataTable LoadMaPhongMoi()
-	{
-		String sql = "select MaPhong from PHONG_TRO where MaPhong not in (select MaPhong from CT_KHACH_THUE)";
+		public DataTable LoadMaPhongMoi()
+		{
+			String sql = "select MaPhong from PHONG_TRO where MaPhong not in (select MaPhong from CT_KHACH_THUE)";
 			DataTable table = manager.executeQuery(sql);
 			return table;
+		}
+
+		public void ResetThongTinPhong(DangKy dangKyPhong)
+        {
+			SqlParameter[] giatri;
+			SqlParameter p1 = new SqlParameter("@maphong", dangKyPhong.getMaPhong()); 
+			if(dangKyPhong.getMaKhach() != null)
+            {
+				SqlParameter p2 = new SqlParameter("@makhach", dangKyPhong.getMaKhach());
+				 giatri = new SqlParameter[] { p1, p2 } ;
+				
+            }
+			else
+            {
+				giatri = new SqlParameter[] { p1 };
+			}
+			String sql = "delete CT_KHACH_THUE where MaPhong = @maphong; update PHONG_TRO set TrangThai = 0, SoNguoi = null where MaPhong = @maphong";
+			manager.Delete(sql, giatri);
+        }
 	}
-}
 }
