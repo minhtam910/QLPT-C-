@@ -21,6 +21,11 @@ namespace QLNT
            return dichVuDAL.LoadDichVuDaDat(maPhong, maKhach);
         }
 
+        public DataTable LoadThongBao()
+        {
+            return dichVuDAL.LoadThongBao();
+        }
+
         public void ThemDichVu(DichVu dichvu)
         {
             dichVuDAL.ThemDichVu(dichvu);

@@ -90,6 +90,10 @@ namespace QLNT
             dgvDichVu.Columns["TenDoAn"].HeaderText = "Dịch Vụ";
             dgvDichVu.Columns["Gia"].HeaderText = "Giá tiền";
 
+            dgvThongBao.DataSource = dichVuBLL.LoadThongBao();
+            dgvThongBao.Columns["NoiDung"].HeaderText = "Nội dung";
+            dgvThongBao.Columns["NgayLap"].HeaderText = "Ngày đăng";
+
         }
 
     }

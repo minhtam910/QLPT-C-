@@ -35,6 +35,13 @@ namespace QLNT
 			return table;
 		}
 
+		public DataTable LoadThongBao()
+        {
+			String sql = "select * from THONG_BAO";
+			DataTable dt = manager.executeQuery(sql);
+			return dt;
+        }
+
 		public void DatDichVu(String maPhong, String maKhach, String maDichVu)
         {
 			SqlParameter p1 = new SqlParameter("@maDoAn", maDichVu);

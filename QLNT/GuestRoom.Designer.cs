@@ -38,20 +38,17 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtRoomInfo = new System.Windows.Forms.TextBox();
             this.Notification = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Topic = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceDetail = new System.Windows.Forms.TabPage();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.btnDatMon = new System.Windows.Forms.Button();
+            this.dgvThongBao = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.tabInfo.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Notification.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ServiceDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongBao)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -147,7 +144,7 @@
             // 
             // Notification
             // 
-            this.Notification.Controls.Add(this.dataGridView1);
+            this.Notification.Controls.Add(this.dgvThongBao);
             this.Notification.Location = new System.Drawing.Point(4, 22);
             this.Notification.Margin = new System.Windows.Forms.Padding(2);
             this.Notification.Name = "Notification";
@@ -156,42 +153,6 @@
             this.Notification.TabIndex = 1;
             this.Notification.Text = "Thông báo của nhà trọ";
             this.Notification.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Time,
-            this.Topic,
-            this.Detail});
-            this.dataGridView1.Location = new System.Drawing.Point(4, 5);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(791, 361);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Time
-            // 
-            this.Time.HeaderText = "Thời gian";
-            this.Time.MinimumWidth = 6;
-            this.Time.Name = "Time";
-            this.Time.Width = 200;
-            // 
-            // Topic
-            // 
-            this.Topic.HeaderText = "Nội dung";
-            this.Topic.MinimumWidth = 6;
-            this.Topic.Name = "Topic";
-            this.Topic.Width = 120;
-            // 
-            // Detail
-            // 
-            this.Detail.HeaderText = "Thông báo";
-            this.Detail.MinimumWidth = 6;
-            this.Detail.Name = "Detail";
-            this.Detail.Width = 680;
             // 
             // ServiceDetail
             // 
@@ -225,6 +186,14 @@
             this.btnDatMon.UseVisualStyleBackColor = true;
             this.btnDatMon.Click += new System.EventHandler(this.btnDatMon_Click);
             // 
+            // dgvThongBao
+            // 
+            this.dgvThongBao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongBao.Location = new System.Drawing.Point(5, 5);
+            this.dgvThongBao.Name = "dgvThongBao";
+            this.dgvThongBao.Size = new System.Drawing.Size(793, 82);
+            this.dgvThongBao.TabIndex = 0;
+            // 
             // GuestRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,9 +213,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.Notification.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ServiceDetail.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongBao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,11 +233,8 @@
         private System.Windows.Forms.TabPage Notification;
         private System.Windows.Forms.TextBox txtRoomInfo;
         private System.Windows.Forms.TabPage ServiceDetail;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Topic;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Detail;
         private System.Windows.Forms.Button btnDatMon;
         private System.Windows.Forms.DataGridView dgvDichVu;
+        private System.Windows.Forms.DataGridView dgvThongBao;
     }
 }

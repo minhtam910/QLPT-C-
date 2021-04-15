@@ -15,8 +15,8 @@ namespace QLNT
 	{
 		int indexRowKhach;
 		int indexRowGia;
-		int indexRowThang;
 		String phongTrong, phongGhep, maPhong, maKhach;
+		ThongBaoService service;
 
 		KhachThueBLL khachThueBLL = new KhachThueBLL();
 		BangGiaPhongBLL phongBLL = new BangGiaPhongBLL();
@@ -24,11 +24,16 @@ namespace QLNT
 		DangKyBLL dangKyBLL = new DangKyBLL();
 		ThongKeBLL thongKeBLL = new ThongKeBLL();
 		HoaDonBLL hoaDonBLL = new HoaDonBLL();
+		
 
 		public Form1()
 		{
 			InitializeComponent();
-			
+			service = new ThongBaoService();
+			Client test1 = new Client(service, "client1");
+			Client test2 = new Client(service, "client2");
+			service.registerObservers(test1);
+			service.registerObservers(test2);
 		}
 
 		public void LoadDataGridView()
@@ -38,7 +43,7 @@ namespace QLNT
 			dgvThongTinGiaThue.DataSource = phongBLL.LoadThongTinGiaThue();
 			dgvDanhSachKhachChuaCoPhong.DataSource = dangKyBLL.LoadKhachThueChuaCoPhong();
 			dgvPhongCoKhachThue.DataSource = dangKyBLL.LoadPhongDaCoKhach();
-			dgvThang.DataSource = thongKeBLL.Loadthang();
+			//dgvThang.DataSource = thongKeBLL.Loadthang();
 			txtCMND.Enabled = false;
 			txtMaKhach.Enabled = false;
 			txtNgheNghiep.Enabled = false;
@@ -303,7 +308,7 @@ namespace QLNT
 			}
 		}
 
-		private void dgvThang_CellClick(object sender, DataGridViewCellEventArgs e)
+		/*private void dgvThang_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			string thang = dgvThang.Rows[e.RowIndex].Cells[0].Value.ToString();
 			ThongKe thongKe = new ThongKe();
@@ -317,7 +322,7 @@ namespace QLNT
 			ThongKe thongKe = new ThongKe();
 			thongKe.setMaphong(maPhong);
 			dgvTienPhong.DataSource = thongKeBLL.LoadTienPhongTheoMa(thongKe);
-		}
+		}*/
 
 		private void rbtnThuePhongMoi_CheckedChanged(object sender, EventArgs e)
 		{
@@ -385,6 +390,13 @@ namespace QLNT
             {
 				MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnDangThongBao_Click(object sender, EventArgs e)
+        {
+			String noiDungThongBao = txtThongBao.Text.ToString();
+			ThongBao tb = new ThongBao(noiDungThongBao, DateTime.Now);
+			service.addThongBao(tb);
         }
 
         private void dgvTrangThaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
