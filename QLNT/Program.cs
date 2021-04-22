@@ -11,12 +11,14 @@ namespace QLNT
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
+
 		[STAThread]
 		static void Main()
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			ThongBaoService service = new ThongBaoService();
+			Application.Run(new Form1(service));
 			//Application.Run(new SelectInfo());
 		}
 	}

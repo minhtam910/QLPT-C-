@@ -10,7 +10,7 @@ namespace QLNT
 	{
 		private String maphong;
 		private String makhach;
-		private String ngayvaophong;
+		private DateTime ngayvaophong;
 
 		public String getMaPhong()
 		{
@@ -34,12 +34,12 @@ namespace QLNT
 		}
 
 		//Mã phòng
-		public String getNgayVaoPhong()
+		public DateTime getNgayVaoPhong()
 		{
 			return ngayvaophong;
 		}
 
-		public void setNgayVaoPhong(String _ngayvaophong)
+		public void setNgayVaoPhong(DateTime _ngayvaophong)
 		{
 			ngayvaophong = _ngayvaophong;
 		}

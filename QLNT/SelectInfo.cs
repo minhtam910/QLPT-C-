@@ -16,13 +16,15 @@ namespace QLNT
         DBAccess manager;
         DangKyBLL dangKyBLL = new DangKyBLL();
         String maPhong;
+        ThongBaoService service;
 
-        public SelectInfo()
+        public SelectInfo(ThongBaoService service)
         {
             InitializeComponent();
 
             try
             {
+                this.service = service;
                 cbPhong.DataSource = dangKyBLL.LoadPhongDaCoKhach();
                 cbPhong.DisplayMember = "MaPhong";
                 cbPhong.ValueMember = "MaPhong";
@@ -49,7 +51,7 @@ namespace QLNT
             DataTable dt = manager.Select(sql, parameters);
             if(dt.Rows.Count > 0)
             {
-                GuestRoom fgr = new GuestRoom(maPhong);
+                GuestRoom fgr = new GuestRoom(maPhong,service);
                 fgr.Show();
                 this.Hide();
             }

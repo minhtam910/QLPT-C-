@@ -117,6 +117,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1031,7 +1032,7 @@
             this.groupBox5.Size = new System.Drawing.Size(362, 325);
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Tiền phòng";
+            this.groupBox5.Text = "Khung nhập thông báo";
             // 
             // txtThongBao
             // 
@@ -1066,6 +1067,7 @@
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.MistyRose;
+            this.tabPage7.Controls.Add(this.button1);
             this.tabPage7.Controls.Add(this.comboBox1);
             this.tabPage7.Controls.Add(this.label21);
             this.tabPage7.Controls.Add(this.label12);
@@ -1170,6 +1172,16 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(798, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 21);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -1320,6 +1332,7 @@
         private System.Windows.Forms.RichTextBox txtGhiChu;
         private System.Windows.Forms.RichTextBox txtThongBao;
         private System.Windows.Forms.Button btnDangThongBao;
+        private System.Windows.Forms.Button button1;
     }
 }
 

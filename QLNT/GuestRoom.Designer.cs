@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuestRoom));
             this.label1 = new System.Windows.Forms.Label();
             this.txtRoomNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,17 +37,18 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtRoomInfo = new System.Windows.Forms.TextBox();
             this.Notification = new System.Windows.Forms.TabPage();
+            this.dgvThongBao = new System.Windows.Forms.DataGridView();
             this.ServiceDetail = new System.Windows.Forms.TabPage();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.btnDatMon = new System.Windows.Forms.Button();
-            this.dgvThongBao = new System.Windows.Forms.DataGridView();
+            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabInfo.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Notification.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongBao)).BeginInit();
             this.ServiceDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongBao)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -140,7 +140,7 @@
             this.txtRoomInfo.Name = "txtRoomInfo";
             this.txtRoomInfo.Size = new System.Drawing.Size(794, 362);
             this.txtRoomInfo.TabIndex = 0;
-            this.txtRoomInfo.Text = resources.GetString("txtRoomInfo.Text");
+            this.txtRoomInfo.Text = "Thông tin khách hàng từ DB sẽ được fill vào đây";
             // 
             // Notification
             // 
@@ -154,8 +154,17 @@
             this.Notification.Text = "Thông báo của nhà trọ";
             this.Notification.UseVisualStyleBackColor = true;
             // 
+            // dgvThongBao
+            // 
+            this.dgvThongBao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongBao.Location = new System.Drawing.Point(5, 5);
+            this.dgvThongBao.Name = "dgvThongBao";
+            this.dgvThongBao.Size = new System.Drawing.Size(793, 82);
+            this.dgvThongBao.TabIndex = 0;
+            // 
             // ServiceDetail
             // 
+            this.ServiceDetail.Controls.Add(this.btnBack);
             this.ServiceDetail.Controls.Add(this.dgvDichVu);
             this.ServiceDetail.Controls.Add(this.btnDatMon);
             this.ServiceDetail.Location = new System.Drawing.Point(4, 22);
@@ -186,13 +195,15 @@
             this.btnDatMon.UseVisualStyleBackColor = true;
             this.btnDatMon.Click += new System.EventHandler(this.btnDatMon_Click);
             // 
-            // dgvThongBao
+            // btnBack
             // 
-            this.dgvThongBao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThongBao.Location = new System.Drawing.Point(5, 5);
-            this.dgvThongBao.Name = "dgvThongBao";
-            this.dgvThongBao.Size = new System.Drawing.Size(793, 82);
-            this.dgvThongBao.TabIndex = 0;
+            this.btnBack.Location = new System.Drawing.Point(642, 338);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // GuestRoom
             // 
@@ -213,9 +224,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.Notification.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongBao)).EndInit();
             this.ServiceDetail.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongBao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,5 +247,6 @@
         private System.Windows.Forms.Button btnDatMon;
         private System.Windows.Forms.DataGridView dgvDichVu;
         private System.Windows.Forms.DataGridView dgvThongBao;
+        private System.Windows.Forms.Button btnBack;
     }
 }

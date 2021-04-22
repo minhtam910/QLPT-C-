@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    class ThongBao
+    public class ThongBao
     {
         private String NoiDung;
         private DateTime NgayLap;

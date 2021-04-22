@@ -17,13 +17,17 @@ namespace QLNT
         DichVuBLL dichVuBLL;
         DangKy dangKy;
         DataTable dt;
-        public GuestRoom(String maPhong)
+        CookService cookService;
+        ThongBaoService service;
+        public GuestRoom(String maPhong, ThongBaoService service)
         {
             this.maPhong = maPhong;
+            this.service = service;
 
             InitializeComponent();
             dangKyBLL = new DangKyBLL();
             dichVuBLL = new DichVuBLL();
+            cookService = new CookService();
             dangKy = new DangKy();
             dangKy.setMaPhong(maPhong);
         }
@@ -41,7 +45,15 @@ namespace QLNT
 
         private void btnDatMon_Click(object sender, EventArgs e)
         {
-            dichVuBLL.DatDichVu(maPhong, maKhach, maDichVu);
+            cookService.order(maDichVu, maKhach, maPhong);
+            //dichVuBLL.DatDichVu(maPhong, maKhach, maDichVu);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1(service);
+            f1.Show();
+            this.Hide();
         }
 
         private void dgvDichVu_CellClick(object sender, DataGridViewCellEventArgs e)

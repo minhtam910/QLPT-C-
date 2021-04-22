@@ -53,9 +53,14 @@
     <Compile Include="BangGiaPhongBLL.cs" />
     <Compile Include="BangGiaPhongDAL.cs" />
     <Compile Include="BunCa.cs" />
-    <Compile Include="CamTam.cs" />
+    <Compile Include="ComTam.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include="Cook_Service.cs" />
+    <Compile Include="CondimentDecorator.cs" />
+    <Compile Include="CookService.cs" />
+    <Compile Include="CostDichVu.cs" />
+    <Compile Include="CostGiaPhong.cs" />
+    <Compile Include="CostKhachThueDH.cs" />
+    <Compile Include="CostKhachThueNH.cs" />
     <Compile Include="DangKy.cs" />
     <Compile Include="DangKyBLL.cs" />
     <Compile Include="DangKyDAL.cs" />
@@ -95,13 +100,15 @@
     <Compile Include="SelectInfo.Designer.cs">
       <DependentUpon>SelectInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Service_Store.cs" />
+    <Compile Include="ServiceStore.cs" />
     <Compile Include="Snack.cs" />
     <Compile Include="ThongBao.cs" />
     <Compile Include="ThongBaoService.cs" />
     <Compile Include="ThongKe.cs" />
     <Compile Include="ThongKeBLL.cs" />
     <Compile Include="ThongKeDAL.cs" />
+    <Compile Include="TinhTienHD.cs" />
+    <Compile Include="TongHD.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -8,7 +8,6 @@ namespace QLNT
 {
     public interface IService
     {
-        void cook();
-        
+        void cook(String maKhach, String maPhong);      
     }
 }

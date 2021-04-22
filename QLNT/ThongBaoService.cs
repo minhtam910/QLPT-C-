@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    class ThongBaoService
+    public class ThongBaoService
     {
         private List<IObserver> observers;
         private List<ThongBao> listThongBao;
@@ -16,6 +16,12 @@ namespace QLNT
         {
             observers = new List<IObserver>();
             listThongBao = new List<ThongBao>();
+        }
+
+        public ThongBaoService(ThongBaoService tempService)
+        {
+            observers = tempService.getListObservers();
+            listThongBao = tempService.getListThongBao();
         }
 
         public List<ThongBao> getListThongBao()
@@ -40,6 +46,7 @@ namespace QLNT
             {
                 observers.Add(item);
             }
+            Console.WriteLine("Observer registered!");
         }
 
         public void notifyObservers()

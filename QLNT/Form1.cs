@@ -16,7 +16,6 @@ namespace QLNT
 		int indexRowKhach;
 		int indexRowGia;
 		String phongTrong, phongGhep, maPhong, maKhach;
-		ThongBaoService service;
 
 		KhachThueBLL khachThueBLL = new KhachThueBLL();
 		BangGiaPhongBLL phongBLL = new BangGiaPhongBLL();
@@ -24,16 +23,16 @@ namespace QLNT
 		DangKyBLL dangKyBLL = new DangKyBLL();
 		ThongKeBLL thongKeBLL = new ThongKeBLL();
 		HoaDonBLL hoaDonBLL = new HoaDonBLL();
-		
+		ThongBaoService service;
 
-		public Form1()
+
+
+		public Form1(ThongBaoService service)
 		{
 			InitializeComponent();
-			service = new ThongBaoService();
-			Client test1 = new Client(service, "client1");
-			Client test2 = new Client(service, "client2");
-			service.registerObservers(test1);
-			service.registerObservers(test2);
+			this.service = service;
+
+			Console.WriteLine("Number of observers: " + service.getListObservers().Count);
 		}
 
 		public void LoadDataGridView()
@@ -357,19 +356,24 @@ namespace QLNT
 				DataGridViewRow row = dgvDanhSachKhachChuaCoPhong.Rows[indexRowKhach];
 				maKhach = row.Cells[0].Value.ToString();
 				dangKy.setMaKhach(maKhach);
-				dangKy.setNgayVaoPhong(DateTime.Now.ToString());
+				dangKy.setNgayVaoPhong(DateTime.Now);
 				if (cbPhongOGhep.Enabled == true)
 				{
 					dangKy.setMaPhong(phongGhep);
 					dangKyBLL.ThemKhachOghep(dangKy);
+					Client tempClient = new Client(service, phongGhep);
+					service.registerObservers(tempClient);
 				}
 				else
 				{
 					dangKy.setMaPhong(phongTrong);
 					dangKyBLL.ThemKhachThueVaoPhongMoi(dangKy);
+					Client tempClient = new Client(service, phongTrong);
+					service.registerObservers(tempClient);
 				}
 				MessageBox.Show("Thành công!");
 				LoadDataGridView();
+				
 			}
 			catch(Exception ex)
             {
@@ -397,6 +401,13 @@ namespace QLNT
 			String noiDungThongBao = txtThongBao.Text.ToString();
 			ThongBao tb = new ThongBao(noiDungThongBao, DateTime.Now);
 			service.addThongBao(tb);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+			SelectInfo selectInfo = new SelectInfo(service);
+			selectInfo.Show();
+			this.Hide();
         }
 
         private void dgvTrangThaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -428,8 +439,6 @@ namespace QLNT
 			try
             {
 				DangKy dk = new DangKy();
-				//if (!maKhach.Equals(""))
-				//	dk.setMaKhach(maKhach);
 				if (!maPhong.Equals(""))
 					dk.setMaPhong(maPhong);
 				dangKyBLL.ResetThongTinPhong(dk);

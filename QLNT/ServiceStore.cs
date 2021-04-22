@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    public interface IObserver
+    public abstract class ServiceStore
     {
-        void update(List<ThongBao> listThongBao);  
+        
+        public abstract IService cooking(String maDoAn, String maKhach, String maPhong);
+
+       
     }
 }
