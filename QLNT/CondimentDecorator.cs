@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    public abstract class CondimentDecorator : TinhTienHD
+    public abstract class CondimentDecorator : ThongTinHD
     {
-        protected TinhTienHD wrapObj;
+        protected ThongTinHD wrapObj;
     }
 }

@@ -8,16 +8,19 @@ namespace QLNT
 {
     public class TongHD
     {
-        public void cost()
+        public void Tongcost()
         {
-            TinhTienHD hd1 = new CostKhachThueDH();
-            hd1 = new CostDichVu(hd1);
-            hd1 = new CostGiaPhong(hd1);
+            ThongTinHD hd = new PhongThueDH();
+            hd = new ComTam(hd);
+            hd.cost();
+            hd = new Snack(hd);
+            hd.cost();
 
-            TinhTienHD hd2 = new CostKhachThueNH();
-            hd2 = new CostDichVu(hd2);
-            hd2 = new CostGiaPhong(hd2);
-
+            ThongTinHD hd1 = new PhongThueNH();
+            hd1 = new MiGoi(hd1);
+            hd1.cost();
+            hd1 = new BunCa(hd1);
+            hd1.cost();
         }
     }
 }

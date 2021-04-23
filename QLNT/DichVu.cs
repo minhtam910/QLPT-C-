@@ -12,6 +12,9 @@ namespace QLNT
 		private string TenDoAn;
 		private int giatien;
 
+		
+		
+
 		public DichVu()
 		{
 			MaDoAn = "";

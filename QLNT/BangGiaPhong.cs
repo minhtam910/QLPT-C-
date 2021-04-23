@@ -11,6 +11,9 @@ namespace QLNT
 		private int songuoi;
 		private int giatien;
 
+		
+		
+
 		public BangGiaPhong()
 		{
 			songuoi = giatien = 0;

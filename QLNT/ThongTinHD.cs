@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    public abstract class TinhTienHD
+    public abstract class ThongTinHD
     {
-        DichVu dichvu;
         
         public abstract double cost();
 

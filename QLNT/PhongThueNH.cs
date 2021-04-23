@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    public class CostKhachThueNH : TinhTienHD
+    public class PhongThueNH : ThongTinHD
     {
-        BangGiaPhong gia;
-       
+
+        String description;
+
+        public PhongThueNH()
+        {
+            description = "Phong Thue Ngan Han";
+        }
+
         override
         public double cost()
         {
-            return gia.getGiaTien();
+            return 400000;
         }
     }
 }

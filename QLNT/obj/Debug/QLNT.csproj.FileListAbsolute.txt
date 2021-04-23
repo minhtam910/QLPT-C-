@@ -32,3 +32,17 @@ G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.GuestRoom.resources
 G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.SelectInfo.resources
 G:\GitHub\QLPT-C-\QLNT\bin\Debug\System.Collections.NonGeneric.dll
 G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.CopyComplete
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\bin\Debug\QLNT.exe.config
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\bin\Debug\QLNT.exe
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\bin\Debug\QLNT.pdb
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\bin\Debug\System.Collections.NonGeneric.dll
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.csprojAssemblyReference.cache
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.Form1.resources
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.GuestRoom.resources
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.Properties.Resources.resources
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.SelectInfo.resources
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.GenerateResource.cache
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.CoreCompileInputs.cache
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.CopyComplete
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.exe
+C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.pdb
