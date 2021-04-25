@@ -19,10 +19,13 @@ namespace QLNT
         DataTable dt;
         CookService cookService;
         ThongBaoService service;
-        public GuestRoom(String maPhong, ThongBaoService service)
+        List<ThongTinHoaDon> listThongTin;
+
+        public GuestRoom(String maPhong, ThongBaoService service, List<ThongTinHoaDon> list)
         {
             this.maPhong = maPhong;
             this.service = service;
+            listThongTin = list;
 
             InitializeComponent();
             dangKyBLL = new DangKyBLL();
@@ -30,6 +33,7 @@ namespace QLNT
             cookService = new CookService();
             dangKy = new DangKy();
             dangKy.setMaPhong(maPhong);
+            Console.WriteLine("List count: " + listThongTin.Count);
         }
 
         private void GuestRoom_Load(object sender, EventArgs e)
@@ -45,13 +49,14 @@ namespace QLNT
 
         private void btnDatMon_Click(object sender, EventArgs e)
         {
-            cookService.order(maDichVu, maKhach, maPhong);
+
+            cookService.order(maDichVu, maKhach, maPhong, listThongTin);
             //dichVuBLL.DatDichVu(maPhong, maKhach, maDichVu);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1(service);
+            Form1 f1 = new Form1(service, listThongTin);
             f1.Show();
             this.Hide();
         }

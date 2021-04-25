@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 namespace QLNT
 {
     public abstract class ServiceStore
-    {
-        
-        public abstract IService cooking(String maDoAn, String maKhach, String maPhong);
+    {      
+        public abstract ThongTinHoaDon cooking(String maDoAn, String maKhach, String maPhong, List<ThongTinHoaDon> list);
 
-       
     }
 }

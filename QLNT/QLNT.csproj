@@ -57,10 +57,8 @@
     <Compile Include="Client.cs" />
     <Compile Include="CondimentDecorator.cs" />
     <Compile Include="CookService.cs" />
-    <Compile Include="CostDichVu.cs" />
-    <Compile Include="CostGiaPhong.cs" />
-    <Compile Include="PhongThueDH.cs" />
-    <Compile Include="PhongThueNH.cs" />
+    <Compile Include="PhongThueDaiHan.cs" />
+    <Compile Include="PhongThueNganHan.cs" />
     <Compile Include="DangKy.cs" />
     <Compile Include="DangKyBLL.cs" />
     <Compile Include="DangKyDAL.cs" />
@@ -107,8 +105,8 @@
     <Compile Include="ThongKe.cs" />
     <Compile Include="ThongKeBLL.cs" />
     <Compile Include="ThongKeDAL.cs" />
-    <Compile Include="ThongTinHD.cs" />
-    <Compile Include="TongHD.cs" />
+    <Compile Include="ThongTinHoaDon.cs" />
+    <Compile Include="TongHoaDon.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

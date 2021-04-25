@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    public class TongHD
+    public class TongHoaDon
     {
         public void Tongcost()
         {
-            ThongTinHD hd = new PhongThueDH();
+            /*ThongTinHoaDon hd = new PhongThueDaiHan();
             hd = new ComTam(hd);
             hd.cost();
             hd = new Snack(hd);
             hd.cost();
 
-            ThongTinHD hd1 = new PhongThueNH();
+            ThongTinHoaDon hd1 = new PhongThueNganHan();
             hd1 = new MiGoi(hd1);
             hd1.cost();
             hd1 = new BunCa(hd1);
-            hd1.cost();
+            hd1.cost();*/
         }
     }
 }

@@ -9,14 +9,12 @@ namespace QLNT
 {
     class BunCa : CondimentDecorator, IService
     {
-        public void cook(String maKhach, String maPhong)
-        {
-            MessageBox.Show("Bún cá đang được chuẩn bị cho khách " + maKhach + " tại phòng " + maPhong + "!");
-        }
 
-        public BunCa(ThongTinHD hd)
+        public BunCa(ThongTinHoaDon hd)
         {
             this.wrapObj = hd;
+            description = hd.getDescription();
+
         }
 
 
@@ -26,8 +24,16 @@ namespace QLNT
             return 30000 + wrapObj.cost();
         }
 
-       
-        
+        public override double cost(int time)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void cook(string maKhach, string maPhong)
+        {
+            MessageBox.Show("Bún cá đang được chuẩn bị cho khách " + maKhach + " tại phòng " + maPhong + "!");
+            addDescription("Khách " + maKhach + "đặt món BÚN CÁ lúc " + DateTime.Now.ToString() + "\n");
+        }
     }
     
 }

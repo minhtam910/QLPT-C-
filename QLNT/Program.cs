@@ -18,7 +18,8 @@ namespace QLNT
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			ThongBaoService service = new ThongBaoService();
-			Application.Run(new Form1(service));
+			List<ThongTinHoaDon> listThongtin = new List<ThongTinHoaDon>();
+			Application.Run(new Form1(service, listThongtin));
 			//Application.Run(new SelectInfo());
 		}
 	}

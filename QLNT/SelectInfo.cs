@@ -17,14 +17,16 @@ namespace QLNT
         DangKyBLL dangKyBLL = new DangKyBLL();
         String maPhong;
         ThongBaoService service;
+        List<ThongTinHoaDon> listThongTin;
 
-        public SelectInfo(ThongBaoService service)
+        public SelectInfo(ThongBaoService service, List<ThongTinHoaDon> list)
         {
             InitializeComponent();
 
             try
             {
                 this.service = service;
+                listThongTin = list;
                 cbPhong.DataSource = dangKyBLL.LoadPhongDaCoKhach();
                 cbPhong.DisplayMember = "MaPhong";
                 cbPhong.ValueMember = "MaPhong";
@@ -51,7 +53,7 @@ namespace QLNT
             DataTable dt = manager.Select(sql, parameters);
             if(dt.Rows.Count > 0)
             {
-                GuestRoom fgr = new GuestRoom(maPhong,service);
+                GuestRoom fgr = new GuestRoom(maPhong,service,listThongTin);
                 fgr.Show();
                 this.Hide();
             }

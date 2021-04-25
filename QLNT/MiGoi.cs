@@ -9,14 +9,16 @@ namespace QLNT
 {
     class MiGoi : CondimentDecorator, IService
     {
-        public void cook(String maKhach, String maPhong)
+        public override void cook(String maKhach, String maPhong)
         {
             MessageBox.Show("Mì gói đang được chuẩn bị cho khách " + maKhach + " tại phòng " + maPhong + "!");
+            addDescription("Khách " + maKhach + "đặt món MÌ GÓI lúc " + DateTime.Now.ToString() + "\n");
         }
 
-        public MiGoi(ThongTinHD hd)
+        public MiGoi(ThongTinHoaDon hd)
         {
             this.wrapObj = hd;
+            description = hd.getDescription();
         }
 
         override
@@ -25,6 +27,9 @@ namespace QLNT
             return 20000 + wrapObj.cost();
         }
 
-        
+        public override double cost(int time)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

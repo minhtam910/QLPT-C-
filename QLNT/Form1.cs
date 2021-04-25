@@ -24,15 +24,23 @@ namespace QLNT
 		ThongKeBLL thongKeBLL = new ThongKeBLL();
 		HoaDonBLL hoaDonBLL = new HoaDonBLL();
 		ThongBaoService service;
+		List<ThongTinHoaDon> listThongTin;
 
 
-
-		public Form1(ThongBaoService service)
+		public Form1(ThongBaoService service, List<ThongTinHoaDon> list)
 		{
 			InitializeComponent();
 			this.service = service;
+			listThongTin = list;
 
 			Console.WriteLine("Number of observers: " + service.getListObservers().Count);
+			Console.WriteLine("Number of booked room: " + listThongTin.Count);
+			foreach (ThongTinHoaDon thd in listThongTin)
+            {
+				Console.WriteLine(thd.getMaKhach());
+				Console.WriteLine(thd.getDescription());
+				Console.WriteLine(thd.cost());
+			}
 		}
 
 		public void LoadDataGridView()
@@ -61,15 +69,15 @@ namespace QLNT
 			cbPhongOGhep.DisplayMember = "MaPhong";
 			cbPhongOGhep.ValueMember = "MaPhong";
 
-			try
+			/*try
             {
-				cbPhongOGhep.SelectedIndex = 0;
-				cbPhongTrong.SelectedIndex = 0;
+				cbPhongOGhep.SelectedIndex = 1;
+				cbPhongTrong.SelectedIndex = 1;
 			}
 			catch(Exception ex)
             {
 				Console.WriteLine(ex.Message);
-            }
+            }*/
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -361,8 +369,6 @@ namespace QLNT
 				{
 					dangKy.setMaPhong(phongGhep);
 					dangKyBLL.ThemKhachOghep(dangKy);
-					Client tempClient = new Client(service, phongGhep);
-					service.registerObservers(tempClient);
 				}
 				else
 				{
@@ -370,8 +376,13 @@ namespace QLNT
 					dangKyBLL.ThemKhachThueVaoPhongMoi(dangKy);
 					Client tempClient = new Client(service, phongTrong);
 					service.registerObservers(tempClient);
+					if(phongTrong.Substring(0,1).Equals("A"))
+						listThongTin.Add(new PhongThueNganHan(maKhach));
+					else
+						listThongTin.Add(new PhongThueDaiHan(maKhach));
 				}
 				MessageBox.Show("Thành công!");
+				
 				LoadDataGridView();
 				
 			}
@@ -405,7 +416,7 @@ namespace QLNT
 
         private void button1_Click(object sender, EventArgs e)
         {
-			SelectInfo selectInfo = new SelectInfo(service);
+			SelectInfo selectInfo = new SelectInfo(service, listThongTin);
 			selectInfo.Show();
 			this.Hide();
         }

@@ -9,13 +9,15 @@ namespace QLNT
 {
     class ComTam : CondimentDecorator, IService
     {
-        public void cook(String maKhach, String maPhong)
+        public override void cook(String maKhach, String maPhong)
         {
             MessageBox.Show("Cơm tấm đang được chuẩn bị cho khách " + maKhach + " tại phòng " + maPhong + "!");
+            addDescription("Khách " + maKhach + "đặt món CƠM TẤM lúc " + DateTime.Now.ToString() + "\n");
         }
 
-        public ComTam(ThongTinHD hd) {
+        public ComTam(ThongTinHoaDon hd) {
             this.wrapObj = hd;
+            description = hd.getDescription();
         }
 
         override
@@ -24,7 +26,9 @@ namespace QLNT
             return 25000 + wrapObj.cost();
         }
 
-        
-        
+        public override double cost(int time)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
