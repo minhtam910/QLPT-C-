@@ -78,26 +78,18 @@ namespace QLNT
 
             info += "@";
             info += "Thông tin dịch vụ: @";
-            DataTable dtdv = dichVuBLL.LoadDichVuDaDat(maKhach, maPhong);
-            try
+            ThongTinHoaDon thongTinHoaDon = null;
+
+            for (int i = 0; i < listThongTin.Count(); i++)
             {
-                if(dtdv.Rows.Count == 0)
+                Console.WriteLine(listThongTin[i].getMaKhach());
+                if (listThongTin[i].getMaKhach().Equals(maKhach))
                 {
-                    info += "Chưa thực hiện yêu cầu dịch vụ nào!";
+                    thongTinHoaDon = listThongTin[i];
                 }
-                else
-                {
-                    for (int i = 0; i < dtdv.Rows.Count; i++)
-                    {
-                        info += dtdv.Rows[i][0].ToString() + "  , ngày đặt: " + dtdv.Rows[i][1].ToString() + "@";
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
             }
 
+            info += thongTinHoaDon.getDescription();
 
             info = info.Replace("@", " " + System.Environment.NewLine);
             txtRoomInfo.Text = info;

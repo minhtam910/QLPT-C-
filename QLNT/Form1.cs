@@ -421,6 +421,17 @@ namespace QLNT
 			this.Hide();
         }
 
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+			if (!txtGhiChu.Text.Equals("Phòng trống"))
+			{
+				DangKy dk = new DangKy();
+				dk.setMaKhach(maKhach);
+				dk.setMaPhong(maPhong);
+				dangKyBLL.KhachCheckout(dk);
+			}		
+        }
+
         private void dgvTrangThaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 			try
@@ -433,11 +444,28 @@ namespace QLNT
 
 				dgvChiTietPhong.DataSource = dangKyBLL.LoadChiTietKhachThue(dk);
 
-				DataTable dt = dangKyBLL.LoadThongTinDichVu(dk);
-				if (dt.Rows.Count > 0)
-					txtGhiChu.Text = dt.Rows[0][0].ToString();
+
+				if(dgvChiTietPhong.Rows.Count > 1)
+				{ 
+					String makhach = dgvChiTietPhong.Rows[0].Cells[0].Value.ToString();
+					ThongTinHoaDon thongTinHoaDon = null;
+
+					for (int i = 0; i < listThongTin.Count(); i++)
+					{
+						Console.WriteLine(listThongTin[i].getMaKhach());
+						if (listThongTin[i].getMaKhach().Equals(makhach))
+                        {
+							thongTinHoaDon = listThongTin[i];
+						}
+							
+					}
+					txtGhiChu.Text = thongTinHoaDon.getDescription();
+				}
 				else
+				{ 
 					txtGhiChu.Text = "Phòng trống";
+				}
+					
 			}
 			catch(Exception ex)
             {

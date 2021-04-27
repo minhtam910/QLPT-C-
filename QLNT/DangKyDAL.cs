@@ -145,5 +145,14 @@ namespace QLNT
 			String sql = "delete CT_KHACH_THUE where MaPhong = @maphong; update PHONG_TRO set TrangThai = 0, SoNguoi = null where MaPhong = @maphong";
 			manager.Delete(sql, giatri);
         }
+
+		public bool KhachCheckout(DangKy dangKy)
+        {
+			SqlParameter p1 = new SqlParameter("@maphong", dangKy.getMaPhong());
+
+			SqlParameter[] giatri = { p1};
+
+			return manager.Update(@"dbo.[KhachCheckout]", giatri);
+        }
 	}
 }

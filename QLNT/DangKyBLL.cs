@@ -68,5 +68,10 @@ namespace QLNT
         {
 			data.ResetThongTinPhong(dangKyPhong);
         }
+
+		public bool KhachCheckout(DangKy dangKyPhong)
+        {
+			return data.KhachCheckout(dangKyPhong);
+        }
 	}
 }
