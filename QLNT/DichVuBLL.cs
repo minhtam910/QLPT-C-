@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    class DichVuBLL
+    public class DichVuBLL : ObjectBLL
     {
         DichVuDAL dichVuDAL = DichVuDAL.get();
+
+        public DichVuBLL(Dictionary<String, Object> dict)
+        {
+            setListObject(dict);
+        }
 
         public void DatDichVu(String maPhong, String maKhach, String maDichVu)
         {
@@ -26,24 +31,45 @@ namespace QLNT
             return dichVuDAL.LoadThongBao();
         }
 
-        public void ThemDichVu(DichVu dichvu)
-        {
-            dichVuDAL.ThemDichVu(dichvu);
-        }
+        
         public DataTable LoadDoAn()
         {
             return dichVuDAL.LoadDoAn();
         }
 
-        public bool SuaDichVu(DichVu dichvu)
+        public void ThemDichVu()
         {
-            return dichVuDAL.SuaDichVu(dichvu);
+            dichVuDAL.ThemDichVu(interactObjects);
         }
 
-        public void XoaDichVu(DichVu dichvu)
+        public bool SuaDichVu()
         {
-            dichVuDAL.XoaDichVu(dichvu);
+            return dichVuDAL.SuaDichVu(interactObjects);
         }
 
+        public void XoaDichVu()
+        {
+            dichVuDAL.XoaDichVu(interactObjects);
+        }
+
+        public override void editObject()
+        {
+            SuaDichVu();
+        }
+
+        public override DataTable findObject()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void addObject()
+        {
+            ThemDichVu();
+        }
+
+        public override void deleteObject()
+        {
+            XoaDichVu();
+        }
     }
 }

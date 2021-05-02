@@ -17,21 +17,26 @@ namespace QLNT
 		int indexRowGia;
 		String phongTrong, phongGhep, maPhong, maKhach;
 
-		KhachThueBLL khachThueBLL = new KhachThueBLL();
+		KhachThueBLL khachThueBLL;
 		BangGiaPhongBLL phongBLL = new BangGiaPhongBLL();
 		PhongTroBLL phongTroBLL = new PhongTroBLL();
-		DangKyBLL dangKyBLL = new DangKyBLL();
+		DangKyBLL dangKyBLL;
 		ThongKeBLL thongKeBLL = new ThongKeBLL();
 		HoaDonBLL hoaDonBLL = new HoaDonBLL();
 		ThongBaoService service;
 		List<ThongTinHoaDon> listThongTin;
+		Dictionary<String, Object> listObject;
 
-
-		public Form1(ThongBaoService service, List<ThongTinHoaDon> list)
+		public Form1(ThongBaoService service, List<ThongTinHoaDon> list, Dictionary<String,Object> listObject)
 		{
 			InitializeComponent();
 			this.service = service;
 			listThongTin = list;
+			this.listObject = listObject;
+			
+
+			dangKyBLL = new DangKyBLL(listObject);
+			khachThueBLL = new KhachThueBLL(listObject);
 
 			Console.WriteLine("Number of observers: " + service.getListObservers().Count);
 			Console.WriteLine("Number of booked room: " + listThongTin.Count);
@@ -50,7 +55,7 @@ namespace QLNT
 			dgvThongTinGiaThue.DataSource = phongBLL.LoadThongTinGiaThue();
 			dgvDanhSachKhachChuaCoPhong.DataSource = dangKyBLL.LoadKhachThueChuaCoPhong();
 			dgvPhongCoKhachThue.DataSource = dangKyBLL.LoadPhongDaCoKhach();
-			//dgvThang.DataSource = thongKeBLL.Loadthang();
+
 			txtCMND.Enabled = false;
 			txtMaKhach.Enabled = false;
 			txtNgheNghiep.Enabled = false;
@@ -69,15 +74,6 @@ namespace QLNT
 			cbPhongOGhep.DisplayMember = "MaPhong";
 			cbPhongOGhep.ValueMember = "MaPhong";
 
-			/*try
-            {
-				cbPhongOGhep.SelectedIndex = 1;
-				cbPhongTrong.SelectedIndex = 1;
-			}
-			catch(Exception ex)
-            {
-				Console.WriteLine(ex.Message);
-            }*/
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -111,9 +107,8 @@ namespace QLNT
 				khach.setQuequan(txtQueQuan.Text.ToString());
 				khach.setTenKhach(txtTenKhach.Text.ToString());
 				khach.setPhai(cbGioiTinh.Text.ToString());
-				
-				khachThueBLL.ThemKhachThueVaoPhongMoi(khach);
-				//dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
+				khachThueBLL.getListObject()["KhachThue"] = khach;
+				khachThueBLL.ThemKhachThueVaoPhongMoi();
 				LoadDataGridView();
 
 				MessageBox.Show("Thêm khách thành công.");
@@ -130,9 +125,9 @@ namespace QLNT
 		{
 			maPhong = dgvPhongCoKhachThue.Rows[e.RowIndex].Cells[0].Value.ToString();
 			DangKy dangKy = new DangKy();
-			//MessageBox.Show(maphong);
 			dangKy.setMaPhong(maPhong);
-			dgvDanhSachKhachThuePhong.DataSource = dangKyBLL.LoadChiTietKhachThue(dangKy);
+			dangKyBLL.getListObject()["DangKy"] = dangKy;
+			dgvDanhSachKhachThuePhong.DataSource = dangKyBLL.LoadChiTietKhachThue();
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
@@ -144,8 +139,8 @@ namespace QLNT
 				{
 					KhachThue khach = new KhachThue();
 					khach.setMaKhach(txtMaKhach.Text.ToString());
-					khachThueBLL.XoaKhachThue(khach);
-					//dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
+					khachThueBLL.getListObject()["KhachThue"] = khach;
+					khachThueBLL.XoaKhachThue();
 				}
 				LoadDataGridView();
 			}
@@ -185,9 +180,8 @@ namespace QLNT
 				khach.setQuequan(txtQueQuan.Text.ToString());
 				khach.setTenKhach(txtTenKhach.Text.ToString());
 				khach.setPhai(cbGioiTinh.Text.ToString());
-
-				khachThueBLL.SuaKhachThue(khach);
-				//dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
+				khachThueBLL.getListObject()["KhachThue"] = khach;
+				khachThueBLL.SuaKhachThue();
 				LoadDataGridView();
 			}
 			txtCMND.Enabled = false;
@@ -268,7 +262,6 @@ namespace QLNT
 				bangGiaPhong.setSoNguoi(songuoi);
 
 				phongBLL.ThemPhong(bangGiaPhong);
-				//dgvThongTinGiaThue.DataSource = phongBLL.LoadThongTinGiaThue();
 				MessageBox.Show("Thêm thành công.");
 			}
 		}
@@ -315,22 +308,6 @@ namespace QLNT
 			}
 		}
 
-		/*private void dgvThang_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			string thang = dgvThang.Rows[e.RowIndex].Cells[0].Value.ToString();
-			ThongKe thongKe = new ThongKe();
-			thongKe.setNgaylap(thang);
-			dgvDanhSachHoaDon.DataSource = thongKeBLL.LoadHDTheothang(thongKe);
-		}
-
-		private void dgvDanhSachHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			maPhong = dgvDanhSachHoaDon.Rows[e.RowIndex].Cells[0].Value.ToString();
-			ThongKe thongKe = new ThongKe();
-			thongKe.setMaphong(maPhong);
-			dgvTienPhong.DataSource = thongKeBLL.LoadTienPhongTheoMa(thongKe);
-		}*/
-
 		private void rbtnThuePhongMoi_CheckedChanged(object sender, EventArgs e)
 		{
 			cbPhongOGhep.Enabled = false;
@@ -368,13 +345,15 @@ namespace QLNT
 				if (cbPhongOGhep.Enabled == true)
 				{
 					dangKy.setMaPhong(phongGhep);
-					dangKyBLL.ThemKhachOghep(dangKy);
+					dangKyBLL.getListObject()["DangKy"] = dangKy;
+					dangKyBLL.ThemKhachOghep();
 				}
 				else
 				{
 					dangKy.setMaPhong(phongTrong);
-					dangKyBLL.ThemKhachThueVaoPhongMoi(dangKy);
-					Client tempClient = new Client(service, phongTrong);
+					dangKyBLL.getListObject()["DangKy"] = dangKy;
+					dangKyBLL.ThemKhachThueVaoPhongMoi();
+					Client tempClient = new Client(service, maKhach, phongTrong, listThongTin, listObject);
 					service.registerObservers(tempClient);
 					if(phongTrong.Substring(0,1).Equals("A"))
 						listThongTin.Add(new PhongThueNganHan(maKhach));
@@ -399,7 +378,6 @@ namespace QLNT
 				indexRowKhach = e.RowIndex;
 				DataGridViewRow row = dgvChiTietPhong.Rows[indexRowKhach];
 				maKhach = row.Cells[0].Value.ToString();
-				//MessageBox.Show(maKhach);
 			}
 			catch(Exception ex)
             {
@@ -416,7 +394,7 @@ namespace QLNT
 
         private void button1_Click(object sender, EventArgs e)
         {
-			SelectInfo selectInfo = new SelectInfo(service, listThongTin);
+			SelectInfo selectInfo = new SelectInfo(service, listThongTin, listObject);
 			selectInfo.Show();
 			this.Hide();
         }
@@ -428,7 +406,8 @@ namespace QLNT
 				DangKy dk = new DangKy();
 				dk.setMaKhach(maKhach);
 				dk.setMaPhong(maPhong);
-				dangKyBLL.KhachCheckout(dk);
+				dangKyBLL.getListObject()["DangKy"] = dk;
+				dangKyBLL.KhachCheckout();
 			}		
         }
 
@@ -441,8 +420,8 @@ namespace QLNT
 				maPhong = row.Cells[0].Value.ToString();
 				DangKy dk = new DangKy();
 				dk.setMaPhong(maPhong);
-
-				dgvChiTietPhong.DataSource = dangKyBLL.LoadChiTietKhachThue(dk);
+				dangKyBLL.getListObject()["DangKy"] = dk;
+				dgvChiTietPhong.DataSource = dangKyBLL.LoadChiTietKhachThue();
 
 
 				if(dgvChiTietPhong.Rows.Count > 1)
@@ -480,7 +459,8 @@ namespace QLNT
 				DangKy dk = new DangKy();
 				if (!maPhong.Equals(""))
 					dk.setMaPhong(maPhong);
-				dangKyBLL.ResetThongTinPhong(dk);
+				dangKyBLL.getListObject()["DangKy"] = dk;
+				dangKyBLL.KhachCheckout();
 				LoadDataGridView();
 			}
 			catch(Exception ex)
@@ -493,7 +473,6 @@ namespace QLNT
         {
 			indexRowKhach = e.RowIndex;
 			DataGridViewRow row = dgvDanhSachKhachChuaCoPhong.Rows[e.RowIndex];
-			//MessageBox.Show(row.Cells[0].Value.ToString());
         }
     }
 }

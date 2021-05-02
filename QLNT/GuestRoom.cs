@@ -20,43 +20,48 @@ namespace QLNT
         CookService cookService;
         ThongBaoService service;
         List<ThongTinHoaDon> listThongTin;
+        Dictionary<String, Object> listObject;
 
-        public GuestRoom(String maPhong, ThongBaoService service, List<ThongTinHoaDon> list)
+        public GuestRoom(String maPhong, ThongBaoService service, List<ThongTinHoaDon> list, Dictionary<String, Object> listObject)
         {
             this.maPhong = maPhong;
             this.service = service;
             listThongTin = list;
+            this.listObject = listObject;
+            DangKy dk = new DangKy();
+            dk.setMaPhong(maPhong);
+            this.listObject["DangKy"] = dk;
 
             InitializeComponent();
-            dangKyBLL = new DangKyBLL();
-            dichVuBLL = new DichVuBLL();
-            cookService = new CookService();
+            dangKyBLL = new DangKyBLL(this.listObject);
+            dichVuBLL = new DichVuBLL(this.listObject);
+            cookService = new CookService(dichVuBLL);
             dangKy = new DangKy();
             dangKy.setMaPhong(maPhong);
             Console.WriteLine("List count: " + listThongTin.Count);
+
         }
 
-        private void GuestRoom_Load(object sender, EventArgs e)
+       private void GuestRoom_Load(object sender, EventArgs e)
         {
-            txtRoomNumber.Text = maPhong;
+           txtRoomNumber.Text = maPhong;
 
-            dt = dangKyBLL.LoadChiTietKhachThue(dangKy);
-            txtGuestName.Text = dt.Rows[0][1].ToString();
-            maKhach = dt.Rows[0][0].ToString();
+           dt = dangKyBLL.LoadChiTietKhachThue();
+           txtGuestName.Text = dt.Rows[0][1].ToString();
+           maKhach = dt.Rows[0][0].ToString();
 
-            LoadAllInformation();
+           LoadAllInformation();
         }
 
         private void btnDatMon_Click(object sender, EventArgs e)
         {
-
             cookService.order(maDichVu, maKhach, maPhong, listThongTin);
-            //dichVuBLL.DatDichVu(maPhong, maKhach, maDichVu);
+            dichVuBLL.DatDichVu(maPhong, maKhach, maDichVu);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1(service, listThongTin);
+            Form1 f1 = new Form1(service, listThongTin, listObject);
             f1.Show();
             this.Hide();
         }
@@ -103,6 +108,15 @@ namespace QLNT
             dgvThongBao.Columns["NoiDung"].HeaderText = "Nội dung";
             dgvThongBao.Columns["NgayLap"].HeaderText = "Ngày đăng";
 
+
+            String tb = "";
+            foreach(ThongBao thongBao in service.getListThongBao())
+            {
+                tb += thongBao.getNgayLap() + "/ " + thongBao.getNoiDung() + "@";
+            }
+
+            tb = tb.Replace("@", " " + System.Environment.NewLine);
+            txtThongBao.Text = tb; 
         }
 
     }

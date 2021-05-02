@@ -38,53 +38,51 @@ namespace QLNT
 			DataTable table = manager.executeQuery(sql);
 			return table;
 		}
-		/*Load khách thuê đặt phòng
-		public DataTable loadkhachthuedatphong() 
-		{
-			String sql = "select username, Tenkhach, email, phai, cmnd, quequan, nghenghiep, dienthoai  from USER_KHACHTHUE where Tinhtrang = 1";
-			rs = data.executeQuery(sql);
-			return rs;
-		}*/
 
 		//Tìm khách thuê theo tên
 		public DataTable TimKhachThue(String sql, SqlParameter[] parameters)
         {
 			return rs = manager.Select(sql, parameters);
         }
-		public DataTable TimKhachThueTheoTen(KhachThue khachthue)
+		public DataTable TimKhachThueTheoTen(Dictionary<String, Object> dict)
 		{
+			KhachThue khachthue = (KhachThue)dict["KhachThue"];
 			String sql = "select * from KHACH_THUE where TenKhach like N'%" + khachthue.getTenKhach() + "%'";
 			rs = manager.executeQuery(sql);
 			return rs;
 		}
 
 		//Tìm khách thuê theo mã khách thuê
-		public DataTable TimKhachThueTheoMa(KhachThue khachthue)
+		public DataTable TimKhachThueTheoMa(Dictionary<String, Object> dict)
 		{
+			KhachThue khachthue = (KhachThue)dict["KhachThue"];
 			String sql = "select * from KHACH_THUE where MaKhach like N'%" + khachthue.getMaKhach() + "%'";
 			rs = manager.executeQuery(sql);
 			return rs;
 		}
 
 		//Tìm khách thuê theo quê quán
-		public DataTable TimKhachThueTheoQueQuan(KhachThue khachthue)
+		public DataTable TimKhachThueTheoQueQuan(Dictionary<String, Object> dict)
 		{
+			KhachThue khachthue = (KhachThue)dict["KhachThue"];
 			String sql = "select * from KHACH_THUE where QueQuan like N'%" + khachthue.getQuequan() + "%'";
 			rs = manager.executeQuery(sql);
 			return rs;
 		}
 
 		//Tìm khách thuê theo nghề nghiệp
-		public DataTable TimKhachThueTheoNgheNghiep(KhachThue khachthue)
+		public DataTable TimKhachThueTheoNgheNghiep(Dictionary<String, Object> dict)
 		{
+			KhachThue khachthue = (KhachThue)dict["KhachThue"];
 			String sql = "select * from KHACH_THUE where NgheNghiep like N'%" + khachthue.getNgheNghiep() + "%'";
 			rs = manager.executeQuery(sql);
 			return rs;
 		}
 
 		//thêm khách thuê
-		public void ThemKhachthue(KhachThue khachthue)
+		public void ThemKhachthue(Dictionary<String, Object> dict)
 		{
+			KhachThue khachthue = (KhachThue)dict["KhachThue"];
 			SqlParameter p1 = new SqlParameter("@makhach", khachthue.getMaKhach());
 			SqlParameter p2 = new SqlParameter("@tenkhach", khachthue.getTenKhach());
 			SqlParameter p3 = new SqlParameter("@phai", khachthue.getPhai());
@@ -99,26 +97,11 @@ namespace QLNT
 			manager.Update(@"dbo.[ThemKhachThue]", giatri);
 		}
 
-		//thêm khách thuê có đặt phòng trước
-		/*public bool ThemKhachThueDatPhong(KhachThue khachthue)
-		{
-				SqlParameter p1 = new SqlParameter("@makhach", khachthue.getMaKhach());
-				SqlParameter p2 = new SqlParameter("@tenkhach", khachthue.getTenKhach());
-				SqlParameter p3 = new SqlParameter("@phai", khachthue.getPhai());
-				SqlParameter p4 = new SqlParameter("@cmnd", khachthue.getCmnd());
-				SqlParameter p5 = new SqlParameter("@quequan", khachthue.getQuequan());
-				SqlParameter p6 = new SqlParameter("@nghenghiep", khachthue.getNgheNghiep());
-
-
-
-				SqlParameter[] giatri = { p1, p2, p3, p4, p5, p6 };
-
-				return data.Update("ThemKhachThueDatPhong", giatri);
-		}*/
-
 		//Xóa khách thuê
-		public void XoaKhach(KhachThue khachthue)
+		public void XoaKhach(Dictionary<String, Object> dict)
 		{
+
+			KhachThue khachthue = (KhachThue)dict["KhachThue"];
 			SqlParameter p1 = new SqlParameter("@makhach", khachthue.getMaKhach());
 
 			SqlParameter[] giatri = { p1 };
@@ -130,8 +113,10 @@ namespace QLNT
 		}
 
 		//Sửa khách thuê
-		public bool SuaKhachthue(KhachThue khachthue)
+		public bool SuaKhachthue(Dictionary<String, Object> dict)
 		{
+
+			KhachThue khachthue = (KhachThue)dict["KhachThue"];
 			SqlParameter p1 = new SqlParameter("@makhach", khachthue.getMaKhach());
 			SqlParameter p2 = new SqlParameter("@tenkhach", khachthue.getTenKhach());
 			SqlParameter p3 = new SqlParameter("@phai", khachthue.getPhai());

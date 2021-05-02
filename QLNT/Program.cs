@@ -19,8 +19,12 @@ namespace QLNT
 			Application.SetCompatibleTextRenderingDefault(false);
 			ThongBaoService service = new ThongBaoService();
 			List<ThongTinHoaDon> listThongtin = new List<ThongTinHoaDon>();
-			Application.Run(new Form1(service, listThongtin));
-			//Application.Run(new SelectInfo());
+			Dictionary<string, Object> listObject = new Dictionary<string, object> { };
+			listObject = new Dictionary<string, Object>(){ { "DangKy", new DangKy() },
+														{"DichVu", new DichVu() },
+														{"KhachThue", new KhachThue()}
+													 };
+			Application.Run(new Form1(service, listThongtin, listObject));
 		}
 	}
 }

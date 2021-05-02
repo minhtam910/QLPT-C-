@@ -14,15 +14,17 @@ namespace QLNT
     public partial class SelectInfo : Form
     {
         DBAccess manager;
-        DangKyBLL dangKyBLL = new DangKyBLL();
+        DangKyBLL dangKyBLL; 
         String maPhong;
         ThongBaoService service;
         List<ThongTinHoaDon> listThongTin;
+        Dictionary<String, Object> listObject;
 
-        public SelectInfo(ThongBaoService service, List<ThongTinHoaDon> list)
+        public SelectInfo(ThongBaoService service, List<ThongTinHoaDon> list, Dictionary<String,Object> listObject)
         {
             InitializeComponent();
-
+            this.listObject = listObject;
+            dangKyBLL = new DangKyBLL(listObject);
             try
             {
                 this.service = service;
@@ -53,7 +55,7 @@ namespace QLNT
             DataTable dt = manager.Select(sql, parameters);
             if(dt.Rows.Count > 0)
             {
-                GuestRoom fgr = new GuestRoom(maPhong,service,listThongTin);
+                GuestRoom fgr = new GuestRoom(maPhong,service,listThongTin, listObject);
                 fgr.Show();
                 this.Hide();
             }

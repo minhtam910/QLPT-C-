@@ -9,6 +9,11 @@ namespace QLNT
     public class CookService : ServiceStore
     {
         DichVuBLL dichVuBLL;
+
+        public CookService(DichVuBLL dv)
+        {
+            dichVuBLL = dv;
+        }
         public override ThongTinHoaDon cooking(String maDoAn, String maKhach, String maPhong, List<ThongTinHoaDon> list)
         {
             ThongTinHoaDon thongTinHoaDon = null;
@@ -83,7 +88,6 @@ namespace QLNT
             Console.WriteLine("Cost: " + thd.cost());
             Console.WriteLine("Description: " + thd.getDescription());
             Console.WriteLine("----------------------Complete adding decoration--------------------");
-            dichVuBLL = new DichVuBLL();
             dichVuBLL.DatDichVu(maPhong, maKhach, maDoAn);
         }
     }

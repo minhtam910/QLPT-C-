@@ -7,18 +7,23 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-	class DangKyBLL
+	class DangKyBLL : ObjectBLL
 	{
 		DangKyDAL data = DangKyDAL.get();
 
+		public DangKyBLL(Dictionary<String,Object> dict)
+        {
+			setListObject(dict);
+        }
+
 		public DataTable LoadKhachThueChuaCoPhong() 
 		{
-        return data.LoadKhachThueChuaCoPhong();
+			return data.LoadKhachThueChuaCoPhong();
 		}
 
 		public DataTable LoadPhongDaiHan()
 		{
-				return data.LoadPhongDaiHan();
+			return data.LoadPhongDaiHan();
 		}
 		public DataTable LoadPhongChuaCoKhach() 
 		{
@@ -30,26 +35,26 @@ namespace QLNT
 			return data.LoadPhongDaCoKhach();
 		}
 
-		public DataTable LoadChiTietKhachThue(DangKy dangKyPhong) 
+		public DataTable LoadChiTietKhachThue() 
 		{
-			return data.LoadChiTietKhachThue(dangKyPhong);
+			return data.LoadChiTietKhachThue(interactObjects);
 		}
 
-		public DataTable LoadThongTinDichVu(DangKy dangKyPhong)
+		public DataTable LoadThongTinDichVu()
 		{
-			return data.LoadThongTinDichVu(dangKyPhong);
+			return data.LoadThongTinDichVu(interactObjects);
 		}
 
 			//Thêm khách ở ghép
-		public bool ThemKhachOghep(DangKy dangKyPhong)
+		public bool ThemKhachOghep()
 		{
-			return data.ThemKhachOghep(dangKyPhong);
+			return data.ThemKhachOghep(interactObjects);
 		}
 
 		//Thêm khách ở phòng mới
-		public bool ThemKhachThueVaoPhongMoi(DangKy dangKyPhong) 
+		public bool ThemKhachThueVaoPhongMoi() 
 		{
-			return data.ThemKhachThueVaoPhongMoi(dangKyPhong);
+			return data.ThemKhachThueVaoPhongMoi(interactObjects);
 		}
 
 		//Load danh sách phòng có thể ở ghép
@@ -64,14 +69,29 @@ namespace QLNT
 			return data.LoadMaPhongMoi();
 		}
 
-		public void ResetThongTinPhong(DangKy dangKyPhong)
+		public bool KhachCheckout()
         {
-			data.ResetThongTinPhong(dangKyPhong);
+			return data.KhachCheckout(interactObjects);
         }
 
-		public bool KhachCheckout(DangKy dangKyPhong)
+        public override void editObject()
         {
-			return data.KhachCheckout(dangKyPhong);
+            throw new NotImplementedException();
         }
-	}
+
+        public override DataTable findObject()
+        {
+			return LoadChiTietKhachThue();
+        }
+
+        public override void addObject()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void deleteObject()
+        {
+			KhachCheckout();
+        }
+    }
 }

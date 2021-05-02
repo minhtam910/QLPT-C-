@@ -57,6 +57,7 @@
     <Compile Include="Client.cs" />
     <Compile Include="CondimentDecorator.cs" />
     <Compile Include="CookService.cs" />
+    <Compile Include="ObjectBLL.cs" />
     <Compile Include="PhongThueDaiHan.cs" />
     <Compile Include="PhongThueNganHan.cs" />
     <Compile Include="DangKy.cs" />

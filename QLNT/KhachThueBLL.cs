@@ -8,65 +8,81 @@ using System.Data.SqlClient;
 
 namespace QLNT
 {
-	class KhachThueBLL
+	class KhachThueBLL : ObjectBLL
 	{
 		KhachThueDAL khachthue = KhachThueDAL.get();
+
+		public KhachThueBLL(Dictionary<String, Object> dict)
+		{
+			setListObject(dict);
+		}
 
 		public DataTable LoadKhachThue() 
 		{
 			return khachthue.Loadall();
 		}
 
-	/*public DataTable loadkhachthuedatphong() 
-	{
-        return khachthue.loadkhachthuedatphong();
-	}*/
 
 
-	//Thêm khách thuê không đặt phòng trước
-	public void ThemKhachThueVaoPhongMoi(KhachThue KhachThue)
-	{
-		khachthue.ThemKhachthue(KhachThue);
-	}
+		//Thêm khách thuê không đặt phòng trước
+		public void ThemKhachThueVaoPhongMoi()
+		{
+			khachthue.ThemKhachthue(interactObjects);
+		}
 
-	//Thêm khách thuê có đặt phòng trước
-	/*public bool ThemKhachThueDatPhong(KhachThue KhachThue)
-	{
-		return khachthue.ThemKhachThueDatPhong(KhachThue);
-	}*/
 
-	public bool SuaKhachThue(KhachThue KhachThue)
-	{
-		return khachthue.SuaKhachthue(KhachThue);
-	}
+		public bool SuaKhachThue()
+		{
+			return khachthue.SuaKhachthue(interactObjects);
+		}
 
-	public void XoaKhachThue(KhachThue KhachThue)
-	{
-		khachthue.XoaKhach(KhachThue);
-	}
+		public void XoaKhachThue()
+		{
+			khachthue.XoaKhach(interactObjects);
+		}
 
-	public DataTable TimKhachThue(String sql, SqlParameter[] parameters)
-	{
-		return khachthue.TimKhachThue(sql, parameters);
-	}
-		public DataTable TimKhachThueTheoTen(KhachThue KhachThue) 
-	{
-        return khachthue.TimKhachThueTheoTen(KhachThue);
-	}
+		public DataTable TimKhachThue(String sql, SqlParameter[] parameters)
+		{
+			return khachthue.TimKhachThue(sql, parameters);
+		}
+			public DataTable TimKhachThueTheoTen() 
+		{
+			return khachthue.TimKhachThueTheoTen(interactObjects);
+		}
 
-	public DataTable TimKhachThueTheoMa(KhachThue KhachThue)
-	{
-        return khachthue.TimKhachThueTheoMa(KhachThue);
-	}
+		public DataTable TimKhachThueTheoMa()
+		{
+			return khachthue.TimKhachThueTheoMa(interactObjects);
+		}
 
-	public DataTable TimKhachThueTheoNghe(KhachThue KhachThue)
-	{
-        return khachthue.TimKhachThueTheoNgheNghiep(KhachThue);
-	}
+		public DataTable TimKhachThueTheoNghe()
+		{
+			return khachthue.TimKhachThueTheoNgheNghiep(interactObjects);
+		}
 
-	public DataTable TimKhachThueTheoQueQuan(KhachThue KhachThue)
-	{
-        return khachthue.TimKhachThueTheoQueQuan(KhachThue);
-	}
-}
+		public DataTable TimKhachThueTheoQueQuan()
+		{
+			return khachthue.TimKhachThueTheoQueQuan(interactObjects);
+		}
+
+        public override void editObject()
+        {
+			SuaKhachThue();
+        }
+
+        public override DataTable findObject()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void addObject()
+        {
+			ThemKhachThueVaoPhongMoi();
+        }
+
+        public override void deleteObject()
+        {
+			XoaKhachThue();
+        }
+    }
 }

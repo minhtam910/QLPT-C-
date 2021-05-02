@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    class DichVu
+	public class DichVu
     {
 		private string MaDoAn;
 		private string TenDoAn;
 		private int giatien;
-
 		
-		
-
 		public DichVu()
 		{
 			MaDoAn = "";

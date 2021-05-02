@@ -39,9 +39,10 @@
             this.Notification = new System.Windows.Forms.TabPage();
             this.dgvThongBao = new System.Windows.Forms.DataGridView();
             this.ServiceDetail = new System.Windows.Forms.TabPage();
+            this.btnBack = new System.Windows.Forms.Button();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.btnDatMon = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.txtThongBao = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.tabInfo.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -144,6 +145,7 @@
             // 
             // Notification
             // 
+            this.Notification.Controls.Add(this.txtThongBao);
             this.Notification.Controls.Add(this.dgvThongBao);
             this.Notification.Location = new System.Drawing.Point(4, 22);
             this.Notification.Margin = new System.Windows.Forms.Padding(2);
@@ -176,6 +178,16 @@
             this.ServiceDetail.Text = "Dịch vụ";
             this.ServiceDetail.UseVisualStyleBackColor = true;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(642, 338);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // dgvDichVu
             // 
             this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -195,15 +207,13 @@
             this.btnDatMon.UseVisualStyleBackColor = true;
             this.btnDatMon.Click += new System.EventHandler(this.btnDatMon_Click);
             // 
-            // btnBack
+            // txtThongBao
             // 
-            this.btnBack.Location = new System.Drawing.Point(642, 338);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 3;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.txtThongBao.Location = new System.Drawing.Point(9, 98);
+            this.txtThongBao.Name = "txtThongBao";
+            this.txtThongBao.Size = new System.Drawing.Size(788, 117);
+            this.txtThongBao.TabIndex = 1;
+            this.txtThongBao.Text = "";
             // 
             // GuestRoom
             // 
@@ -248,5 +258,6 @@
         private System.Windows.Forms.DataGridView dgvDichVu;
         private System.Windows.Forms.DataGridView dgvThongBao;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.RichTextBox txtThongBao;
     }
 }

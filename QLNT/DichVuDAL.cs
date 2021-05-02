@@ -63,8 +63,9 @@ namespace QLNT
 			return dt;
 		}
 
-		public void ThemDichVu(DichVu dv)
+		public void ThemDichVu(Dictionary<String, Object> dict)
 		{
+			DichVu dv = (DichVu)dict["DichVu"];
 			SqlParameter p1 = new SqlParameter("@MaDoAn", dv.getMaDoAn());
 			SqlParameter p2 = new SqlParameter("@TenDoAn", dv.getTenDoAn());
 			SqlParameter p3 = new SqlParameter("@giatien", dv.getGiaTien());
@@ -75,8 +76,9 @@ namespace QLNT
 			manager.Update(@"dbo.[ThemDichVu]", giatri);
 		}
 
-		public bool SuaDichVu(DichVu dv)
+		public bool SuaDichVu(Dictionary<String, Object> dict)
 		{
+			DichVu dv = (DichVu)dict["DichVu"];
 			SqlParameter p1 = new SqlParameter("@MaDoAn", dv.getMaDoAn());
 			SqlParameter p2 = new SqlParameter("@TenDoAn", dv.getTenDoAn());
 			SqlParameter p3 = new SqlParameter("@giatien", dv.getGiaTien());
@@ -86,8 +88,9 @@ namespace QLNT
 			return manager.Update(@"dbo.[SuaDichVu]", giatri);
 		}
 
-		public void XoaDichVu(DichVu dv)
+		public void XoaDichVu(Dictionary<String, Object> dict)
 		{
+			DichVu dv = (DichVu)dict["DichVu"];
 			SqlParameter p1 = new SqlParameter("@MaDoAn", dv.getMaDoAn());
 
 			SqlParameter[] giatri = { p1 };
