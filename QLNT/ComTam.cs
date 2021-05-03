@@ -12,7 +12,7 @@ namespace QLNT
         public override void cook(String maKhach, String maPhong)
         {
             MessageBox.Show("Cơm tấm đang được chuẩn bị cho khách " + maKhach + " tại phòng " + maPhong + "!");
-            addDescription("Khách " + maKhach + "đặt món CƠM TẤM lúc " + DateTime.Now.ToString() + "\n");
+            addDescription("Khách " + maKhach + " đặt món CƠM TẤM lúc " + DateTime.Now.ToString() + "\n");
         }
 
         public ComTam(ThongTinHoaDon hd) {

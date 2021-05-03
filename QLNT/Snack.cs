@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace QLNT
 {
-    class Snack : CondimentDecorator, IService
+    class Snack : CondimentDecorator, IFood
     {
         public override void cook(String maKhach, String maPhong)
         {

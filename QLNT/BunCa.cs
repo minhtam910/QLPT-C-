@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace QLNT
 {
-    class BunCa : CondimentDecorator, IService
+    class BunCa : CondimentDecorator, IFood
     {
 
         public BunCa(ThongTinHoaDon hd)

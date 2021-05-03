@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    public abstract class ThongTinHoaDon:IService
+    public abstract class ThongTinHoaDon:IFood
     {
         protected String maKhach;
 
