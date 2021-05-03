@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    public interface IService
+    public interface IFood
     {
         void cook(String maKhach, String maPhong);      
     }

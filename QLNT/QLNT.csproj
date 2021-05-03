@@ -53,10 +53,20 @@
     <Compile Include="BangGiaPhongBLL.cs" />
     <Compile Include="BangGiaPhongDAL.cs" />
     <Compile Include="BunCa.cs" />
+    <Compile Include="Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkout.Designer.cs">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComTam.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="CondimentDecorator.cs" />
-    <Compile Include="CookService.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="CookWhat.cs" />
+    <Compile Include="Dollars.cs" />
+    <Compile Include="Euros.cs" />
+    <Compile Include="Expression.cs" />
     <Compile Include="ObjectBLL.cs" />
     <Compile Include="PhongThueDaiHan.cs" />
     <Compile Include="PhongThueNganHan.cs" />
@@ -83,7 +93,7 @@
     <Compile Include="HoaDonBLL.cs" />
     <Compile Include="HoaDonDAL.cs" />
     <Compile Include="IObserver.cs" />
-    <Compile Include="IService.cs" />
+    <Compile Include="IFood.cs" />
     <Compile Include="KhachThue.cs" />
     <Compile Include="KhachThueBLL.cs" />
     <Compile Include="KhachThueDAL.cs" />
@@ -99,7 +109,7 @@
     <Compile Include="SelectInfo.Designer.cs">
       <DependentUpon>SelectInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServiceStore.cs" />
+    <Compile Include="CookFood.cs" />
     <Compile Include="Snack.cs" />
     <Compile Include="ThongBao.cs" />
     <Compile Include="ThongBaoService.cs" />
@@ -107,7 +117,10 @@
     <Compile Include="ThongKeBLL.cs" />
     <Compile Include="ThongKeDAL.cs" />
     <Compile Include="ThongTinHoaDon.cs" />
-    <Compile Include="TongHoaDon.cs" />
+    <Compile Include="VND.cs" />
+    <EmbeddedResource Include="Checkout.resx">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

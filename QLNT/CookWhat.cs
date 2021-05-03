@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    public class CookService : ServiceStore
+    public class CookWhat : CookFood
     {
         DichVuBLL dichVuBLL;
 
-        public CookService(DichVuBLL dv)
+        public CookWhat(DichVuBLL dv)
         {
             dichVuBLL = dv;
         }

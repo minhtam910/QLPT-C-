@@ -405,7 +405,16 @@ namespace QLNT
 			{
 				DangKy dk = new DangKy();
 				dk.setMaKhach(maKhach);
+				Console.WriteLine(maKhach);
+				Console.WriteLine("----------------");
+				for (int i = 0; i < listThongTin.Count(); i++)
+				{
+					Console.WriteLine(listThongTin[i].getMaKhach());
+				}
 				dk.setMaPhong(maPhong);
+				Checkout checkOut = new Checkout(service, listThongTin, listObject, maKhach);
+				
+				checkOut.Show();
 				dangKyBLL.getListObject()["DangKy"] = dk;
 				dangKyBLL.KhachCheckout();
 			}		

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLNT
 {
-    public abstract class ServiceStore
+    public abstract class CookFood
     {      
         public abstract ThongTinHoaDon cooking(String maDoAn, String maKhach, String maPhong, List<ThongTinHoaDon> list);
 

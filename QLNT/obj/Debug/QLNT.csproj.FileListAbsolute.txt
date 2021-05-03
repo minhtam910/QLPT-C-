@@ -46,3 +46,4 @@ C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.CoreCompil
 C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.csproj.CopyComplete
 C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.exe
 C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.pdb
+G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.Checkout.resources

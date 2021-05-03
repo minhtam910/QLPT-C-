@@ -17,7 +17,7 @@ namespace QLNT
         DichVuBLL dichVuBLL;
         DangKy dangKy;
         DataTable dt;
-        CookService cookService;
+        CookWhat cookService;
         ThongBaoService service;
         List<ThongTinHoaDon> listThongTin;
         Dictionary<String, Object> listObject;
@@ -35,7 +35,7 @@ namespace QLNT
             InitializeComponent();
             dangKyBLL = new DangKyBLL(this.listObject);
             dichVuBLL = new DichVuBLL(this.listObject);
-            cookService = new CookService(dichVuBLL);
+            cookService = new CookWhat(dichVuBLL);
             dangKy = new DangKy();
             dangKy.setMaPhong(maPhong);
             Console.WriteLine("List count: " + listThongTin.Count);
