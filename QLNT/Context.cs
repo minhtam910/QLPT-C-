@@ -5,28 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interpreter
+namespace QLNT
 {
     class Context
     {
-        String input = "";
         String output = "";
         String from = "";
         String to = "";
         double value;
-        String[] listComp;
 
-        public Context(String input)
+        public Context(double value, String from, String to)
         {
-            this.input = input;
+ 
+            this.value = value;
 
-            listComp = input.Split(char.Parse(" "));
+            this.from = from;
 
-            value = Double.Parse(listComp[0]);
-
-            from = listComp[1];
-
-            to = listComp[3];
+            this.to = to;
         }
 
         public String getFrom()

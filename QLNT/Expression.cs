@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interpreter
+namespace QLNT
 {
     abstract class Expression
     {
-        public abstract String vnd(double value);
+        public abstract double vnd(double value);
 
-        public abstract String dollars(double value);
+        public abstract double dollars(double value);
 
-        public abstract String euros(double value);
+        public abstract double euros(double value);
     }
 }

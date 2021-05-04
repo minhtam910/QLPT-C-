@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interpreter
+namespace QLNT
 {
     class Euros : Expression
     {
-        public override string euros(double value)
+        public override double euros(double value)
         {
-            return value.ToString();
+            return value;
         }
 
-        public override string dollars(double value)
+        public override double dollars(double value)
         {
-            return (value * 1.21).ToString();
+            return (value * 1.21);
         }
 
-        public override string vnd(double value)
+        public override double vnd(double value)
         {
-            return (value * 27749).ToString();
+            return (value * 27749);
         }
     }
 }

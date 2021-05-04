@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interpreter
+namespace QLNT
 {
     class VND : Expression
     {
-        public override string dollars(double value)
+        public override double dollars(double value)
         {
-            return (value / 23022).ToString();
+            return (value / 23022);
         }
 
-        public override string euros(double value)
+        public override double euros(double value)
         {
-            return (value / 27745).ToString();
+            return (value / 27745);
         }
 
-        public override string vnd(double value)
+        public override double vnd(double value)
         {
-            return value.ToString() ;
+            return value ;
         }
     }
 }

@@ -63,5 +63,11 @@ namespace QLNT
             info = info.Replace("@", " " + System.Environment.NewLine);
             txtHoaDon.Text = info;
         }
+
+        private void btnCash_Click(object sender, EventArgs e)
+        {
+            CashPayment cPayment = new CashPayment(cost);
+            cPayment.Show();
+        }
     }
 }

@@ -53,6 +53,12 @@
     <Compile Include="BangGiaPhongBLL.cs" />
     <Compile Include="BangGiaPhongDAL.cs" />
     <Compile Include="BunCa.cs" />
+    <Compile Include="CashPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashPayment.Designer.cs">
+      <DependentUpon>CashPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <Compile Include="ThongKeDAL.cs" />
     <Compile Include="ThongTinHoaDon.cs" />
     <Compile Include="VND.cs" />
+    <EmbeddedResource Include="CashPayment.resx">
+      <DependentUpon>CashPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>

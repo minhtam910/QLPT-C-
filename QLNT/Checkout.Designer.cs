@@ -69,6 +69,7 @@ namespace QLNT
             this.btnCash.TabIndex = 3;
             this.btnCash.Text = "Cash";
             this.btnCash.UseVisualStyleBackColor = true;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // btnEBanking
             // 
