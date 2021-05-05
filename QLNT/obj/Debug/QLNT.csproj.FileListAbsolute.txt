@@ -48,5 +48,3 @@ C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.exe
 C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.pdb
 G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.Checkout.resources
 G:\GitHub\QLPT-C-\QLNT\obj\Debug\QLNT.CashPayment.resources
-C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.CashPayment.resources
-C:\Users\WIN10\Downloads\Final-MTK\QLPT-C-\QLNT\obj\Debug\QLNT.Checkout.resources
