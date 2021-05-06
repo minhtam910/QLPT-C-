@@ -53,85 +53,103 @@ namespace QLNT
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(131, 9);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.07692F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(178, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.Size = new System.Drawing.Size(243, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Khách trả tiền mặt";
+            this.label1.Text = "KHÁCH TRẢ TIỀN MẶT";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 29);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.753846F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(46, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 13);
+            this.label2.Size = new System.Drawing.Size(163, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Số tiền cần thanh toán: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 54);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.753846F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(26, 103);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 13);
+            this.label3.Size = new System.Drawing.Size(183, 18);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Số tiền khách thanh toán: ";
+            this.label3.Text = "Số tiền khách thanh toán: :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 122);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.753846F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(13, 184);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 13);
+            this.label4.Size = new System.Drawing.Size(199, 18);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Số tiền thừa sau thanh toán: ";
+            this.label4.Text = "Số tiền thừa sau thanh toán : ";
             // 
             // txtCost
             // 
-            this.txtCost.Location = new System.Drawing.Point(157, 26);
+            this.txtCost.Location = new System.Drawing.Point(233, 57);
+            this.txtCost.Margin = new System.Windows.Forms.Padding(4);
             this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(175, 20);
+            this.txtCost.Size = new System.Drawing.Size(282, 22);
             this.txtCost.TabIndex = 4;
+            this.txtCost.TextChanged += new System.EventHandler(this.txtCost_TextChanged);
             // 
             // txtPayment
             // 
-            this.txtPayment.Location = new System.Drawing.Point(157, 52);
+            this.txtPayment.Location = new System.Drawing.Point(233, 99);
+            this.txtPayment.Margin = new System.Windows.Forms.Padding(4);
             this.txtPayment.Name = "txtPayment";
-            this.txtPayment.Size = new System.Drawing.Size(175, 20);
+            this.txtPayment.Size = new System.Drawing.Size(282, 22);
             this.txtPayment.TabIndex = 5;
             this.txtPayment.TextChanged += new System.EventHandler(this.txtPayment_TextChanged);
             // 
             // txtChange
             // 
-            this.txtChange.Location = new System.Drawing.Point(157, 119);
+            this.txtChange.Location = new System.Drawing.Point(233, 182);
+            this.txtChange.Margin = new System.Windows.Forms.Padding(4);
             this.txtChange.Name = "txtChange";
-            this.txtChange.Size = new System.Drawing.Size(175, 20);
+            this.txtChange.Size = new System.Drawing.Size(282, 22);
             this.txtChange.TabIndex = 6;
             // 
             // lbChange
             // 
             this.lbChange.AutoSize = true;
-            this.lbChange.Location = new System.Drawing.Point(338, 122);
+            this.lbChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.753846F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbChange.Location = new System.Drawing.Point(523, 185);
+            this.lbChange.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbChange.Name = "lbChange";
-            this.lbChange.Size = new System.Drawing.Size(30, 13);
+            this.lbChange.Size = new System.Drawing.Size(39, 18);
             this.lbChange.TabIndex = 7;
             this.lbChange.Text = "VND";
             // 
             // lbPay
             // 
             this.lbPay.AutoSize = true;
-            this.lbPay.Location = new System.Drawing.Point(338, 55);
+            this.lbPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.753846F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPay.Location = new System.Drawing.Point(523, 102);
+            this.lbPay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPay.Name = "lbPay";
-            this.lbPay.Size = new System.Drawing.Size(30, 13);
+            this.lbPay.Size = new System.Drawing.Size(39, 18);
             this.lbPay.TabIndex = 8;
             this.lbPay.Text = "VND";
             // 
             // rdUSD
             // 
             this.rdUSD.AutoSize = true;
-            this.rdUSD.Location = new System.Drawing.Point(61, 6);
+            this.rdUSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.753846F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdUSD.Location = new System.Drawing.Point(105, 7);
+            this.rdUSD.Margin = new System.Windows.Forms.Padding(4);
             this.rdUSD.Name = "rdUSD";
-            this.rdUSD.Size = new System.Drawing.Size(57, 17);
+            this.rdUSD.Size = new System.Drawing.Size(83, 22);
             this.rdUSD.TabIndex = 9;
             this.rdUSD.TabStop = true;
             this.rdUSD.Text = "Dollars";
@@ -141,9 +159,11 @@ namespace QLNT
             // rdEuro
             // 
             this.rdEuro.AutoSize = true;
-            this.rdEuro.Location = new System.Drawing.Point(3, 6);
+            this.rdEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.753846F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdEuro.Location = new System.Drawing.Point(4, 7);
+            this.rdEuro.Margin = new System.Windows.Forms.Padding(4);
             this.rdEuro.Name = "rdEuro";
-            this.rdEuro.Size = new System.Drawing.Size(52, 17);
+            this.rdEuro.Size = new System.Drawing.Size(74, 22);
             this.rdEuro.TabIndex = 10;
             this.rdEuro.TabStop = true;
             this.rdEuro.Text = "Euros";
@@ -153,9 +173,11 @@ namespace QLNT
             // rdVND
             // 
             this.rdVND.AutoSize = true;
-            this.rdVND.Location = new System.Drawing.Point(124, 6);
+            this.rdVND.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.753846F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdVND.Location = new System.Drawing.Point(204, 7);
+            this.rdVND.Margin = new System.Windows.Forms.Padding(4);
             this.rdVND.Name = "rdVND";
-            this.rdVND.Size = new System.Drawing.Size(48, 17);
+            this.rdVND.Size = new System.Drawing.Size(63, 22);
             this.rdVND.TabIndex = 11;
             this.rdVND.TabStop = true;
             this.rdVND.Text = "VND";
@@ -164,63 +186,77 @@ namespace QLNT
             // 
             // btnDoIt
             // 
-            this.btnDoIt.Location = new System.Drawing.Point(293, 176);
+            this.btnDoIt.BackColor = System.Drawing.SystemColors.Window;
+            this.btnDoIt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.861538F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoIt.Location = new System.Drawing.Point(409, 264);
+            this.btnDoIt.Margin = new System.Windows.Forms.Padding(4);
             this.btnDoIt.Name = "btnDoIt";
-            this.btnDoIt.Size = new System.Drawing.Size(75, 23);
+            this.btnDoIt.Size = new System.Drawing.Size(151, 40);
             this.btnDoIt.TabIndex = 12;
             this.btnDoIt.Text = "Do it!";
-            this.btnDoIt.UseVisualStyleBackColor = true;
+            this.btnDoIt.UseVisualStyleBackColor = false;
             this.btnDoIt.Click += new System.EventHandler(this.btnDoIt_Click);
             // 
             // lbCost
             // 
             this.lbCost.AutoSize = true;
-            this.lbCost.Location = new System.Drawing.Point(338, 29);
+            this.lbCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.753846F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCost.Location = new System.Drawing.Point(523, 58);
+            this.lbCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCost.Name = "lbCost";
-            this.lbCost.Size = new System.Drawing.Size(30, 13);
+            this.lbCost.Size = new System.Drawing.Size(39, 18);
             this.lbCost.TabIndex = 13;
             this.lbCost.Text = "VND";
+            this.lbCost.Click += new System.EventHandler(this.lbCost_Click);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.rdEuro);
             this.panel1.Controls.Add(this.rdUSD);
             this.panel1.Controls.Add(this.rdVND);
-            this.panel1.Location = new System.Drawing.Point(157, 78);
+            this.panel1.Location = new System.Drawing.Point(233, 138);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(175, 29);
+            this.panel1.Size = new System.Drawing.Size(282, 36);
             this.panel1.TabIndex = 14;
             // 
             // lbCurrency
             // 
             this.lbCurrency.AutoSize = true;
-            this.lbCurrency.Location = new System.Drawing.Point(338, 153);
+            this.lbCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.753846F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCurrency.Location = new System.Drawing.Point(523, 229);
+            this.lbCurrency.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCurrency.Name = "lbCurrency";
-            this.lbCurrency.Size = new System.Drawing.Size(30, 13);
+            this.lbCurrency.Size = new System.Drawing.Size(39, 18);
             this.lbCurrency.TabIndex = 17;
             this.lbCurrency.Text = "VND";
+            this.lbCurrency.Click += new System.EventHandler(this.lbCurrency_Click);
             // 
             // txtChangeCurrency
             // 
-            this.txtChangeCurrency.Location = new System.Drawing.Point(157, 150);
+            this.txtChangeCurrency.Location = new System.Drawing.Point(233, 223);
+            this.txtChangeCurrency.Margin = new System.Windows.Forms.Padding(4);
             this.txtChangeCurrency.Name = "txtChangeCurrency";
-            this.txtChangeCurrency.Size = new System.Drawing.Size(175, 20);
+            this.txtChangeCurrency.Size = new System.Drawing.Size(282, 22);
             this.txtChangeCurrency.TabIndex = 16;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(120, 153);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.753846F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(160, 225);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
+            this.label6.Size = new System.Drawing.Size(49, 18);
             this.label6.TabIndex = 15;
-            this.label6.Text = "hoặc";
+            this.label6.Text = "hoặc :";
             // 
             // CashPayment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 203);
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.ClientSize = new System.Drawing.Size(573, 317);
             this.Controls.Add(this.lbCurrency);
             this.Controls.Add(this.txtChangeCurrency);
             this.Controls.Add(this.label6);
@@ -236,6 +272,7 @@ namespace QLNT
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CashPayment";
             this.Text = "CashPayment";
             this.panel1.ResumeLayout(false);

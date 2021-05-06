@@ -19,8 +19,8 @@ namespace QLNT
 
 		public SqlConnection open()
 		{
-			//conn = new SqlConnection("Data Source=DESKTOP-0NEO62M;Initial Catalog=QUANLYPHONGTRO;Integrated Security=True");
-			conn = new SqlConnection("Data Source=.;Initial Catalog=QUANLYPHONGTRO;Integrated Security=True");
+			conn = new SqlConnection("Data Source=DESKTOP-0NEO62M;Initial Catalog=QUANLYPHONGTRO;Integrated Security=True");
+			//conn = new SqlConnection("Data Source=.;Initial Catalog=QUANLYPHONGTRO;Integrated Security=True");
 			conn.Open();
 			return conn;
 		}

@@ -73,6 +73,21 @@ namespace QLNT
             txtCost.Text = toValue.ToString();
         }
 
+        private void lbCurrency_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCost_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCost_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public void exchangeToVND()
         {
             String to = "VND";
