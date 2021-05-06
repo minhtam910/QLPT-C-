@@ -9,6 +9,7 @@ namespace QLNT
 {
     public interface IObserver
     {
-        void update(List<ThongBao> listThongBao);  
+        void update(List<ThongBao> listThongBao);
+        String getMaClient();
     }
 }

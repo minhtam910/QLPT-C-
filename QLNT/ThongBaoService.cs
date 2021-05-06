@@ -34,6 +34,21 @@ namespace QLNT
             return observers;
         }
 
+        public IObserver getObserver(String maKhach)
+        {
+            for(int i = 0; i < observers.Count(); i++)
+            {
+                if(observers[i].getMaClient().Equals(maKhach))
+                {
+                    IObserver io = observers[i];
+                    return io;
+                }
+            }
+
+            Console.WriteLine("Không tìm được observer với mã khách " + maKhach);
+            return null;
+        }
+
         public void addThongBao(ThongBao tb)
         {
             listThongBao.Add(tb);
@@ -55,6 +70,11 @@ namespace QLNT
             {
                  item.update(listThongBao);
             }
+        }
+
+        public void unRegister(IObserver o)
+        {
+            observers.Remove(o);
         }
     }
 }
