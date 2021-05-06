@@ -15,11 +15,14 @@ namespace QLNT
         String from = "", to = "";
         double value;
         double cost;
+        ComplexEnDisableCommand complexCommand;
         public CashPayment(double cost)
         {
             InitializeComponent();
             txtCost.Text = cost.ToString();
             this.cost = cost;
+            complexCommand = new ComplexEnDisableCommand();
+            complexCommand.disable(new List<Control>() { txtCost, txtChange, txtChangeCurrency });
         }
 
         private void rdEuro_CheckedChanged(object sender, EventArgs e)
@@ -57,6 +60,8 @@ namespace QLNT
                 
                 double change = value - tempCost;
                 txtChangeCurrency.Text = change.ToString();
+
+                complexCommand.disable(new List<Control>() { btnDoIt, rdEuro, rdUSD, rdVND, txtPayment });
             }
         }
 
@@ -71,21 +76,8 @@ namespace QLNT
             double toValue = (Double)t.GetMethod(to.ToLower()).Invoke(convertFrom, new Object[] { context.getValue() });
 
             txtCost.Text = toValue.ToString();
-        }
 
-        private void lbCurrency_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCost_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbCost_Click(object sender, EventArgs e)
-        {
-
+            complexCommand.delText(new List<Control>() { txtChange, txtChangeCurrency });
         }
 
         public void exchangeToVND()

@@ -26,6 +26,8 @@ namespace QLNT
 		ThongBaoService service;
 		List<ThongTinHoaDon> listThongTin;
 		Dictionary<String, Object> listObject;
+		ComplexEnDisableCommand complexCommand;
+		ComplexControlsAdapter complexAdapter;
 
 		public Form1(ThongBaoService service, List<ThongTinHoaDon> list, Dictionary<String,Object> listObject)
 		{
@@ -33,6 +35,8 @@ namespace QLNT
 			this.service = service;
 			listThongTin = list;
 			this.listObject = listObject;
+			complexCommand = new ComplexEnDisableCommand();
+			complexAdapter = new ComplexControlsAdapter();
 			
 
 			dangKyBLL = new DangKyBLL(listObject);
@@ -74,18 +78,13 @@ namespace QLNT
 			cbPhongOGhep.DisplayMember = "MaPhong";
 			cbPhongOGhep.ValueMember = "MaPhong";
 
+			List<Control> listTxtControls = new List<Control>() { txtCMND, txtMaKhach, txtNgheNghiep, txtQueQuan, txtTenKhach, cbGioiTinh, btnCapNhat, btnSua, btnThemMoi, btnXoa, btnCheckOut, btnThemKhachDangKy, cbPhongOGhep, cbPhongTrong, btnDangThongBao };
+			complexCommand.disable(listTxtControls);
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			LoadDataGridView();
-			
-			txtCMND.Enabled = false;
-			txtMaKhach.Enabled = false;
-			txtNgheNghiep.Enabled = false;
-			txtQueQuan.Enabled = false;
-			txtTenKhach.Enabled = false;
-			cbGioiTinh.Enabled = false;
 		}
 
 
@@ -113,12 +112,6 @@ namespace QLNT
 
 				MessageBox.Show("Thêm khách thành công.");
 			}
-			txtCMND.Enabled = false;
-			txtMaKhach.Enabled = false;
-			txtNgheNghiep.Enabled = false;
-			txtQueQuan.Enabled = false;
-			txtTenKhach.Enabled = false;
-			cbGioiTinh.Enabled = false;
 		}
 
 		private void dgvPhongCoKhachThue_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -161,6 +154,9 @@ namespace QLNT
 			txtCMND.Text = row.Cells[3].Value.ToString();
 			txtQueQuan.Text = row.Cells[4].Value.ToString();
 			txtNgheNghiep.Text = row.Cells[5].Value.ToString();
+
+			complexAdapter.enable(btnSua);
+			complexAdapter.disable(btnThem);
 		}
 
 		private void btnCapNhat_Click(object sender, EventArgs e)
@@ -172,7 +168,8 @@ namespace QLNT
 			}
 			else
 			{
-
+				List<Control> listTxtControls = new List<Control>() { txtCMND, txtMaKhach, txtNgheNghiep, txtQueQuan, txtTenKhach, cbGioiTinh, btnCapNhat };
+				complexCommand.disable(listTxtControls);
 				KhachThue khach = new KhachThue();
 				khach.setMaKhach(txtMaKhach.Text.ToString());
 				khach.setCmnd(txtCMND.Text.ToString());
@@ -184,32 +181,23 @@ namespace QLNT
 				khachThueBLL.SuaKhachThue();
 				LoadDataGridView();
 			}
-			txtCMND.Enabled = false;
-			txtMaKhach.Enabled = false;
-			txtNgheNghiep.Enabled = false;
-			txtQueQuan.Enabled = false;
-			txtTenKhach.Enabled = false;
-			cbGioiTinh.Enabled = false;
 		}
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			txtCMND.Enabled = true;
-			txtMaKhach.Enabled = true;
-			txtNgheNghiep.Enabled = true;
-			txtQueQuan.Enabled = true;
-			txtTenKhach.Enabled = true;
-			cbGioiTinh.Enabled = true;
+			List<Control> listTxtControls = new List<Control>() { txtCMND, txtMaKhach, txtNgheNghiep, txtQueQuan, txtTenKhach, cbGioiTinh, btnThemMoi };
+			complexCommand.enable(listTxtControls);
+			complexAdapter.disable(btnCapNhat);
 		}
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			txtCMND.Enabled = true;
-			txtMaKhach.Enabled = true;
-			txtNgheNghiep.Enabled = true;
-			txtQueQuan.Enabled = true;
-			txtTenKhach.Enabled = true;
-			cbGioiTinh.Enabled = true;
+			if(!txtMaKhach.Text.Equals(""))
+            {
+				List<Control> listTxtControls = new List<Control>() { txtCMND, txtMaKhach, txtNgheNghiep, txtQueQuan, txtTenKhach, cbGioiTinh, btnCapNhat};
+				complexCommand.enable(listTxtControls);
+				complexAdapter.disable(btnThemMoi);
+			}
 		}
 
 		private void button3_Click(object sender, EventArgs e)
@@ -310,14 +298,14 @@ namespace QLNT
 
 		private void rbtnThuePhongMoi_CheckedChanged(object sender, EventArgs e)
 		{
-			cbPhongOGhep.Enabled = false;
-			cbPhongTrong.Enabled = true;
+			complexAdapter.disable(cbPhongOGhep);
+			complexCommand.enable(new List<Control>() { cbPhongTrong, btnThemKhachDangKy });
 		}
 
 		private void rbtnOGhep_CheckedChanged(object sender, EventArgs e)
 		{
-			cbPhongTrong.Enabled = false;
-			cbPhongOGhep.Enabled = true;
+			complexAdapter.disable(cbPhongTrong);
+			complexCommand.enable(new List<Control>() { cbPhongOGhep, btnThemKhachDangKy });
 		}
 
 		private void cbPhongTrong_SelectedIndexChanged(object sender, EventArgs e)
@@ -378,6 +366,7 @@ namespace QLNT
 				indexRowKhach = e.RowIndex;
 				DataGridViewRow row = dgvChiTietPhong.Rows[indexRowKhach];
 				maKhach = row.Cells[0].Value.ToString();
+				complexAdapter.enable(btnCheckOut);
 			}
 			catch(Exception ex)
             {
@@ -421,30 +410,27 @@ namespace QLNT
 			}		
         }
 
-        private void label21_Click(object sender, EventArgs e)
+        private void txtMaKhach_TextChanged(object sender, EventArgs e)
         {
-
+			if (txtMaKhach.Text.Equals(""))
+				complexAdapter.disable(btnXoa);
+			else
+				complexAdapter.enable(btnXoa);
         }
 
-        private void label12_Click(object sender, EventArgs e)
+        private void txtThongBao_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
+			if(!txtThongBao.Text.Equals(""))
+				complexAdapter.enable(btnDangThongBao);
+			else
+				complexAdapter.disable(btnDangThongBao);
+		}
 
         private void dgvTrangThaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 			try
             {
+				complexAdapter.disable(btnCheckOut);
 				indexRowKhach = e.RowIndex;
 				DataGridViewRow row = dgvTrangThaiPhong.Rows[indexRowKhach];
 				maPhong = row.Cells[0].Value.ToString();
@@ -503,6 +489,7 @@ namespace QLNT
         {
 			indexRowKhach = e.RowIndex;
 			DataGridViewRow row = dgvDanhSachKhachChuaCoPhong.Rows[e.RowIndex];
+			complexCommand.enable(new List<Control>() { rbtnOGhep, rbtnThuePhongMoi});
         }
     }
 }

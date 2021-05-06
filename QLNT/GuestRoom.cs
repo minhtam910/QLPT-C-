@@ -21,6 +21,7 @@ namespace QLNT
         ThongBaoService service;
         List<ThongTinHoaDon> listThongTin;
         Dictionary<String, Object> listObject;
+        ComplexControlsAdapter complexAdapter;
 
         public GuestRoom(String maPhong, ThongBaoService service, List<ThongTinHoaDon> list, Dictionary<String, Object> listObject)
         {
@@ -36,6 +37,7 @@ namespace QLNT
             dangKyBLL = new DangKyBLL(this.listObject);
             dichVuBLL = new DichVuBLL(this.listObject);
             cookService = new CookWhat(dichVuBLL);
+            complexAdapter = new ComplexControlsAdapter();
             dangKy = new DangKy();
             dangKy.setMaPhong(maPhong);
             Console.WriteLine("List count: " + listThongTin.Count);
@@ -57,6 +59,7 @@ namespace QLNT
         {
             cookService.order(maDichVu, maKhach, maPhong, listThongTin);
             dichVuBLL.DatDichVu(maPhong, maKhach, maDichVu);
+            LoadAllInformation();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -68,7 +71,8 @@ namespace QLNT
 
         private void dgvDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            maDichVu = dgvDichVu.Rows[e.RowIndex].Cells[0].Value.ToString();    
+            maDichVu = dgvDichVu.Rows[e.RowIndex].Cells[0].Value.ToString();
+            complexAdapter.enable(btnDatMon);
         }
 
         public void LoadAllInformation()
@@ -116,7 +120,9 @@ namespace QLNT
             }
 
             tb = tb.Replace("@", " " + System.Environment.NewLine);
-            txtThongBao.Text = tb; 
+            txtThongBao.Text = tb;
+
+            complexAdapter.disable(btnDatMon);
         }
 
     }

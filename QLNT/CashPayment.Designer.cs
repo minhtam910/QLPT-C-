@@ -101,7 +101,6 @@ namespace QLNT
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(282, 22);
             this.txtCost.TabIndex = 4;
-            this.txtCost.TextChanged += new System.EventHandler(this.txtCost_TextChanged);
             // 
             // txtPayment
             // 
@@ -207,7 +206,6 @@ namespace QLNT
             this.lbCost.Size = new System.Drawing.Size(39, 18);
             this.lbCost.TabIndex = 13;
             this.lbCost.Text = "VND";
-            this.lbCost.Click += new System.EventHandler(this.lbCost_Click);
             // 
             // panel1
             // 
@@ -230,7 +228,6 @@ namespace QLNT
             this.lbCurrency.Size = new System.Drawing.Size(39, 18);
             this.lbCurrency.TabIndex = 17;
             this.lbCurrency.Text = "VND";
-            this.lbCurrency.Click += new System.EventHandler(this.lbCurrency_Click);
             // 
             // txtChangeCurrency
             // 

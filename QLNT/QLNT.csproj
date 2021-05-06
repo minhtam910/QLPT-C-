@@ -65,12 +65,17 @@
     <Compile Include="Checkout.Designer.cs">
       <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
+    <Compile Include="IComplexCommandBase.cs" />
+    <Compile Include="ISimpleCommandBase.cs" />
+    <Compile Include="ComplexControlsAdapter.cs" />
+    <Compile Include="ComplexEnDisableCommand.cs" />
     <Compile Include="ComTam.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="CondimentDecorator.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="CookWhat.cs" />
     <Compile Include="Dollars.cs" />
+    <Compile Include="SimpleEnDisableCommand.cs" />
     <Compile Include="Euros.cs" />
     <Compile Include="Expression.cs" />
     <Compile Include="ObjectBLL.cs" />
