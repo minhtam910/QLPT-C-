@@ -405,12 +405,13 @@ namespace QLNT
 			{
 				DangKy dk = new DangKy();
 				dk.setMaKhach(maKhach);
-				Console.WriteLine(maKhach);
-				Console.WriteLine("----------------");
-				for (int i = 0; i < listThongTin.Count(); i++)
-				{
-					Console.WriteLine(listThongTin[i].getMaKhach());
+
+				if(service.getObserver(maKhach) != null)
+                {
+					IObserver io = service.getObserver(maKhach);
+					service.unRegister(io);
 				}
+
 				dk.setMaPhong(maPhong);
 				Checkout checkOut = new Checkout(service, listThongTin, listObject, maKhach);
 				

@@ -35,5 +35,10 @@ namespace QLNT
                
             }
         }
+
+        public String getMaClient()
+        {
+            return maClient;
+        }
     }
 }
