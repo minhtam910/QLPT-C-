@@ -56,7 +56,7 @@ namespace QLNT
         {
 			dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
 			dgvTrangThaiPhong.DataSource = phongTroBLL.LoadThongTinPhong();	
-			dgvThongTinGiaThue.DataSource = phongBLL.LoadThongTinGiaThue();
+			
 			dgvDanhSachKhachChuaCoPhong.DataSource = dangKyBLL.LoadKhachThueChuaCoPhong();
 			dgvPhongCoKhachThue.DataSource = dangKyBLL.LoadPhongDaCoKhach();
 
@@ -232,69 +232,11 @@ namespace QLNT
 			dgvDSKhachThue.DataSource = khachThueBLL.TimKhachThue(select, parameters);
 		}
 
-		private void btnThemGiaPhong_Click(object sender, EventArgs e)
-		{
-			BangGiaPhong bangGiaPhong = new BangGiaPhong();
+		
 
-			int giatien = Convert.ToInt32(txtGiaTien.Text.ToString());
-			int songuoi = Convert.ToInt32(txtSoNguoi.Text.ToString());
+		
 
-			if (txtGiaTien.Text.ToString() == "" || txtSoNguoi.Text.ToString() == "")
-			{
-				MessageBox.Show("Hãy điền đầy đủ thông tin");
-			}
-
-			else
-			{
-				bangGiaPhong.setGiaTien(giatien);
-				bangGiaPhong.setSoNguoi(songuoi);
-
-				phongBLL.ThemPhong(bangGiaPhong);
-				MessageBox.Show("Thêm thành công.");
-			}
-		}
-
-		private void btnCapNhatGiaPhong_Click(object sender, EventArgs e)
-		{
-			DataGridViewRow updaterow = dgvThongTinGiaThue.Rows[indexRowGia];
-			if (updaterow.Cells[0].Value == null || updaterow.Cells[1].Value == null)
-			{
-				MessageBox.Show("Hãy chọn khách hàng cần cập nhật");
-			}
-			else
-			{
-				updaterow.Cells[0].Value = txtSoNguoi.Text;
-				updaterow.Cells[1].Value = txtGiaTien.Text;
-				MessageBox.Show("Cập nhật thành công");
-			}
-		}
-
-		private void dgvThongTinGiaThue_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			indexRowGia = e.RowIndex;
-			DataGridViewRow row = dgvThongTinGiaThue.Rows[indexRowGia];
-
-			txtSoNguoi.Text = row.Cells[0].Value.ToString();
-			txtGiaTien.Text = row.Cells[1].Value.ToString();
-		}
-
-		private void btnXoaGiaPhong_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				int selectedIndex = dgvThongTinGiaThue.CurrentCell.RowIndex;
-				if (selectedIndex > -1)
-				{
-					dgvThongTinGiaThue.Rows.RemoveAt(selectedIndex);
-					dataGridView1.Refresh(); //
-					MessageBox.Show("Xóa thành công");
-				}
-			}
-			catch (InvalidOperationException ex)
-			{
-				throw ex;
-			}
-		}
+		
 
 		private void rbtnThuePhongMoi_CheckedChanged(object sender, EventArgs e)
 		{
@@ -376,9 +318,7 @@ namespace QLNT
 
         private void btnDangThongBao_Click(object sender, EventArgs e)
         {
-			String noiDungThongBao = txtThongBao.Text.ToString();
-			ThongBao tb = new ThongBao(noiDungThongBao, DateTime.Now);
-			service.addThongBao(tb);
+			
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -424,6 +364,13 @@ namespace QLNT
 				complexAdapter.enable(btnDangThongBao);
 			else
 				complexAdapter.disable(btnDangThongBao);
+		}
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+			SelectInfo selectInfo = new SelectInfo(service, listThongTin, listObject);
+			selectInfo.Show();
+			this.Hide();
 		}
 
         private void dgvTrangThaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
