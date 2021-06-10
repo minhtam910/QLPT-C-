@@ -23,21 +23,56 @@ namespace QLNT
 		DangKyBLL dangKyBLL = new DangKyBLL();
 		ThongKeBLL thongKeBLL = new ThongKeBLL();
 		HoaDonBLL hoaDonBLL = new HoaDonBLL();
+<<<<<<< Updated upstream
 		DichVuBLL dichvu = new DichVuBLL();
+=======
+		ThongBaoService service;
+		List<ThongTinHoaDon> listThongTin;
+		Dictionary<String, Object> listObject;
+		IndividualEnDisableCommand iCommand;
+		EnDisableCommand complexCommand;
+		ComplexControlsAdapter complexAdapter;
+>>>>>>> Stashed changes
 
 		public Form1()
 		{
 			InitializeComponent();
+<<<<<<< Updated upstream
 			cbGioiTinh.SelectedItem = "Nam";
 			cbTimKiem.SelectedItem = "Mã Khách";
+=======
+			this.service = service;
+			listThongTin = list;
+			this.listObject = listObject;
+			complexCommand = new EnDisableCommand();
+			
+
+			dangKyBLL = new DangKyBLL(listObject);
+			khachThueBLL = new KhachThueBLL(listObject);
+
+			Console.WriteLine("Number of observers: " + service.getListObservers().Count);
+			Console.WriteLine("Number of booked room: " + listThongTin.Count);
+			foreach (ThongTinHoaDon thd in listThongTin)
+            {
+				Console.WriteLine(thd.getMaKhach());
+				Console.WriteLine(thd.getDescription());
+				Console.WriteLine(thd.cost());
+			}
+>>>>>>> Stashed changes
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			dgvDSKhachThue.DataSource = khachThueBLL.LoadKhachThue();
+<<<<<<< Updated upstream
 			dgvTrangThaiPhong.DataSource = phongTroBLL.loadThongTinPhong();
 			dgvThongTinGiaThue.DataSource = phongBLL.LoadThongTinGiaThue();
 			dgvDanhSachKhachChuaCoPhong.DataSource = dangKyBLL.loadKhachThueChuaCoPhong();
+=======
+			dgvTrangThaiPhong.DataSource = phongTroBLL.LoadThongTinPhong();	
+			
+			dgvDanhSachKhachChuaCoPhong.DataSource = dangKyBLL.LoadKhachThueChuaCoPhong();
+>>>>>>> Stashed changes
 			dgvPhongCoKhachThue.DataSource = dangKyBLL.LoadPhongDaCoKhach();
 			dgvThang.DataSource = thongKeBLL.loadthang();
 			dgvDichVu.DataSource = dichvu.LoadDoAn();
@@ -50,9 +85,31 @@ namespace QLNT
 			txtTenKhach.Enabled = false;
 			cbGioiTinh.Enabled = false;
 
+<<<<<<< Updated upstream
 			txtMaDoAn.Enabled = false;
 			txtTenDoAn.Enabled = false;
 			txtGiaDoAn.Enabled = false;
+=======
+			cbGioiTinh.SelectedItem = "Nam";
+			cbTimKiem.SelectedItem = "Mã Khách";
+
+			cbPhongTrong.DataSource = dangKyBLL.LoadPhongChuaCoKhach();
+			cbPhongTrong.DisplayMember = "MaPhong";
+			cbPhongTrong.ValueMember = "MaPhong";
+
+			cbPhongOGhep.DataSource = dangKyBLL.LoadPhongDaiHan();
+			cbPhongOGhep.DisplayMember = "MaPhong";
+			cbPhongOGhep.ValueMember = "MaPhong";
+
+			List<Control> listTxtControls = new List<Control>() { txtCMND, txtMaKhach, txtNgheNghiep, txtQueQuan, txtTenKhach, cbGioiTinh, btnCapNhat, btnSua, btnThemMoi, btnXoa, btnCheckOut, btnThemKhachDangKy, cbPhongOGhep, cbPhongTrong, btnDangThongBao };
+			complexCommand.setListControls(listTxtControls);
+			complexCommand.disable();
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			LoadDataGridView();
+>>>>>>> Stashed changes
 		}
 
 
@@ -147,6 +204,18 @@ namespace QLNT
 			txtCMND.Text = row.Cells[3].Value.ToString();
 			txtQueQuan.Text = row.Cells[4].Value.ToString();
 			txtNgheNghiep.Text = row.Cells[5].Value.ToString();
+<<<<<<< Updated upstream
+=======
+
+
+			complexCommand.setListControls(new List<Control>(){ btnSua });
+			complexAdapter = new ComplexControlsAdapter(complexCommand);
+			complexAdapter.enable();
+
+			complexCommand.setListControls(new List<Control>(){ btnThem });
+			complexAdapter = new ComplexControlsAdapter(complexCommand);
+			complexAdapter.disable();
+>>>>>>> Stashed changes
 		}
 
 		private void btnCapNhat_Click(object sender, EventArgs e)
@@ -158,7 +227,13 @@ namespace QLNT
 			}
 			else
 			{
+<<<<<<< Updated upstream
 
+=======
+				List<Control> listTxtControls = new List<Control>() { txtCMND, txtMaKhach, txtNgheNghiep, txtQueQuan, txtTenKhach, cbGioiTinh, btnCapNhat };
+				complexCommand.setListControls(listTxtControls);
+				complexCommand.disable();
+>>>>>>> Stashed changes
 				KhachThue khach = new KhachThue();
 				khach.setMaKhach(txtMaKhach.Text.ToString());
 				khach.setCmnd(txtCMND.Text.ToString());
@@ -180,22 +255,47 @@ namespace QLNT
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
+<<<<<<< Updated upstream
 			txtCMND.Enabled = true;
 			txtMaKhach.Enabled = true;
 			txtNgheNghiep.Enabled = true;
 			txtQueQuan.Enabled = true;
 			txtTenKhach.Enabled = true;
 			cbGioiTinh.Enabled = true;
+=======
+			List<Control> listTxtControls = new List<Control>() { txtCMND, txtMaKhach, txtNgheNghiep, txtQueQuan, txtTenKhach, cbGioiTinh, btnThemMoi };
+
+			complexCommand.setListControls(listTxtControls);
+			complexCommand.enable();
+
+			complexCommand.setListControls(new List<Control>(){ btnCapNhat });
+			complexAdapter = new ComplexControlsAdapter(complexCommand);
+			complexAdapter.disable();
+>>>>>>> Stashed changes
 		}
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
+<<<<<<< Updated upstream
 			txtCMND.Enabled = true;
 			txtMaKhach.Enabled = true;
 			txtNgheNghiep.Enabled = true;
 			txtQueQuan.Enabled = true;
 			txtTenKhach.Enabled = true;
 			cbGioiTinh.Enabled = true;
+=======
+			if(!txtMaKhach.Text.Equals(""))
+            {
+				List<Control> listTxtControls = new List<Control>() { txtCMND, txtMaKhach, txtNgheNghiep, txtQueQuan, txtTenKhach, cbGioiTinh, btnCapNhat};
+
+				complexCommand.setListControls(listTxtControls);
+				complexCommand.enable();
+
+				listTxtControls = new List<Control>() { btnThemMoi };
+				complexAdapter = new ComplexControlsAdapter(complexCommand);
+				complexAdapter.disable();
+			}
+>>>>>>> Stashed changes
 		}
 
 		private void button3_Click(object sender, EventArgs e)
@@ -230,6 +330,7 @@ namespace QLNT
 			dgvDSKhachThue.DataSource = khachThueBLL.TimKhachThue(select, parameters);
 		}
 
+<<<<<<< Updated upstream
 		private void btnThemGiaPhong_Click(object sender, EventArgs e)
 		{
 			BangGiaPhong bangGiaPhong = new BangGiaPhong();
@@ -272,11 +373,13 @@ namespace QLNT
 		{
 			indexRowGia = e.RowIndex;
 			DataGridViewRow row = dgvThongTinGiaThue.Rows[indexRowGia];
+=======
+		
+>>>>>>> Stashed changes
 
-			txtSoNguoi.Text = row.Cells[0].Value.ToString();
-			txtGiaTien.Text = row.Cells[1].Value.ToString();
-		}
+		
 
+<<<<<<< Updated upstream
 		private void btnXoaGiaPhong_Click(object sender, EventArgs e)
 		{
 			try
@@ -306,6 +409,9 @@ namespace QLNT
 				throw ex;
 			}
 		}
+=======
+		
+>>>>>>> Stashed changes
 
 		private void dgvThang_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -325,14 +431,32 @@ namespace QLNT
 
 		private void rbtnThuePhongMoi_CheckedChanged(object sender, EventArgs e)
 		{
+<<<<<<< Updated upstream
 			cbPhongOGhep.Enabled = false;
 			cbPhongTrong.Enabled = true;
+=======
+			complexCommand.setListControls(new List<Control>() { cbPhongOGhep });
+			complexAdapter = new ComplexControlsAdapter(complexCommand);
+			complexAdapter.disable();
+
+			complexCommand.setListControls(new List<Control>() { cbPhongTrong, btnThemKhachDangKy });
+			complexCommand.enable();
+>>>>>>> Stashed changes
 		}
 
 		private void rbtnOGhep_CheckedChanged(object sender, EventArgs e)
 		{
+<<<<<<< Updated upstream
 			cbPhongTrong.Enabled = false;
 			cbPhongOGhep.Enabled = true;
+=======
+			complexCommand.setListControls(new List<Control>() { cbPhongTrong });
+			complexAdapter = new ComplexControlsAdapter(complexCommand);
+			complexAdapter.disable();
+
+			complexCommand.setListControls(new List<Control>() { cbPhongTrong, btnThemKhachDangKy });
+			complexCommand.enable();
+>>>>>>> Stashed changes
 		}
 
 		private void cbPhongTrong_SelectedIndexChanged(object sender, EventArgs e)
@@ -354,7 +478,28 @@ namespace QLNT
 =======
         private void label26_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
 
+=======
+            try
+            {
+				indexRowKhach = e.RowIndex;
+				DataGridViewRow row = dgvChiTietPhong.Rows[indexRowKhach];
+				maKhach = row.Cells[0].Value.ToString();
+				complexCommand.setListControls(new List<Control>() { btnCheckOut });
+				complexAdapter = new ComplexControlsAdapter(complexCommand);
+				complexAdapter.enable();
+			}
+			catch(Exception ex)
+            {
+				MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDangThongBao_Click(object sender, EventArgs e)
+        {
+			
+>>>>>>> Stashed changes
         }
 
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -375,6 +520,7 @@ namespace QLNT
 
         private void label24_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
 
         }
 
@@ -390,6 +536,55 @@ namespace QLNT
 				if (result == DialogResult.Yes)
 				{
 					try
+=======
+			complexCommand.setListControls(new List<Control>() { btnXoa });
+			complexAdapter = new ComplexControlsAdapter(complexCommand);
+			if (txtMaKhach.Text.Equals(""))
+				complexAdapter.disable();
+			else
+				complexAdapter.enable();
+        }
+
+        private void txtThongBao_TextChanged(object sender, EventArgs e)
+        {
+			complexCommand.setListControls(new List<Control>() { btnDangThongBao });
+			complexAdapter = new ComplexControlsAdapter(complexCommand);
+			if (!txtThongBao.Text.Equals(""))
+				complexAdapter.enable();
+			else
+				complexAdapter.disable();
+		}
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+			SelectInfo selectInfo = new SelectInfo(service, listThongTin, listObject);
+			selectInfo.Show();
+			this.Hide();
+		}
+
+        private void dgvTrangThaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+			try
+            {
+				complexCommand.setListControls(new List<Control>() { btnCheckOut });
+				complexAdapter = new ComplexControlsAdapter(complexCommand);
+				complexAdapter.disable();
+				indexRowKhach = e.RowIndex;
+				DataGridViewRow row = dgvTrangThaiPhong.Rows[indexRowKhach];
+				maPhong = row.Cells[0].Value.ToString();
+				DangKy dk = new DangKy();
+				dk.setMaPhong(maPhong);
+				dangKyBLL.getListObject()["DangKy"] = dk;
+				dgvChiTietPhong.DataSource = dangKyBLL.LoadChiTietKhachThue();
+
+
+				if(dgvChiTietPhong.Rows.Count > 1)
+				{ 
+					String makhach = dgvChiTietPhong.Rows[0].Cells[0].Value.ToString();
+					ThongTinHoaDon thongTinHoaDon = null;
+
+					for (int i = 0; i < listThongTin.Count(); i++)
+>>>>>>> Stashed changes
 					{
 						int selectedIndex = dgvDichVu.CurrentCell.RowIndex;
 						if (selectedIndex > -1)
@@ -474,6 +669,7 @@ namespace QLNT
 
         private void button2_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
 			DichVu dv = new DichVu();
 
 			string MaDoAn = txtMaDoAn.Text.ToString();
@@ -504,4 +700,12 @@ namespace QLNT
 		}
 	}
 >>>>>>> e60da6275badb0aec4f6e8c5029a6786f369a23b
+=======
+			indexRowKhach = e.RowIndex;
+			DataGridViewRow row = dgvDanhSachKhachChuaCoPhong.Rows[e.RowIndex];
+			complexCommand.setListControls(new List<Control>() { rbtnOGhep, rbtnThuePhongMoi });
+			complexCommand.enable();
+        }
+    }
+>>>>>>> Stashed changes
 }

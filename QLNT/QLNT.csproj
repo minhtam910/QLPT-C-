@@ -49,6 +49,38 @@
     <Compile Include="BangGiaPhong.cs" />
     <Compile Include="BangGiaPhongBLL.cs" />
     <Compile Include="BangGiaPhongDAL.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="BunCa.cs" />
+    <Compile Include="CashPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashPayment.Designer.cs">
+      <DependentUpon>CashPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkout.Designer.cs">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IndividualCommandBase.cs" />
+    <Compile Include="ICommandBase.cs" />
+    <Compile Include="ComplexControlsAdapter.cs" />
+    <Compile Include="IndividualEnDisableCommand.cs" />
+    <Compile Include="ComTam.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="CondimentDecorator.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="CookWhat.cs" />
+    <Compile Include="Dollars.cs" />
+    <Compile Include="EnDisableCommand.cs" />
+    <Compile Include="Euros.cs" />
+    <Compile Include="Expression.cs" />
+    <Compile Include="ObjectBLL.cs" />
+    <Compile Include="PhongThueDaiHan.cs" />
+    <Compile Include="PhongThueNganHan.cs" />
+>>>>>>> Stashed changes
     <Compile Include="DangKy.cs" />
     <Compile Include="DangKyBLL.cs" />
     <Compile Include="DangKyDAL.cs" />
@@ -74,6 +106,20 @@
     <Compile Include="PhongTroDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="SelectInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectInfo.Designer.cs">
+      <DependentUpon>SelectInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CookFood.cs" />
+    <Compile Include="Snack.cs" />
+    <Compile Include="TextCommand.cs" />
+    <Compile Include="ThongBao.cs" />
+    <Compile Include="ThongBaoService.cs" />
+>>>>>>> Stashed changes
     <Compile Include="ThongKe.cs" />
     <Compile Include="ThongKeBLL.cs" />
     <Compile Include="ThongKeDAL.cs" />

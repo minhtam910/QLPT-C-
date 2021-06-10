@@ -64,6 +64,7 @@
             this.dgvChiTietPhong = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgvTrangThaiPhong = new System.Windows.Forms.DataGridView();
+<<<<<<< Updated upstream
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.btnXoaGiaPhong = new System.Windows.Forms.Button();
@@ -76,6 +77,8 @@
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.dgvThongTinGiaThue = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
+=======
+>>>>>>> Stashed changes
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -108,6 +111,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvThang = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -141,6 +145,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
 >>>>>>> e60da6275badb0aec4f6e8c5029a6786f369a23b
+=======
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+>>>>>>> Stashed changes
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -152,10 +162,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhong)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrangThaiPhong)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            this.groupBox21.SuspendLayout();
-            this.groupBox18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinGiaThue)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachKhachChuaCoPhong)).BeginInit();
@@ -171,6 +177,7 @@
             this.groupBox19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHoaDon)).BeginInit();
             this.groupBox5.SuspendLayout();
+<<<<<<< Updated upstream
             ((System.ComponentModel.ISupportInitialize)(this.dgvTienPhong)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThang)).BeginInit();
@@ -184,6 +191,8 @@
             this.groupBox16.SuspendLayout();
             this.groupBox15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
+=======
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox20.SuspendLayout();
 >>>>>>> e60da6275badb0aec4f6e8c5029a6786f369a23b
@@ -193,18 +202,29 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+<<<<<<< Updated upstream
             this.tabControl1.Controls.Add(this.tabPage7);
 <<<<<<< HEAD
 =======
             this.tabControl1.Controls.Add(this.tabPage4);
 >>>>>>> e60da6275badb0aec4f6e8c5029a6786f369a23b
+=======
+            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tabControl1.ItemSize = new System.Drawing.Size(207, 25);
+>>>>>>> Stashed changes
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
+<<<<<<< Updated upstream
             this.tabControl1.Size = new System.Drawing.Size(1156, 741);
+=======
+            this.tabControl1.Size = new System.Drawing.Size(867, 487);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+>>>>>>> Stashed changes
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -217,10 +237,18 @@
             this.tabPage1.Controls.Add(this.btnXoa);
             this.tabPage1.Controls.Add(this.btnThem);
             this.tabPage1.Controls.Add(this.btnSua);
+<<<<<<< Updated upstream
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1148, 712);
+=======
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(859, 454);
+>>>>>>> Stashed changes
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Khách trọ";
 <<<<<<< HEAD
@@ -242,11 +270,20 @@
             // 
             this.dgvDSKhachThue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSKhachThue.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.dgvDSKhachThue.Location = new System.Drawing.Point(3, 18);
+=======
+            this.dgvDSKhachThue.Location = new System.Drawing.Point(2, 26);
+            this.dgvDSKhachThue.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> Stashed changes
             this.dgvDSKhachThue.Name = "dgvDSKhachThue";
             this.dgvDSKhachThue.RowHeadersWidth = 51;
             this.dgvDSKhachThue.RowTemplate.Height = 24;
+<<<<<<< Updated upstream
             this.dgvDSKhachThue.Size = new System.Drawing.Size(649, 346);
+=======
+            this.dgvDSKhachThue.Size = new System.Drawing.Size(480, 270);
+>>>>>>> Stashed changes
             this.dgvDSKhachThue.TabIndex = 1;
             this.dgvDSKhachThue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKhachThue_CellClick);
 <<<<<<< HEAD
@@ -274,7 +311,11 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(29, 52);
             this.label13.Name = "label13";
+<<<<<<< Updated upstream
             this.label13.Size = new System.Drawing.Size(68, 17);
+=======
+            this.label13.Size = new System.Drawing.Size(82, 20);
+>>>>>>> Stashed changes
             this.label13.TabIndex = 7;
             this.label13.Text = "Tìm kiếm:";
             // 
@@ -290,21 +331,33 @@
             "CMND"});
             this.cbTimKiem.Location = new System.Drawing.Point(135, 95);
             this.cbTimKiem.Name = "cbTimKiem";
+<<<<<<< Updated upstream
             this.cbTimKiem.Size = new System.Drawing.Size(182, 24);
+=======
+            this.cbTimKiem.Size = new System.Drawing.Size(225, 28);
+>>>>>>> Stashed changes
             this.cbTimKiem.TabIndex = 6;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(-710, 97);
             this.textBox7.Name = "textBox7";
+<<<<<<< Updated upstream
             this.textBox7.Size = new System.Drawing.Size(250, 22);
+=======
+            this.textBox7.Size = new System.Drawing.Size(188, 26);
+>>>>>>> Stashed changes
             this.textBox7.TabIndex = 1;
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(135, 47);
             this.txtTimKiem.Name = "txtTimKiem";
+<<<<<<< Updated upstream
             this.txtTimKiem.Size = new System.Drawing.Size(309, 22);
+=======
+            this.txtTimKiem.Size = new System.Drawing.Size(225, 26);
+>>>>>>> Stashed changes
             this.txtTimKiem.TabIndex = 1;
             // 
             // button3
@@ -322,7 +375,11 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(29, 98);
             this.label8.Name = "label8";
+<<<<<<< Updated upstream
             this.label8.Size = new System.Drawing.Size(100, 17);
+=======
+            this.label8.Size = new System.Drawing.Size(119, 20);
+>>>>>>> Stashed changes
             this.label8.TabIndex = 5;
             this.label8.Text = "Tìm kiếm theo:";
             // 
@@ -357,35 +414,55 @@
             "Nữ"});
             this.cbGioiTinh.Location = new System.Drawing.Point(768, 70);
             this.cbGioiTinh.Name = "cbGioiTinh";
+<<<<<<< Updated upstream
             this.cbGioiTinh.Size = new System.Drawing.Size(182, 24);
+=======
+            this.cbGioiTinh.Size = new System.Drawing.Size(138, 28);
+>>>>>>> Stashed changes
             this.cbGioiTinh.TabIndex = 6;
             // 
             // txtNgheNghiep
             // 
             this.txtNgheNghiep.Location = new System.Drawing.Point(473, 73);
             this.txtNgheNghiep.Name = "txtNgheNghiep";
+<<<<<<< Updated upstream
             this.txtNgheNghiep.Size = new System.Drawing.Size(182, 22);
+=======
+            this.txtNgheNghiep.Size = new System.Drawing.Size(138, 26);
+>>>>>>> Stashed changes
             this.txtNgheNghiep.TabIndex = 1;
             // 
             // txtTenKhach
             // 
             this.txtTenKhach.Location = new System.Drawing.Point(134, 73);
             this.txtTenKhach.Name = "txtTenKhach";
+<<<<<<< Updated upstream
             this.txtTenKhach.Size = new System.Drawing.Size(182, 22);
+=======
+            this.txtTenKhach.Size = new System.Drawing.Size(138, 26);
+>>>>>>> Stashed changes
             this.txtTenKhach.TabIndex = 1;
             // 
             // txtCMND
             // 
             this.txtCMND.Location = new System.Drawing.Point(768, 33);
             this.txtCMND.Name = "txtCMND";
+<<<<<<< Updated upstream
             this.txtCMND.Size = new System.Drawing.Size(182, 22);
+=======
+            this.txtCMND.Size = new System.Drawing.Size(138, 26);
+>>>>>>> Stashed changes
             this.txtCMND.TabIndex = 1;
             // 
             // txtQueQuan
             // 
             this.txtQueQuan.Location = new System.Drawing.Point(473, 33);
             this.txtQueQuan.Name = "txtQueQuan";
+<<<<<<< Updated upstream
             this.txtQueQuan.Size = new System.Drawing.Size(182, 22);
+=======
+            this.txtQueQuan.Size = new System.Drawing.Size(138, 26);
+>>>>>>> Stashed changes
             this.txtQueQuan.TabIndex = 1;
             // 
             // label7
@@ -393,7 +470,11 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(697, 73);
             this.label7.Name = "label7";
+<<<<<<< Updated upstream
             this.label7.Size = new System.Drawing.Size(64, 17);
+=======
+            this.label7.Size = new System.Drawing.Size(76, 20);
+>>>>>>> Stashed changes
             this.label7.TabIndex = 5;
             this.label7.Text = "Giới tính:";
             // 
@@ -402,7 +483,11 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(379, 73);
             this.label5.Name = "label5";
+<<<<<<< Updated upstream
             this.label5.Size = new System.Drawing.Size(93, 17);
+=======
+            this.label5.Size = new System.Drawing.Size(107, 20);
+>>>>>>> Stashed changes
             this.label5.TabIndex = 5;
             this.label5.Text = "Nghề nghiệp:";
             // 
@@ -410,7 +495,11 @@
             // 
             this.txtMaKhach.Location = new System.Drawing.Point(134, 33);
             this.txtMaKhach.Name = "txtMaKhach";
+<<<<<<< Updated upstream
             this.txtMaKhach.Size = new System.Drawing.Size(182, 22);
+=======
+            this.txtMaKhach.Size = new System.Drawing.Size(138, 26);
+>>>>>>> Stashed changes
             this.txtMaKhach.TabIndex = 1;
             // 
             // label6
@@ -418,7 +507,11 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(697, 32);
             this.label6.Name = "label6";
+<<<<<<< Updated upstream
             this.label6.Size = new System.Drawing.Size(52, 17);
+=======
+            this.label6.Size = new System.Drawing.Size(65, 20);
+>>>>>>> Stashed changes
             this.label6.TabIndex = 5;
             this.label6.Text = "CMND:";
             // 
@@ -427,7 +520,11 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(379, 32);
             this.label4.Name = "label4";
+<<<<<<< Updated upstream
             this.label4.Size = new System.Drawing.Size(75, 17);
+=======
+            this.label4.Size = new System.Drawing.Size(86, 20);
+>>>>>>> Stashed changes
             this.label4.TabIndex = 5;
             this.label4.Text = "Quê quán:";
             // 
@@ -436,7 +533,11 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(17, 77);
             this.label3.Name = "label3";
+<<<<<<< Updated upstream
             this.label3.Size = new System.Drawing.Size(111, 17);
+=======
+            this.label3.Size = new System.Drawing.Size(128, 20);
+>>>>>>> Stashed changes
             this.label3.TabIndex = 5;
             this.label3.Text = "Tên khách thuê:";
             // 
@@ -445,7 +546,11 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(17, 36);
             this.label2.Name = "label2";
+<<<<<<< Updated upstream
             this.label2.Size = new System.Drawing.Size(105, 17);
+=======
+            this.label2.Size = new System.Drawing.Size(123, 20);
+>>>>>>> Stashed changes
             this.label2.TabIndex = 5;
             this.label2.Text = "Mã khách thuê:";
             // 
@@ -472,10 +577,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
+<<<<<<< Updated upstream
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(424, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(257, 34);
+=======
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18.27692F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(277, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(375, 37);
+>>>>>>> Stashed changes
             this.label1.TabIndex = 2;
             this.label1.Text = "Quản Lý Khách Trọ";
             // 
@@ -515,20 +628,36 @@
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Controls.Add(this.groupBox6);
+<<<<<<< Updated upstream
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1148, 712);
+=======
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(859, 454);
+>>>>>>> Stashed changes
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Phòng trọ";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+<<<<<<< Updated upstream
             this.label9.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(424, 3);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(255, 34);
+=======
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 18.27692F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(272, 7);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(375, 37);
+>>>>>>> Stashed changes
             this.label9.TabIndex = 3;
             this.label9.Text = "Quản Lý Phòng Trọ";
             // 
@@ -546,11 +675,21 @@
             // 
             this.dgvChiTietPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.dgvChiTietPhong.Location = new System.Drawing.Point(3, 18);
+=======
+            this.dgvChiTietPhong.GridColor = System.Drawing.SystemColors.InfoText;
+            this.dgvChiTietPhong.Location = new System.Drawing.Point(2, 21);
+            this.dgvChiTietPhong.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> Stashed changes
             this.dgvChiTietPhong.Name = "dgvChiTietPhong";
             this.dgvChiTietPhong.RowHeadersWidth = 51;
             this.dgvChiTietPhong.RowTemplate.Height = 24;
+<<<<<<< Updated upstream
             this.dgvChiTietPhong.Size = new System.Drawing.Size(574, 488);
+=======
+            this.dgvChiTietPhong.Size = new System.Drawing.Size(431, 137);
+>>>>>>> Stashed changes
             this.dgvChiTietPhong.TabIndex = 0;
             // 
             // groupBox6
@@ -567,10 +706,16 @@
             // 
             this.dgvTrangThaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTrangThaiPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.dgvTrangThaiPhong.Location = new System.Drawing.Point(3, 18);
+=======
+            this.dgvTrangThaiPhong.Location = new System.Drawing.Point(2, 21);
+            this.dgvTrangThaiPhong.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> Stashed changes
             this.dgvTrangThaiPhong.Name = "dgvTrangThaiPhong";
             this.dgvTrangThaiPhong.RowHeadersWidth = 51;
             this.dgvTrangThaiPhong.RowTemplate.Height = 24;
+<<<<<<< Updated upstream
             this.dgvTrangThaiPhong.Size = new System.Drawing.Size(542, 488);
             this.dgvTrangThaiPhong.TabIndex = 0;
             this.dgvTrangThaiPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrangThaiPhong_CellClick);
@@ -698,6 +843,12 @@
             this.label14.TabIndex = 4;
             this.label14.Text = "Bảng giá thuê phòng";
             // 
+=======
+            this.dgvTrangThaiPhong.Size = new System.Drawing.Size(407, 378);
+            this.dgvTrangThaiPhong.TabIndex = 0;
+            this.dgvTrangThaiPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrangThaiPhong_CellClick);
+            // 
+>>>>>>> Stashed changes
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.MistyRose;
@@ -705,10 +856,18 @@
             this.tabPage5.Controls.Add(this.groupBox10);
             this.tabPage5.Controls.Add(this.groupBox9);
             this.tabPage5.Controls.Add(this.groupBox8);
+<<<<<<< Updated upstream
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(1148, 712);
+=======
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage5.Size = new System.Drawing.Size(859, 454);
+>>>>>>> Stashed changes
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Đăng ký";
             // 
@@ -718,7 +877,11 @@
             this.label10.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(421, 11);
             this.label10.Name = "label10";
+<<<<<<< Updated upstream
             this.label10.Size = new System.Drawing.Size(258, 34);
+=======
+            this.label10.Size = new System.Drawing.Size(379, 37);
+>>>>>>> Stashed changes
             this.label10.TabIndex = 8;
             this.label10.Text = "Đăng Ký Phòng Trọ";
             // 
@@ -736,11 +899,20 @@
             // 
             this.dgvDanhSachKhachChuaCoPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachKhachChuaCoPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.dgvDanhSachKhachChuaCoPhong.Location = new System.Drawing.Point(3, 18);
+=======
+            this.dgvDanhSachKhachChuaCoPhong.Location = new System.Drawing.Point(2, 21);
+            this.dgvDanhSachKhachChuaCoPhong.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> Stashed changes
             this.dgvDanhSachKhachChuaCoPhong.Name = "dgvDanhSachKhachChuaCoPhong";
             this.dgvDanhSachKhachChuaCoPhong.RowHeadersWidth = 51;
             this.dgvDanhSachKhachChuaCoPhong.RowTemplate.Height = 24;
+<<<<<<< Updated upstream
             this.dgvDanhSachKhachChuaCoPhong.Size = new System.Drawing.Size(625, 248);
+=======
+            this.dgvDanhSachKhachChuaCoPhong.Size = new System.Drawing.Size(469, 196);
+>>>>>>> Stashed changes
             this.dgvDanhSachKhachChuaCoPhong.TabIndex = 0;
             // 
             // groupBox9
@@ -781,7 +953,11 @@
             this.rbtnOGhep.AutoSize = true;
             this.rbtnOGhep.Location = new System.Drawing.Point(43, 96);
             this.rbtnOGhep.Name = "rbtnOGhep";
+<<<<<<< Updated upstream
             this.rbtnOGhep.Size = new System.Drawing.Size(117, 21);
+=======
+            this.rbtnOGhep.Size = new System.Drawing.Size(132, 24);
+>>>>>>> Stashed changes
             this.rbtnOGhep.TabIndex = 0;
             this.rbtnOGhep.TabStop = true;
             this.rbtnOGhep.Text = "Khách ở ghép";
@@ -793,7 +969,11 @@
             this.rbtnThuePhongMoi.AutoSize = true;
             this.rbtnThuePhongMoi.Location = new System.Drawing.Point(43, 55);
             this.rbtnThuePhongMoi.Name = "rbtnThuePhongMoi";
+<<<<<<< Updated upstream
             this.rbtnThuePhongMoi.Size = new System.Drawing.Size(171, 21);
+=======
+            this.rbtnThuePhongMoi.Size = new System.Drawing.Size(196, 24);
+>>>>>>> Stashed changes
             this.rbtnThuePhongMoi.TabIndex = 0;
             this.rbtnThuePhongMoi.TabStop = true;
             this.rbtnThuePhongMoi.Text = "Khách thuê phòng mới";
@@ -816,7 +996,11 @@
             this.cbPhongOGhep.FormattingEnabled = true;
             this.cbPhongOGhep.Location = new System.Drawing.Point(239, 55);
             this.cbPhongOGhep.Name = "cbPhongOGhep";
+<<<<<<< Updated upstream
             this.cbPhongOGhep.Size = new System.Drawing.Size(181, 24);
+=======
+            this.cbPhongOGhep.Size = new System.Drawing.Size(161, 28);
+>>>>>>> Stashed changes
             this.cbPhongOGhep.TabIndex = 1;
             this.cbPhongOGhep.SelectedIndexChanged += new System.EventHandler(this.cbPhongOGhep_SelectedIndexChanged);
             // 
@@ -825,7 +1009,11 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(37, 62);
             this.label17.Name = "label17";
+<<<<<<< Updated upstream
             this.label17.Size = new System.Drawing.Size(124, 17);
+=======
+            this.label17.Size = new System.Drawing.Size(145, 20);
+>>>>>>> Stashed changes
             this.label17.TabIndex = 0;
             this.label17.Text = "Danh sách phòng:";
             // 
@@ -845,7 +1033,11 @@
             this.cbPhongTrong.FormattingEnabled = true;
             this.cbPhongTrong.Location = new System.Drawing.Point(239, 40);
             this.cbPhongTrong.Name = "cbPhongTrong";
+<<<<<<< Updated upstream
             this.cbPhongTrong.Size = new System.Drawing.Size(181, 24);
+=======
+            this.cbPhongTrong.Size = new System.Drawing.Size(161, 28);
+>>>>>>> Stashed changes
             this.cbPhongTrong.TabIndex = 1;
             this.cbPhongTrong.SelectedIndexChanged += new System.EventHandler(this.cbPhongTrong_SelectedIndexChanged);
             // 
@@ -854,7 +1046,11 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(37, 47);
             this.label16.Name = "label16";
+<<<<<<< Updated upstream
             this.label16.Size = new System.Drawing.Size(161, 17);
+=======
+            this.label16.Size = new System.Drawing.Size(188, 20);
+>>>>>>> Stashed changes
             this.label16.TabIndex = 0;
             this.label16.Text = "Danh sách phòng trống:";
             // 
@@ -883,11 +1079,20 @@
             // 
             this.dgvDanhSachKhachThuePhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachKhachThuePhong.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.dgvDanhSachKhachThuePhong.Location = new System.Drawing.Point(3, 18);
+=======
+            this.dgvDanhSachKhachThuePhong.Location = new System.Drawing.Point(2, 21);
+            this.dgvDanhSachKhachThuePhong.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> Stashed changes
             this.dgvDanhSachKhachThuePhong.Name = "dgvDanhSachKhachThuePhong";
             this.dgvDanhSachKhachThuePhong.RowHeadersWidth = 51;
             this.dgvDanhSachKhachThuePhong.RowTemplate.Height = 24;
+<<<<<<< Updated upstream
             this.dgvDanhSachKhachThuePhong.Size = new System.Drawing.Size(358, 149);
+=======
+            this.dgvDanhSachKhachThuePhong.Size = new System.Drawing.Size(269, 115);
+>>>>>>> Stashed changes
             this.dgvDanhSachKhachThuePhong.TabIndex = 0;
             // 
             // groupBox11
@@ -904,31 +1109,54 @@
             // 
             this.dgvPhongCoKhachThue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhongCoKhachThue.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.dgvPhongCoKhachThue.Location = new System.Drawing.Point(3, 18);
+=======
+            this.dgvPhongCoKhachThue.Location = new System.Drawing.Point(2, 21);
+            this.dgvPhongCoKhachThue.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> Stashed changes
             this.dgvPhongCoKhachThue.Name = "dgvPhongCoKhachThue";
             this.dgvPhongCoKhachThue.RowHeadersWidth = 51;
             this.dgvPhongCoKhachThue.RowTemplate.Height = 24;
+<<<<<<< Updated upstream
             this.dgvPhongCoKhachThue.Size = new System.Drawing.Size(252, 149);
+=======
+            this.dgvPhongCoKhachThue.Size = new System.Drawing.Size(190, 115);
+>>>>>>> Stashed changes
             this.dgvPhongCoKhachThue.TabIndex = 0;
             this.dgvPhongCoKhachThue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhongCoKhachThue_CellClick);
             // 
             // tabPage6
             // 
+<<<<<<< Updated upstream
             this.tabPage6.BackColor = System.Drawing.Color.MistyRose;
             this.tabPage6.Controls.Add(this.textBox2);
             this.tabPage6.Controls.Add(this.label22);
             this.tabPage6.Controls.Add(this.textBox1);
             this.tabPage6.Controls.Add(this.label18);
+=======
+            this.tabPage6.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.tabPage6.Controls.Add(this.button1);
+            this.tabPage6.Controls.Add(this.btnDangThongBao);
+>>>>>>> Stashed changes
             this.tabPage6.Controls.Add(this.groupBox19);
             this.tabPage6.Controls.Add(this.groupBox5);
             this.tabPage6.Controls.Add(this.groupBox4);
             this.tabPage6.Controls.Add(this.label15);
+<<<<<<< Updated upstream
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(1148, 712);
+=======
+            this.tabPage6.Location = new System.Drawing.Point(4, 29);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage6.Size = new System.Drawing.Size(859, 454);
+>>>>>>> Stashed changes
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Thống kê";
+            this.tabPage6.Text = "Thông báo";
             // 
             // textBox2
             // 
@@ -1033,10 +1261,15 @@
             this.label15.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(469, 3);
             this.label15.Name = "label15";
+<<<<<<< Updated upstream
             this.label15.Size = new System.Drawing.Size(233, 34);
+=======
+            this.label15.Size = new System.Drawing.Size(376, 37);
+>>>>>>> Stashed changes
             this.label15.TabIndex = 9;
             this.label15.Text = "Thống kê hóa đơn";
             // 
+<<<<<<< Updated upstream
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.MistyRose;
@@ -1265,6 +1498,8 @@
             this.label23.Text = "Dịch Vụ";
             // 
 >>>>>>> e60da6275badb0aec4f6e8c5029a6786f369a23b
+=======
+>>>>>>> Stashed changes
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
@@ -1296,6 +1531,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 0;
             // 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
             // button2
@@ -1324,6 +1560,22 @@
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+=======
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.Location = new System.Drawing.Point(753, 380);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 30);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Guest";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+>>>>>>> Stashed changes
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 586);
             this.Controls.Add(this.tabControl1);
@@ -1345,12 +1597,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhong)).EndInit();
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrangThaiPhong)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.groupBox21.ResumeLayout(false);
-            this.groupBox21.PerformLayout();
-            this.groupBox18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinGiaThue)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.groupBox10.ResumeLayout(false);
@@ -1371,6 +1617,7 @@
             this.groupBox19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHoaDon)).EndInit();
             this.groupBox5.ResumeLayout(false);
+<<<<<<< Updated upstream
             ((System.ComponentModel.ISupportInitialize)(this.dgvTienPhong)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvThang)).EndInit();
@@ -1387,6 +1634,8 @@
             this.groupBox16.PerformLayout();
             this.groupBox15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
+=======
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox20.ResumeLayout(false);
 >>>>>>> e60da6275badb0aec4f6e8c5029a6786f369a23b
@@ -1431,10 +1680,8 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.GroupBox groupBox7;
-		private System.Windows.Forms.TabPage tabPage3;
 		private System.Windows.Forms.TabPage tabPage5;
 		private System.Windows.Forms.TabPage tabPage6;
-		private System.Windows.Forms.TabPage tabPage7;
 		private System.Windows.Forms.DataGridView dgvChiTietPhong;
 		private System.Windows.Forms.DataGridView dgvTrangThaiPhong;
 		private System.Windows.Forms.Label label10;
@@ -1451,11 +1698,7 @@
 		private System.Windows.Forms.DataGridView dgvDanhSachKhachThuePhong;
 		private System.Windows.Forms.GroupBox groupBox11;
 		private System.Windows.Forms.DataGridView dgvPhongCoKhachThue;
-		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.GroupBox groupBox17;
 		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.Button btnThemKhachDangKy;
 		private System.Windows.Forms.ComboBox cbPhongOGhep;
 		private System.Windows.Forms.Label label17;
@@ -1465,6 +1708,7 @@
 		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.Label label15;
+<<<<<<< Updated upstream
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.GroupBox groupBox21;
@@ -1489,6 +1733,10 @@
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label24;
+=======
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnCheckOut;
+>>>>>>> Stashed changes
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.DataGridView dgvDichVu;
         private System.Windows.Forms.Label label23;
